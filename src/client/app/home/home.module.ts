@@ -3,13 +3,13 @@ import { CommonModule } from '@angular/common';
 import { HomeComponent } from './home.component';
 import { HomeRoutingModule } from './home-routing.module';
 import { SharedModule } from '../shared/shared.module';
-import { EncounterModule } from '../encounter/encounter.module';
-import { EncounterService } from '../encounter/encounter.service';
+import { ChargeModule } from '../charge/charge.module';
+import { ChargeService } from '../charge/charge.service';
 
 @NgModule({
-  imports: [CommonModule, HomeRoutingModule, SharedModule, EncounterModule],
+  imports: [CommonModule, HomeRoutingModule, SharedModule, ChargeModule],
   declarations: [HomeComponent],
   exports: [HomeComponent],
-  providers: [EncounterService]
+  providers: [ChargeService]
 })
 export class HomeModule { }

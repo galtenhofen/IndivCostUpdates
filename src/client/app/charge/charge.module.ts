@@ -1,14 +1,14 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { EncounterComponent } from './encounter.component';
-import { EncounterService } from './encounter.service';
+import { ChargeComponent } from './charge.component';
+import { ChargeService } from './charge.service';
 import { SharedModule } from '../shared/shared.module';
 import { NameListService } from '../shared/name-list/index';
 
 @NgModule({
   imports: [CommonModule, SharedModule],
-  declarations: [EncounterComponent],
-  exports: [EncounterComponent],
-  providers: [EncounterService]
+  declarations: [ChargeComponent],
+  exports: [ChargeComponent],
+  providers: [ChargeService]
 })
-export class EncounterModule { }
+export class ChargeModule { }

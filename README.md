@@ -99,7 +99,7 @@ $ docker-compose build
 $ docker-compose up -d
 ```
 
-Now open your browser at http://localhost:5555
+Now open your browser at http://localhost:8000
 
 ## Production build and deployment
 
@@ -111,7 +111,7 @@ $ docker-compose -f docker-compose.production.yml up angular-seed   # Wait until
 $ docker-compose -f docker-compose.production.yml up -d angular-seed-nginx  # Start the nginx container in detached mode
 ```
 
-Now open your browser at http://localhost:5555
+Now open your browser at http://localhost:8000
 
 # Table of Contents
 

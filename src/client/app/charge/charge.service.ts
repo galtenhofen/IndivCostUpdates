@@ -1,21 +1,21 @@
 import { Injectable, Component, Input, Output } from '@angular/core';
 import { Http, Response, Request, Headers, RequestOptions } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
-import {IEncounter} from './encounter';
+import {ICharge} from './Charge';
 import {IResponse} from './response';
 import 'rxjs/Rx'; 
 
 // import 'rxjs/add/operator/do';  // for debugging
 
 /**
- * This class provides the Encounter service with methods to read names and add names.
+ * This class provides the Charge service with methods to read names and add names.
  */
 @Injectable()
-export class EncounterService {
+export class ChargeService {
   loading:boolean; 
-  private encounterUrl = '/assets/reports.json'; 
+  private ChargeUrl = '/assets/reports.json'; 
   /**
-   * Creates a new EncounterService with the injected Http.
+   * Creates a new Chargeservice with the injected Http.
    * @param {Http} http - The injected Http.
    * @constructor
    */
@@ -25,11 +25,11 @@ export class EncounterService {
    * Returns an Observable for the HTTP GET request for the JSON resource.
    * @return {string[]} The Observable for the HTTP request.
    */
-  getEncounters(dfgid:string): Observable<IResponse> {
-    return this.http.get('/assets/encounters.json')
+  getCharges(dfgid:string): Observable<IResponse> {
+    return this.http.get('/assets/charges.json')
                     .finally( () => this.loading = false)
-                    //.do(data=> console.log("IN getEncounters:  " + JSON.stringify(data)))
-                    .do(data=> console.log("IN getEncounters:  " + data))
+                    .do(data=> console.log("IN getCharges:  " + JSON.stringify(data)))
+                    //.do(data=> console.log("IN getCharges:  " + data))
                     .map((res: Response) => <IResponse>res.json())
                     .catch(this.handleError);
   }
@@ -39,7 +39,7 @@ export class EncounterService {
                 let headers = new Headers({ 'Content-Type': 'application/json' });
                 let options = new RequestOptions({ headers: headers });
 
-                return this.http.post(this.encounterUrl , body, options)
+                return this.http.post(this.ChargeUrl , body, options)
                     .do(data => console.log("POST Response: " + JSON.stringify(data)))
                     .map(this.checkResponseStatus)
                     .catch(this.handleError);

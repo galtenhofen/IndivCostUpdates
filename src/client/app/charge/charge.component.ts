@@ -1,25 +1,25 @@
 import { Component, OnInit } from '@angular/core';
-import { EncounterService } from './encounter.service';
-import {IEncounter} from './encounter';
+import { ChargeService } from './charge.service';
+import {ICharge} from './charge';
 import {IResponse} from './response';
 import {IReport} from './report';
 
 /**
- * This class represents the lazy loaded EncounterComponent.
+ * This class represents the lazy loaded ChargeComponent.
  */
 @Component({
   moduleId: module.id,
-  selector: 'sd-encounter',
-  templateUrl: 'encounter.component.html',
-  styleUrls: ['encounter.component.css'],
+  selector: 'sd-charge',
+  templateUrl: 'charge.component.html',
+  styleUrls: ['charge.component.css'],
 })
-export class EncounterComponent implements OnInit {
+export class ChargeComponent implements OnInit {
 
   //newName: string = '';
   errorMessage: string;
 
 
-    pageTitle: string = 'Prelim Reports';
+    pageTitle: string = 'Individual Cost Updates';
    // errorMessage: string;
     httpStatus: string;
     batchId: string;
@@ -41,7 +41,7 @@ export class EncounterComponent implements OnInit {
     outbound: IOutbound;
 */
     response: IResponse;
-    encounters: IEncounter[] = [];
+    charges: ICharge[] = [];
 
     confirmResponse:string = '';
     loading: boolean = false;
@@ -49,76 +49,65 @@ export class EncounterComponent implements OnInit {
     attempt: boolean;
     updating: boolean = false;
     updatingError: boolean = false;
+    revCodeFilter: string;
 
   
 
   /**
-   * Creates an instance of the EncounterComponent with the injected
-   * Encounter.
+   * Creates an instance of the ChargeComponent with the injected
+   * Charge.
    *
-   * @param {EncounterService} EncounterService - The injected Encounter.
+   * @param {ChargeService} ChargeService - The injected Charge.
    */
-  constructor(public _encounterService: EncounterService) {this.loading = this._encounterService.loading;}
+  constructor(public _chargeService: ChargeService) {this.loading = this._chargeService.loading;}
 
   /**
-   * Get the encounters OnInit
+   * Get the charges OnInit
    */
   ngOnInit() {
-console.log('IN onInIt   this.encounters: ' + this.encounters);
+console.log('IN onInIt   this.charges: ' + this.charges);
 
-console.log('IN onInIt   this.encounters stringify: ' + JSON.stringify(this.encounters));
-     //this.loading=false;
-    //    this.attempt=false;
-    //    this.updating=false;
+console.log('IN onInIt   this.charges stringify: ' + JSON.stringify(this.charges));
+this.revCodeFilter = "";
   }
 
-  /**
-   * Handle the EncounterService observable
-   */
- /* getEncounters() {
-    this.EncounterService.getEncounters()
-      .subscribe(
-        encounters => this.encounters = encounters,
-        error => this.errorMessage = <any>error
-      );
-  }*/
 
 
-onClickrefreshEncounterList(): void{
+onClickrefreshChargeList(): void{
 
-     console.log('Retrieving Encounters...');
+     console.log('Retrieving Charges...');
 
           //  this.attempt= true;
           //  this.disableButtons();
             this.errorMessage = "";
           //  this.updating = false;
-          this.encounters = [];
+          this.charges = [];
             
-                if (this.dataFileGroupId && this.dataFileGroupId != null && this.dataFileGroupId!=""){
+              //  if (this.dataFileGroupId && this.dataFileGroupId != null && this.dataFileGroupId!=""){
                 
                 this.loading = true;
-
-                    this._encounterService.getEncounters(this.dataFileGroupId)
+                this.dataFileGroupId = "878";
+                    this._chargeService.getCharges(this.dataFileGroupId)
                     .subscribe(
-                        response => this.encounters = response.encounterList,
+                        response => this.charges = response.chargeList,
                         //error => this.errorMessage = <any>error,
-                        error => this.onRequestComplete("Get Encounters", error),
-                        () => this.onRequestComplete("Get Encounters", "200"));
-                }
-                else{
-                    alert('Please Enter a DataFileGroupId to in order to fetch files');
+                        error => this.onRequestComplete("Get Charges", error),
+                        () => this.onRequestComplete("Get Charges", "200"));
+               // }
+               // else{
+              //     alert('Please Enter a DataFileGroupId to in order to fetch files');
             
-                }
+               // }
 
             console.log('Leaving onClickrefreshBatchList this.loading: ' + this.loading);
             }
 
   onRequestComplete(action:any, result:any){
             console.log('ENTERING onRequestComplete  Action Performed: ' + action + '  Result: ' + result);
-                if(action == "Get Encounters"){
+                if(action == "Get Charges"){
                     if(result == "200")
                         {
-                            this.loading = this._encounterService.loading;
+                            this.loading = this._chargeService.loading;
                            // this.canEnableButtons();
                         }
                      else{
@@ -133,7 +122,7 @@ onClickrefreshEncounterList(): void{
                      }   
 
                     }
-                else if(action == "Submit Encounters"){
+                else if(action == "Submit Charges"){
                     if(result == "200")
                         {
                             //this.updating = false;
@@ -156,8 +145,8 @@ onClickrefreshEncounterList(): void{
 
         console.log("Loading?: " + this.loading);
         console.log("Error?: " + this.errorMessage);
-        console.log("EncounterLength?: " + this.encounters.length);
-        console.log("Encounters: " + JSON.stringify(this.encounters));
+        //console.log("ChargeLength?: " + this.charges.length);
+        console.log("Charges: " + JSON.stringify(this.charges));
         console.log('LEAVING onRequestComplete');
         }
 
@@ -167,8 +156,8 @@ onClickrefreshEncounterList(): void{
        makeTableScroll() {
             var maxRows = 20;
 
-            var table: any = (<HTMLInputElement>document.getElementById('encountersTable')).value;
-            var wrapper: any = (<HTMLInputElement>document.getElementById('encountersTable')).parentNode;
+            var table: any = (<HTMLInputElement>document.getElementById('chargesTable')).value;
+            var wrapper: any = (<HTMLInputElement>document.getElementById('chargesTable')).parentNode;
             //var wrapper = table.parentNode;
             var rowsInTable = table.rows.length;
             var height = 0;
@@ -185,15 +174,15 @@ onClickrefreshEncounterList(): void{
             this.reportList = [];
             this.reportList.push("326731","326732","326733","326736","326641","326642","326644","326645","326647","326648","326649","326650","326651","326652","326653","326654","326658","326659","326660","326661","326662","326667","326668","326669","326670","326671","326672","326673","326674","326675","326676","326677","326678","326679","326685","326686","326687","326496","326497","326498","326499","326500","326501","326739","326740","326741","326742","326744");
            
-            console.log("Encounters[0]: " + JSON.stringify(this.encounters[0]));  
+            console.log("Charges[0]: " + JSON.stringify(this.charges[0]));  
  
 
             var checkboxes = document.getElementsByTagName('input'); 
             for (var i = 0; i < checkboxes.length; i++)
             {
             if (checkboxes[i].type == 'checkbox'){
-                if(this.encounters[i]){
-                    if(this.encounters[i].standardReport ==="Y"){
+                if(this.charges[i]){
+                    if(this.charges[i].standardReport ==="Y"){
                    
                     checkboxes[i].checked = true;
                     }
@@ -238,8 +227,8 @@ onClickrefreshEncounterList(): void{
             }
 
             
-            for (var j = 0; j < this.encounters.length; j++){
-                this.reportList.push(this.encounters[j].jsxid);
+            for (var j = 0; j < this.charges.length; j++){
+                this.reportList.push(this.charges[j].jsxid);
             }
             console.log('Report List: ' + JSON.stringify(this.reportList));
         }
@@ -273,7 +262,7 @@ onClickrefreshEncounterList(): void{
    
     if(confirm('Are you sure you want to submit the selected reports and close the Prelim Reports App?')){
 
-                this._encounterService.postReportList(this.reportList)
+                this._chargeService.postReportList(this.reportList)
                 .subscribe(
                     data => this.postUpdates = JSON.stringify(data), 
                     error => this.errorMessage = <any>error);
@@ -283,13 +272,13 @@ onClickrefreshEncounterList(): void{
 
 
   /**
-   * Pushes a new name onto the encounters array
+   * Pushes a new name onto the charges array
    * @return {boolean} false to prevent default form submit behavior to refresh the page.
    */
   /*
   addName(): boolean {
-    // TODO: implement EncounterService.post
-    this.encounters.push(this.newName);
+    // TODO: implement ChargeService.post
+    this.charges.push(this.newName);
     this.newName = '';
     return false;
   }*/

@@ -4,13 +4,13 @@
   "dataFileGroupId": "1168",
   "providerId": "100082",
   "userName": "GI Builder User",
-  "encounterList": [
+  "ChargeList": [
     {
       "jsxid": "326731",
       "batchType": "843",
-      "encounterGroup": "AICD (OP)",
-      "encounterType": "Outpatient",
-      "encounterVolume": "77",
+      "ChargeGroup": "AICD (OP)",
+      "ChargeType": "Outpatient",
+      "ChargeVolume": "77",
       "serviceLine": "Cardiology",
       "standardReport": "Y",
       "mstrUrl": "http:\/\/devanalytics.medassets.com\/MicroStrategy\/servlet\/mstrWeb?Server=scs41vdmapapp01&Project=Navigator&Port=0&evt=2048001&src=mstrWeb.2048001&currentViewMedia=2&uid=navigatoruser&pwd=tibco123&visMode=0&documentID=8D2FB75441655878AC5265BA30F472F0&hiddensections=header,path,dockLeft,footer&elementsPromptAnswers=463DAA084A1B77DDD437D98C59F55BED;463DAA084A1B77DDD437D98C59F55BED:1168,D15CB49A4413A7C904706C92DFEE7641;D15CB49A4413A7C904706C92DFEE7641:843"
@@ -18,9 +18,9 @@
     {
       "jsxid": "326732",
       "batchType": "1123",
-      "encounterGroup": "AICD CRT (OP)",
-      "encounterType": "Outpatient",
-      "encounterVolume": "98",
+      "ChargeGroup": "AICD CRT (OP)",
+      "ChargeType": "Outpatient",
+      "ChargeVolume": "98",
       "serviceLine": "Cardiology",
       "standardReport": "Y",
       "mstrUrl": "http:\/\/devanalytics.medassets.com\/MicroStrategy\/servlet\/mstrWeb?Server=scs41vdmapapp01&Project=Navigator&Port=0&evt=2048001&src=mstrWeb.2048001&currentViewMedia=2&uid=navigatoruser&pwd=tibco123&visMode=0&documentID=8D2FB75441655878AC5265BA30F472F0&hiddensections=header,path,dockLeft,footer&elementsPromptAnswers=463DAA084A1B77DDD437D98C59F55BED;463DAA084A1B77DDD437D98C59F55BED:1168,D15CB49A4413A7C904706C92DFEE7641;D15CB49A4413A7C904706C92DFEE7641:1123"
@@ -28,9 +28,9 @@
     {
       "jsxid": "326733",
       "batchType": "170",
-      "encounterGroup": "Angioplasty (OP)",
-      "encounterType": "Outpatient",
-      "encounterVolume": "17",
+      "ChargeGroup": "Angioplasty (OP)",
+      "ChargeType": "Outpatient",
+      "ChargeVolume": "17",
       "serviceLine": "Cardiology",
       "standardReport": "Y",
       "mstrUrl": "http:\/\/devanalytics.medassets.com\/MicroStrategy\/servlet\/mstrWeb?Server=scs41vdmapapp01&Project=Navigator&Port=0&evt=2048001&src=mstrWeb.2048001&currentViewMedia=2&uid=navigatoruser&pwd=tibco123&visMode=0&documentID=8D2FB75441655878AC5265BA30F472F0&hiddensections=header,path,dockLeft,footer&elementsPromptAnswers=463DAA084A1B77DDD437D98C59F55BED;463DAA084A1B77DDD437D98C59F55BED:1168,D15CB49A4413A7C904706C92DFEE7641;D15CB49A4413A7C904706C92DFEE7641:170"
@@ -38,9 +38,9 @@
     {
       "jsxid": "326628",
       "batchType": "842",
-      "encounterGroup": "CABG",
-      "encounterType": "Inpatient",
-      "encounterVolume": "209",
+      "ChargeGroup": "CABG",
+      "ChargeType": "Inpatient",
+      "ChargeVolume": "209",
       "serviceLine": "Cardiac Surgery",
       "standardReport": "N",
       "mstrUrl": "http:\/\/devanalytics.medassets.com\/MicroStrategy\/servlet\/mstrWeb?Server=scs41vdmapapp01&Project=Navigator&Port=0&evt=2048001&src=mstrWeb.2048001&currentViewMedia=2&uid=navigatoruser&pwd=tibco123&visMode=0&documentID=8D2FB75441655878AC5265BA30F472F0&hiddensections=header,path,dockLeft,footer&elementsPromptAnswers=463DAA084A1B77DDD437D98C59F55BED;463DAA084A1B77DDD437D98C59F55BED:1168,D15CB49A4413A7C904706C92DFEE7641;D15CB49A4413A7C904706C92DFEE7641:842"
@@ -48,9 +48,9 @@
     {
       "jsxid": "326629",
       "batchType": "4425",
-      "encounterGroup": "Card Defib w Cath w AMI (MSDRG 222, 223)",
-      "encounterType": "Inpatient",
-      "encounterVolume": "3",
+      "ChargeGroup": "Card Defib w Cath w AMI (MSDRG 222, 223)",
+      "ChargeType": "Inpatient",
+      "ChargeVolume": "3",
       "serviceLine": "Cardiology",
       "standardReport": "N",
       "mstrUrl": "http:\/\/devanalytics.medassets.com\/MicroStrategy\/servlet\/mstrWeb?Server=scs41vdmapapp01&Project=Navigator&Port=0&evt=2048001&src=mstrWeb.2048001&currentViewMedia=2&uid=navigatoruser&pwd=tibco123&visMode=0&documentID=8D2FB75441655878AC5265BA30F472F0&hiddensections=header,path,dockLeft,footer&elementsPromptAnswers=463DAA084A1B77DDD437D98C59F55BED;463DAA084A1B77DDD437D98C59F55BED:1168,D15CB49A4413A7C904706C92DFEE7641;D15CB49A4413A7C904706C92DFEE7641:4425"
@@ -58,9 +58,9 @@
     {
       "jsxid": "326630",
       "batchType": "4426",
-      "encounterGroup": "Card Defib w Cath wo AMI (MSDRG 224, 225)",
-      "encounterType": "Inpatient",
-      "encounterVolume": "7",
+      "ChargeGroup": "Card Defib w Cath wo AMI (MSDRG 224, 225)",
+      "ChargeType": "Inpatient",
+      "ChargeVolume": "7",
       "serviceLine": "Cardiology",
       "standardReport": "N",
       "mstrUrl": "http:\/\/devanalytics.medassets.com\/MicroStrategy\/servlet\/mstrWeb?Server=scs41vdmapapp01&Project=Navigator&Port=0&evt=2048001&src=mstrWeb.2048001&currentViewMedia=2&uid=navigatoruser&pwd=tibco123&visMode=0&documentID=8D2FB75441655878AC5265BA30F472F0&hiddensections=header,path,dockLeft,footer&elementsPromptAnswers=463DAA084A1B77DDD437D98C59F55BED;463DAA084A1B77DDD437D98C59F55BED:1168,D15CB49A4413A7C904706C92DFEE7641;D15CB49A4413A7C904706C92DFEE7641:4426"
@@ -68,9 +68,9 @@
     {
       "jsxid": "326631",
       "batchType": "4422",
-      "encounterGroup": "Card Defib w\/o Cath (MSDRG 226, 227)",
-      "encounterType": "Inpatient",
-      "encounterVolume": "39",
+      "ChargeGroup": "Card Defib w\/o Cath (MSDRG 226, 227)",
+      "ChargeType": "Inpatient",
+      "ChargeVolume": "39",
       "serviceLine": "Cardiology",
       "standardReport": "N",
       "mstrUrl": "http:\/\/devanalytics.medassets.com\/MicroStrategy\/servlet\/mstrWeb?Server=scs41vdmapapp01&Project=Navigator&Port=0&evt=2048001&src=mstrWeb.2048001&currentViewMedia=2&uid=navigatoruser&pwd=tibco123&visMode=0&documentID=8D2FB75441655878AC5265BA30F472F0&hiddensections=header,path,dockLeft,footer&elementsPromptAnswers=463DAA084A1B77DDD437D98C59F55BED;463DAA084A1B77DDD437D98C59F55BED:1168,D15CB49A4413A7C904706C92DFEE7641;D15CB49A4413A7C904706C92DFEE7641:4422"
@@ -78,9 +78,9 @@
     {
       "jsxid": "326634",
       "batchType": "4417",
-      "encounterGroup": "Card Valve & Oth Maj CV Px w Cath (MS 216,217,218)",
-      "encounterType": "Inpatient",
-      "encounterVolume": "51",
+      "ChargeGroup": "Card Valve & Oth Maj CV Px w Cath (MS 216,217,218)",
+      "ChargeType": "Inpatient",
+      "ChargeVolume": "51",
       "serviceLine": "Cardiac Surgery",
       "standardReport": "N",
       "mstrUrl": "http:\/\/devanalytics.medassets.com\/MicroStrategy\/servlet\/mstrWeb?Server=scs41vdmapapp01&Project=Navigator&Port=0&evt=2048001&src=mstrWeb.2048001&currentViewMedia=2&uid=navigatoruser&pwd=tibco123&visMode=0&documentID=8D2FB75441655878AC5265BA30F472F0&hiddensections=header,path,dockLeft,footer&elementsPromptAnswers=463DAA084A1B77DDD437D98C59F55BED;463DAA084A1B77DDD437D98C59F55BED:1168,D15CB49A4413A7C904706C92DFEE7641;D15CB49A4413A7C904706C92DFEE7641:4417"
@@ -88,9 +88,9 @@
     {
       "jsxid": "326635",
       "batchType": "4418",
-      "encounterGroup": "Card Valve & Oth Maj CV Px wo Cath (MS 219,220,221",
-      "encounterType": "Inpatient",
-      "encounterVolume": "164",
+      "ChargeGroup": "Card Valve & Oth Maj CV Px wo Cath (MS 219,220,221",
+      "ChargeType": "Inpatient",
+      "ChargeVolume": "164",
       "serviceLine": "Cardiac Surgery",
       "standardReport": "N",
       "mstrUrl": "http:\/\/devanalytics.medassets.com\/MicroStrategy\/servlet\/mstrWeb?Server=scs41vdmapapp01&Project=Navigator&Port=0&evt=2048001&src=mstrWeb.2048001&currentViewMedia=2&uid=navigatoruser&pwd=tibco123&visMode=0&documentID=8D2FB75441655878AC5265BA30F472F0&hiddensections=header,path,dockLeft,footer&elementsPromptAnswers=463DAA084A1B77DDD437D98C59F55BED;463DAA084A1B77DDD437D98C59F55BED:1168,D15CB49A4413A7C904706C92DFEE7641;D15CB49A4413A7C904706C92DFEE7641:4418"
@@ -98,9 +98,9 @@
     {
       "jsxid": "326735",
       "batchType": "160",
-      "encounterGroup": "Cardiac Mapping (OP)",
-      "encounterType": "Outpatient",
-      "encounterVolume": "141",
+      "ChargeGroup": "Cardiac Mapping (OP)",
+      "ChargeType": "Outpatient",
+      "ChargeVolume": "141",
       "serviceLine": "Cardiology",
       "standardReport": "N",
       "mstrUrl": "http:\/\/devanalytics.medassets.com\/MicroStrategy\/servlet\/mstrWeb?Server=scs41vdmapapp01&Project=Navigator&Port=0&evt=2048001&src=mstrWeb.2048001&currentViewMedia=2&uid=navigatoruser&pwd=tibco123&visMode=0&documentID=8D2FB75441655878AC5265BA30F472F0&hiddensections=header,path,dockLeft,footer&elementsPromptAnswers=463DAA084A1B77DDD437D98C59F55BED;463DAA084A1B77DDD437D98C59F55BED:1168,D15CB49A4413A7C904706C92DFEE7641;D15CB49A4413A7C904706C92DFEE7641:160"
@@ -108,9 +108,9 @@
     {
       "jsxid": "326476",
       "batchType": "4430",
-      "encounterGroup": "Carotid Artery Stent (MSDRG 34, 35, 36)",
-      "encounterType": "Inpatient",
-      "encounterVolume": "17",
+      "ChargeGroup": "Carotid Artery Stent (MSDRG 34, 35, 36)",
+      "ChargeType": "Inpatient",
+      "ChargeVolume": "17",
       "serviceLine": "Vascular Surgery & PVI",
       "standardReport": "N",
       "mstrUrl": "http:\/\/devanalytics.medassets.com\/MicroStrategy\/servlet\/mstrWeb?Server=scs41vdmapapp01&Project=Navigator&Port=0&evt=2048001&src=mstrWeb.2048001&currentViewMedia=2&uid=navigatoruser&pwd=tibco123&visMode=0&documentID=8D2FB75441655878AC5265BA30F472F0&hiddensections=header,path,dockLeft,footer&elementsPromptAnswers=463DAA084A1B77DDD437D98C59F55BED;463DAA084A1B77DDD437D98C59F55BED:1168,D15CB49A4413A7C904706C92DFEE7641;D15CB49A4413A7C904706C92DFEE7641:4430"
@@ -118,9 +118,9 @@
     {
       "jsxid": "326636",
       "batchType": "4427",
-      "encounterGroup": "Coronary Bypass w Cath (MSDRG 233, 234)",
-      "encounterType": "Inpatient",
-      "encounterVolume": "74",
+      "ChargeGroup": "Coronary Bypass w Cath (MSDRG 233, 234)",
+      "ChargeType": "Inpatient",
+      "ChargeVolume": "74",
       "serviceLine": "Cardiac Surgery",
       "standardReport": "N",
       "mstrUrl": "http:\/\/devanalytics.medassets.com\/MicroStrategy\/servlet\/mstrWeb?Server=scs41vdmapapp01&Project=Navigator&Port=0&evt=2048001&src=mstrWeb.2048001&currentViewMedia=2&uid=navigatoruser&pwd=tibco123&visMode=0&documentID=8D2FB75441655878AC5265BA30F472F0&hiddensections=header,path,dockLeft,footer&elementsPromptAnswers=463DAA084A1B77DDD437D98C59F55BED;463DAA084A1B77DDD437D98C59F55BED:1168,D15CB49A4413A7C904706C92DFEE7641;D15CB49A4413A7C904706C92DFEE7641:4427"
@@ -128,9 +128,9 @@
     {
       "jsxid": "326637",
       "batchType": "4428",
-      "encounterGroup": "Coronary Bypass wo Cath (MSDRG 235, 236)",
-      "encounterType": "Inpatient",
-      "encounterVolume": "128",
+      "ChargeGroup": "Coronary Bypass wo Cath (MSDRG 235, 236)",
+      "ChargeType": "Inpatient",
+      "ChargeVolume": "128",
       "serviceLine": "Cardiac Surgery",
       "standardReport": "N",
       "mstrUrl": "http:\/\/devanalytics.medassets.com\/MicroStrategy\/servlet\/mstrWeb?Server=scs41vdmapapp01&Project=Navigator&Port=0&evt=2048001&src=mstrWeb.2048001&currentViewMedia=2&uid=navigatoruser&pwd=tibco123&visMode=0&documentID=8D2FB75441655878AC5265BA30F472F0&hiddensections=header,path,dockLeft,footer&elementsPromptAnswers=463DAA084A1B77DDD437D98C59F55BED;463DAA084A1B77DDD437D98C59F55BED:1168,D15CB49A4413A7C904706C92DFEE7641;D15CB49A4413A7C904706C92DFEE7641:4428"
@@ -138,9 +138,9 @@
     {
       "jsxid": "326736",
       "batchType": "1115",
-      "encounterGroup": "DES (OP)",
-      "encounterType": "Outpatient",
-      "encounterVolume": "323",
+      "ChargeGroup": "DES (OP)",
+      "ChargeType": "Outpatient",
+      "ChargeVolume": "323",
       "serviceLine": "Cardiology",
       "standardReport": "Y",
       "mstrUrl": "http:\/\/devanalytics.medassets.com\/MicroStrategy\/servlet\/mstrWeb?Server=scs41vdmapapp01&Project=Navigator&Port=0&evt=2048001&src=mstrWeb.2048001&currentViewMedia=2&uid=navigatoruser&pwd=tibco123&visMode=0&documentID=8D2FB75441655878AC5265BA30F472F0&hiddensections=header,path,dockLeft,footer&elementsPromptAnswers=463DAA084A1B77DDD437D98C59F55BED;463DAA084A1B77DDD437D98C59F55BED:1168,D15CB49A4413A7C904706C92DFEE7641;D15CB49A4413A7C904706C92DFEE7641:1115"
@@ -148,9 +148,9 @@
     {
       "jsxid": "326737",
       "batchType": "161",
-      "encounterGroup": "Electrophysiologic Cardiac Stimulation (OP)",
-      "encounterType": "Outpatient",
-      "encounterVolume": "52",
+      "ChargeGroup": "Electrophysiologic Cardiac Stimulation (OP)",
+      "ChargeType": "Outpatient",
+      "ChargeVolume": "52",
       "serviceLine": "Cardiology",
       "standardReport": "N",
       "mstrUrl": "http:\/\/devanalytics.medassets.com\/MicroStrategy\/servlet\/mstrWeb?Server=scs41vdmapapp01&Project=Navigator&Port=0&evt=2048001&src=mstrWeb.2048001&currentViewMedia=2&uid=navigatoruser&pwd=tibco123&visMode=0&documentID=8D2FB75441655878AC5265BA30F472F0&hiddensections=header,path,dockLeft,footer&elementsPromptAnswers=463DAA084A1B77DDD437D98C59F55BED;463DAA084A1B77DDD437D98C59F55BED:1168,D15CB49A4413A7C904706C92DFEE7641;D15CB49A4413A7C904706C92DFEE7641:161"
@@ -158,9 +158,9 @@
     {
       "jsxid": "326477",
       "batchType": "4424",
-      "encounterGroup": "Extracranial Px (MSDRG 37, 38, 39)",
-      "encounterType": "Inpatient",
-      "encounterVolume": "109",
+      "ChargeGroup": "Extracranial Px (MSDRG 37, 38, 39)",
+      "ChargeType": "Inpatient",
+      "ChargeVolume": "109",
       "serviceLine": "Vascular Surgery & PVI",
       "standardReport": "N",
       "mstrUrl": "http:\/\/devanalytics.medassets.com\/MicroStrategy\/servlet\/mstrWeb?Server=scs41vdmapapp01&Project=Navigator&Port=0&evt=2048001&src=mstrWeb.2048001&currentViewMedia=2&uid=navigatoruser&pwd=tibco123&visMode=0&documentID=8D2FB75441655878AC5265BA30F472F0&hiddensections=header,path,dockLeft,footer&elementsPromptAnswers=463DAA084A1B77DDD437D98C59F55BED;463DAA084A1B77DDD437D98C59F55BED:1168,D15CB49A4413A7C904706C92DFEE7641;D15CB49A4413A7C904706C92DFEE7641:4424"
@@ -168,9 +168,9 @@
     {
       "jsxid": "326641",
       "batchType": "3832",
-      "encounterGroup": "MSDRG 216 Cardiac Valve & CV Proc w Cath w MCC",
-      "encounterType": "Inpatient",
-      "encounterVolume": "21",
+      "ChargeGroup": "MSDRG 216 Cardiac Valve & CV Proc w Cath w MCC",
+      "ChargeType": "Inpatient",
+      "ChargeVolume": "21",
       "serviceLine": "Cardiac Surgery",
       "standardReport": "Y",
       "mstrUrl": "http:\/\/devanalytics.medassets.com\/MicroStrategy\/servlet\/mstrWeb?Server=scs41vdmapapp01&Project=Navigator&Port=0&evt=2048001&src=mstrWeb.2048001&currentViewMedia=2&uid=navigatoruser&pwd=tibco123&visMode=0&documentID=8D2FB75441655878AC5265BA30F472F0&hiddensections=header,path,dockLeft,footer&elementsPromptAnswers=463DAA084A1B77DDD437D98C59F55BED;463DAA084A1B77DDD437D98C59F55BED:1168,D15CB49A4413A7C904706C92DFEE7641;D15CB49A4413A7C904706C92DFEE7641:3832"
@@ -178,9 +178,9 @@
     {
       "jsxid": "326642",
       "batchType": "3833",
-      "encounterGroup": "MSDRG 217 Cardiac Valve & CV Proc w Cath w CC",
-      "encounterType": "Inpatient",
-      "encounterVolume": "30",
+      "ChargeGroup": "MSDRG 217 Cardiac Valve & CV Proc w Cath w CC",
+      "ChargeType": "Inpatient",
+      "ChargeVolume": "30",
       "serviceLine": "Cardiac Surgery",
       "standardReport": "Y",
       "mstrUrl": "http:\/\/devanalytics.medassets.com\/MicroStrategy\/servlet\/mstrWeb?Server=scs41vdmapapp01&Project=Navigator&Port=0&evt=2048001&src=mstrWeb.2048001&currentViewMedia=2&uid=navigatoruser&pwd=tibco123&visMode=0&documentID=8D2FB75441655878AC5265BA30F472F0&hiddensections=header,path,dockLeft,footer&elementsPromptAnswers=463DAA084A1B77DDD437D98C59F55BED;463DAA084A1B77DDD437D98C59F55BED:1168,D15CB49A4413A7C904706C92DFEE7641;D15CB49A4413A7C904706C92DFEE7641:3833"
@@ -188,9 +188,9 @@
     {
       "jsxid": "326644",
       "batchType": "3835",
-      "encounterGroup": "MSDRG 219 Cardiac Valve & CV Proc wo Cath w MCC",
-      "encounterType": "Inpatient",
-      "encounterVolume": "45",
+      "ChargeGroup": "MSDRG 219 Cardiac Valve & CV Proc wo Cath w MCC",
+      "ChargeType": "Inpatient",
+      "ChargeVolume": "45",
       "serviceLine": "Cardiac Surgery",
       "standardReport": "Y",
       "mstrUrl": "http:\/\/devanalytics.medassets.com\/MicroStrategy\/servlet\/mstrWeb?Server=scs41vdmapapp01&Project=Navigator&Port=0&evt=2048001&src=mstrWeb.2048001&currentViewMedia=2&uid=navigatoruser&pwd=tibco123&visMode=0&documentID=8D2FB75441655878AC5265BA30F472F0&hiddensections=header,path,dockLeft,footer&elementsPromptAnswers=463DAA084A1B77DDD437D98C59F55BED;463DAA084A1B77DDD437D98C59F55BED:1168,D15CB49A4413A7C904706C92DFEE7641;D15CB49A4413A7C904706C92DFEE7641:3835"
@@ -198,9 +198,9 @@
     {
       "jsxid": "326645",
       "batchType": "3836",
-      "encounterGroup": "MSDRG 220 Cardiac Valve & CV Proc wo Cath w CC",
-      "encounterType": "Inpatient",
-      "encounterVolume": "119",
+      "ChargeGroup": "MSDRG 220 Cardiac Valve & CV Proc wo Cath w CC",
+      "ChargeType": "Inpatient",
+      "ChargeVolume": "119",
       "serviceLine": "Cardiac Surgery",
       "standardReport": "Y",
       "mstrUrl": "http:\/\/devanalytics.medassets.com\/MicroStrategy\/servlet\/mstrWeb?Server=scs41vdmapapp01&Project=Navigator&Port=0&evt=2048001&src=mstrWeb.2048001&currentViewMedia=2&uid=navigatoruser&pwd=tibco123&visMode=0&documentID=8D2FB75441655878AC5265BA30F472F0&hiddensections=header,path,dockLeft,footer&elementsPromptAnswers=463DAA084A1B77DDD437D98C59F55BED;463DAA084A1B77DDD437D98C59F55BED:1168,D15CB49A4413A7C904706C92DFEE7641;D15CB49A4413A7C904706C92DFEE7641:3836"
@@ -208,9 +208,9 @@
     {
       "jsxid": "326647",
       "batchType": "3838",
-      "encounterGroup": "MSDRG 222 ICD w Cath w AMI\/HF\/Shock w MCC",
-      "encounterType": "Inpatient",
-      "encounterVolume": "2",
+      "ChargeGroup": "MSDRG 222 ICD w Cath w AMI\/HF\/Shock w MCC",
+      "ChargeType": "Inpatient",
+      "ChargeVolume": "2",
       "serviceLine": "Cardiology",
       "standardReport": "Y",
       "mstrUrl": "http:\/\/devanalytics.medassets.com\/MicroStrategy\/servlet\/mstrWeb?Server=scs41vdmapapp01&Project=Navigator&Port=0&evt=2048001&src=mstrWeb.2048001&currentViewMedia=2&uid=navigatoruser&pwd=tibco123&visMode=0&documentID=8D2FB75441655878AC5265BA30F472F0&hiddensections=header,path,dockLeft,footer&elementsPromptAnswers=463DAA084A1B77DDD437D98C59F55BED;463DAA084A1B77DDD437D98C59F55BED:1168,D15CB49A4413A7C904706C92DFEE7641;D15CB49A4413A7C904706C92DFEE7641:3838"
@@ -218,9 +218,9 @@
     {
       "jsxid": "326648",
       "batchType": "3839",
-      "encounterGroup": "MSDRG 223 ICD w Cath w AMI\/HF\/Shock wo MCC",
-      "encounterType": "Inpatient",
-      "encounterVolume": "1",
+      "ChargeGroup": "MSDRG 223 ICD w Cath w AMI\/HF\/Shock wo MCC",
+      "ChargeType": "Inpatient",
+      "ChargeVolume": "1",
       "serviceLine": "Cardiology",
       "standardReport": "Y",
       "mstrUrl": "http:\/\/devanalytics.medassets.com\/MicroStrategy\/servlet\/mstrWeb?Server=scs41vdmapapp01&Project=Navigator&Port=0&evt=2048001&src=mstrWeb.2048001&currentViewMedia=2&uid=navigatoruser&pwd=tibco123&visMode=0&documentID=8D2FB75441655878AC5265BA30F472F0&hiddensections=header,path,dockLeft,footer&elementsPromptAnswers=463DAA084A1B77DDD437D98C59F55BED;463DAA084A1B77DDD437D98C59F55BED:1168,D15CB49A4413A7C904706C92DFEE7641;D15CB49A4413A7C904706C92DFEE7641:3839"
@@ -228,9 +228,9 @@
     {
       "jsxid": "326649",
       "batchType": "3840",
-      "encounterGroup": "MSDRG 224 ICD w Cath wo AMI\/HF\/Shock w MCC",
-      "encounterType": "Inpatient",
-      "encounterVolume": "1",
+      "ChargeGroup": "MSDRG 224 ICD w Cath wo AMI\/HF\/Shock w MCC",
+      "ChargeType": "Inpatient",
+      "ChargeVolume": "1",
       "serviceLine": "Cardiology",
       "standardReport": "Y",
       "mstrUrl": "http:\/\/devanalytics.medassets.com\/MicroStrategy\/servlet\/mstrWeb?Server=scs41vdmapapp01&Project=Navigator&Port=0&evt=2048001&src=mstrWeb.2048001&currentViewMedia=2&uid=navigatoruser&pwd=tibco123&visMode=0&documentID=8D2FB75441655878AC5265BA30F472F0&hiddensections=header,path,dockLeft,footer&elementsPromptAnswers=463DAA084A1B77DDD437D98C59F55BED;463DAA084A1B77DDD437D98C59F55BED:1168,D15CB49A4413A7C904706C92DFEE7641;D15CB49A4413A7C904706C92DFEE7641:3840"
@@ -238,9 +238,9 @@
     {
       "jsxid": "326650",
       "batchType": "3841",
-      "encounterGroup": "MSDRG 225 ICD w Cath wo AMI\/HF\/Shock wo MCC",
-      "encounterType": "Inpatient",
-      "encounterVolume": "6",
+      "ChargeGroup": "MSDRG 225 ICD w Cath wo AMI\/HF\/Shock wo MCC",
+      "ChargeType": "Inpatient",
+      "ChargeVolume": "6",
       "serviceLine": "Cardiology",
       "standardReport": "Y",
       "mstrUrl": "http:\/\/devanalytics.medassets.com\/MicroStrategy\/servlet\/mstrWeb?Server=scs41vdmapapp01&Project=Navigator&Port=0&evt=2048001&src=mstrWeb.2048001&currentViewMedia=2&uid=navigatoruser&pwd=tibco123&visMode=0&documentID=8D2FB75441655878AC5265BA30F472F0&hiddensections=header,path,dockLeft,footer&elementsPromptAnswers=463DAA084A1B77DDD437D98C59F55BED;463DAA084A1B77DDD437D98C59F55BED:1168,D15CB49A4413A7C904706C92DFEE7641;D15CB49A4413A7C904706C92DFEE7641:3841"
@@ -248,9 +248,9 @@
     {
       "jsxid": "326651",
       "batchType": "3842",
-      "encounterGroup": "MSDRG 226 ICD wo Cath w MCC",
-      "encounterType": "Inpatient",
-      "encounterVolume": "4",
+      "ChargeGroup": "MSDRG 226 ICD wo Cath w MCC",
+      "ChargeType": "Inpatient",
+      "ChargeVolume": "4",
       "serviceLine": "Cardiology",
       "standardReport": "Y",
       "mstrUrl": "http:\/\/devanalytics.medassets.com\/MicroStrategy\/servlet\/mstrWeb?Server=scs41vdmapapp01&Project=Navigator&Port=0&evt=2048001&src=mstrWeb.2048001&currentViewMedia=2&uid=navigatoruser&pwd=tibco123&visMode=0&documentID=8D2FB75441655878AC5265BA30F472F0&hiddensections=header,path,dockLeft,footer&elementsPromptAnswers=463DAA084A1B77DDD437D98C59F55BED;463DAA084A1B77DDD437D98C59F55BED:1168,D15CB49A4413A7C904706C92DFEE7641;D15CB49A4413A7C904706C92DFEE7641:3842"
@@ -258,9 +258,9 @@
     {
       "jsxid": "326652",
       "batchType": "3843",
-      "encounterGroup": "MSDRG 227 ICD wo Cath wo MCC",
-      "encounterType": "Inpatient",
-      "encounterVolume": "35",
+      "ChargeGroup": "MSDRG 227 ICD wo Cath wo MCC",
+      "ChargeType": "Inpatient",
+      "ChargeVolume": "35",
       "serviceLine": "Cardiology",
       "standardReport": "Y",
       "mstrUrl": "http:\/\/devanalytics.medassets.com\/MicroStrategy\/servlet\/mstrWeb?Server=scs41vdmapapp01&Project=Navigator&Port=0&evt=2048001&src=mstrWeb.2048001&currentViewMedia=2&uid=navigatoruser&pwd=tibco123&visMode=0&documentID=8D2FB75441655878AC5265BA30F472F0&hiddensections=header,path,dockLeft,footer&elementsPromptAnswers=463DAA084A1B77DDD437D98C59F55BED;463DAA084A1B77DDD437D98C59F55BED:1168,D15CB49A4413A7C904706C92DFEE7641;D15CB49A4413A7C904706C92DFEE7641:3843"
@@ -268,9 +268,9 @@
     {
       "jsxid": "326653",
       "batchType": "3844",
-      "encounterGroup": "MSDRG 228 Oth Cardiothoracic Proc w MCC",
-      "encounterType": "Inpatient",
-      "encounterVolume": "7",
+      "ChargeGroup": "MSDRG 228 Oth Cardiothoracic Proc w MCC",
+      "ChargeType": "Inpatient",
+      "ChargeVolume": "7",
       "serviceLine": "Cardiac Surgery",
       "standardReport": "Y",
       "mstrUrl": "http:\/\/devanalytics.medassets.com\/MicroStrategy\/servlet\/mstrWeb?Server=scs41vdmapapp01&Project=Navigator&Port=0&evt=2048001&src=mstrWeb.2048001&currentViewMedia=2&uid=navigatoruser&pwd=tibco123&visMode=0&documentID=8D2FB75441655878AC5265BA30F472F0&hiddensections=header,path,dockLeft,footer&elementsPromptAnswers=463DAA084A1B77DDD437D98C59F55BED;463DAA084A1B77DDD437D98C59F55BED:1168,D15CB49A4413A7C904706C92DFEE7641;D15CB49A4413A7C904706C92DFEE7641:3844"
@@ -278,9 +278,9 @@
     {
       "jsxid": "326654",
       "batchType": "3845",
-      "encounterGroup": "MSDRG 229 Oth Cardiothoracic Proc w CC",
-      "encounterType": "Inpatient",
-      "encounterVolume": "40",
+      "ChargeGroup": "MSDRG 229 Oth Cardiothoracic Proc w CC",
+      "ChargeType": "Inpatient",
+      "ChargeVolume": "40",
       "serviceLine": "Cardiac Surgery",
       "standardReport": "Y",
       "mstrUrl": "http:\/\/devanalytics.medassets.com\/MicroStrategy\/servlet\/mstrWeb?Server=scs41vdmapapp01&Project=Navigator&Port=0&evt=2048001&src=mstrWeb.2048001&currentViewMedia=2&uid=navigatoruser&pwd=tibco123&visMode=0&documentID=8D2FB75441655878AC5265BA30F472F0&hiddensections=header,path,dockLeft,footer&elementsPromptAnswers=463DAA084A1B77DDD437D98C59F55BED;463DAA084A1B77DDD437D98C59F55BED:1168,D15CB49A4413A7C904706C92DFEE7641;D15CB49A4413A7C904706C92DFEE7641:3845"
@@ -288,9 +288,9 @@
     {
       "jsxid": "326656",
       "batchType": "3847",
-      "encounterGroup": "MSDRG 231 CABG w PTCA w MCC",
-      "encounterType": "Inpatient",
-      "encounterVolume": "5",
+      "ChargeGroup": "MSDRG 231 CABG w PTCA w MCC",
+      "ChargeType": "Inpatient",
+      "ChargeVolume": "5",
       "serviceLine": "Cardiac Surgery",
       "standardReport": "N",
       "mstrUrl": "http:\/\/devanalytics.medassets.com\/MicroStrategy\/servlet\/mstrWeb?Server=scs41vdmapapp01&Project=Navigator&Port=0&evt=2048001&src=mstrWeb.2048001&currentViewMedia=2&uid=navigatoruser&pwd=tibco123&visMode=0&documentID=8D2FB75441655878AC5265BA30F472F0&hiddensections=header,path,dockLeft,footer&elementsPromptAnswers=463DAA084A1B77DDD437D98C59F55BED;463DAA084A1B77DDD437D98C59F55BED:1168,D15CB49A4413A7C904706C92DFEE7641;D15CB49A4413A7C904706C92DFEE7641:3847"
@@ -298,9 +298,9 @@
     {
       "jsxid": "326657",
       "batchType": "3848",
-      "encounterGroup": "MSDRG 232 CABG w PTCA wo MCC",
-      "encounterType": "Inpatient",
-      "encounterVolume": "2",
+      "ChargeGroup": "MSDRG 232 CABG w PTCA wo MCC",
+      "ChargeType": "Inpatient",
+      "ChargeVolume": "2",
       "serviceLine": "Cardiac Surgery",
       "standardReport": "N",
       "mstrUrl": "http:\/\/devanalytics.medassets.com\/MicroStrategy\/servlet\/mstrWeb?Server=scs41vdmapapp01&Project=Navigator&Port=0&evt=2048001&src=mstrWeb.2048001&currentViewMedia=2&uid=navigatoruser&pwd=tibco123&visMode=0&documentID=8D2FB75441655878AC5265BA30F472F0&hiddensections=header,path,dockLeft,footer&elementsPromptAnswers=463DAA084A1B77DDD437D98C59F55BED;463DAA084A1B77DDD437D98C59F55BED:1168,D15CB49A4413A7C904706C92DFEE7641;D15CB49A4413A7C904706C92DFEE7641:3848"
@@ -308,9 +308,9 @@
     {
       "jsxid": "326658",
       "batchType": "3849",
-      "encounterGroup": "MSDRG 233 CABG w Cardiac Cath w MCC",
-      "encounterType": "Inpatient",
-      "encounterVolume": "18",
+      "ChargeGroup": "MSDRG 233 CABG w Cardiac Cath w MCC",
+      "ChargeType": "Inpatient",
+      "ChargeVolume": "18",
       "serviceLine": "Cardiac Surgery",
       "standardReport": "Y",
       "mstrUrl": "http:\/\/devanalytics.medassets.com\/MicroStrategy\/servlet\/mstrWeb?Server=scs41vdmapapp01&Project=Navigator&Port=0&evt=2048001&src=mstrWeb.2048001&currentViewMedia=2&uid=navigatoruser&pwd=tibco123&visMode=0&documentID=8D2FB75441655878AC5265BA30F472F0&hiddensections=header,path,dockLeft,footer&elementsPromptAnswers=463DAA084A1B77DDD437D98C59F55BED;463DAA084A1B77DDD437D98C59F55BED:1168,D15CB49A4413A7C904706C92DFEE7641;D15CB49A4413A7C904706C92DFEE7641:3849"
@@ -318,9 +318,9 @@
     {
       "jsxid": "326659",
       "batchType": "3850",
-      "encounterGroup": "MSDRG 234 CABG w Cardiac Cath wo MCC",
-      "encounterType": "Inpatient",
-      "encounterVolume": "56",
+      "ChargeGroup": "MSDRG 234 CABG w Cardiac Cath wo MCC",
+      "ChargeType": "Inpatient",
+      "ChargeVolume": "56",
       "serviceLine": "Cardiac Surgery",
       "standardReport": "Y",
       "mstrUrl": "http:\/\/devanalytics.medassets.com\/MicroStrategy\/servlet\/mstrWeb?Server=scs41vdmapapp01&Project=Navigator&Port=0&evt=2048001&src=mstrWeb.2048001&currentViewMedia=2&uid=navigatoruser&pwd=tibco123&visMode=0&documentID=8D2FB75441655878AC5265BA30F472F0&hiddensections=header,path,dockLeft,footer&elementsPromptAnswers=463DAA084A1B77DDD437D98C59F55BED;463DAA084A1B77DDD437D98C59F55BED:1168,D15CB49A4413A7C904706C92DFEE7641;D15CB49A4413A7C904706C92DFEE7641:3850"
@@ -328,9 +328,9 @@
     {
       "jsxid": "326660",
       "batchType": "3851",
-      "encounterGroup": "MSDRG 235 CABG wo Cardiac Cath w MCC",
-      "encounterType": "Inpatient",
-      "encounterVolume": "24",
+      "ChargeGroup": "MSDRG 235 CABG wo Cardiac Cath w MCC",
+      "ChargeType": "Inpatient",
+      "ChargeVolume": "24",
       "serviceLine": "Cardiac Surgery",
       "standardReport": "Y",
       "mstrUrl": "http:\/\/devanalytics.medassets.com\/MicroStrategy\/servlet\/mstrWeb?Server=scs41vdmapapp01&Project=Navigator&Port=0&evt=2048001&src=mstrWeb.2048001&currentViewMedia=2&uid=navigatoruser&pwd=tibco123&visMode=0&documentID=8D2FB75441655878AC5265BA30F472F0&hiddensections=header,path,dockLeft,footer&elementsPromptAnswers=463DAA084A1B77DDD437D98C59F55BED;463DAA084A1B77DDD437D98C59F55BED:1168,D15CB49A4413A7C904706C92DFEE7641;D15CB49A4413A7C904706C92DFEE7641:3851"
@@ -338,9 +338,9 @@
     {
       "jsxid": "326661",
       "batchType": "3852",
-      "encounterGroup": "MSDRG 236 CABG wo Cardiac Cath wo MCC",
-      "encounterType": "Inpatient",
-      "encounterVolume": "104",
+      "ChargeGroup": "MSDRG 236 CABG wo Cardiac Cath wo MCC",
+      "ChargeType": "Inpatient",
+      "ChargeVolume": "104",
       "serviceLine": "Cardiac Surgery",
       "standardReport": "Y",
       "mstrUrl": "http:\/\/devanalytics.medassets.com\/MicroStrategy\/servlet\/mstrWeb?Server=scs41vdmapapp01&Project=Navigator&Port=0&evt=2048001&src=mstrWeb.2048001&currentViewMedia=2&uid=navigatoruser&pwd=tibco123&visMode=0&documentID=8D2FB75441655878AC5265BA30F472F0&hiddensections=header,path,dockLeft,footer&elementsPromptAnswers=463DAA084A1B77DDD437D98C59F55BED;463DAA084A1B77DDD437D98C59F55BED:1168,D15CB49A4413A7C904706C92DFEE7641;D15CB49A4413A7C904706C92DFEE7641:3852"
@@ -348,9 +348,9 @@
     {
       "jsxid": "326662",
       "batchType": "3853",
-      "encounterGroup": "MSDRG 237 Major CV Px w MCC",
-      "encounterType": "Inpatient",
-      "encounterVolume": "22",
+      "ChargeGroup": "MSDRG 237 Major CV Px w MCC",
+      "ChargeType": "Inpatient",
+      "ChargeVolume": "22",
       "serviceLine": "Vascular Surgery & PVI",
       "standardReport": "Y",
       "mstrUrl": "http:\/\/devanalytics.medassets.com\/MicroStrategy\/servlet\/mstrWeb?Server=scs41vdmapapp01&Project=Navigator&Port=0&evt=2048001&src=mstrWeb.2048001&currentViewMedia=2&uid=navigatoruser&pwd=tibco123&visMode=0&documentID=8D2FB75441655878AC5265BA30F472F0&hiddensections=header,path,dockLeft,footer&elementsPromptAnswers=463DAA084A1B77DDD437D98C59F55BED;463DAA084A1B77DDD437D98C59F55BED:1168,D15CB49A4413A7C904706C92DFEE7641;D15CB49A4413A7C904706C92DFEE7641:3853"
@@ -358,9 +358,9 @@
     {
       "jsxid": "326663",
       "batchType": "3854",
-      "encounterGroup": "MSDRG 238 Major CV Px wo MCC",
-      "encounterType": "Inpatient",
-      "encounterVolume": "60",
+      "ChargeGroup": "MSDRG 238 Major CV Px wo MCC",
+      "ChargeType": "Inpatient",
+      "ChargeVolume": "60",
       "serviceLine": "Vascular Surgery & PVI",
       "standardReport": "N",
       "mstrUrl": "http:\/\/devanalytics.medassets.com\/MicroStrategy\/servlet\/mstrWeb?Server=scs41vdmapapp01&Project=Navigator&Port=0&evt=2048001&src=mstrWeb.2048001&currentViewMedia=2&uid=navigatoruser&pwd=tibco123&visMode=0&documentID=8D2FB75441655878AC5265BA30F472F0&hiddensections=header,path,dockLeft,footer&elementsPromptAnswers=463DAA084A1B77DDD437D98C59F55BED;463DAA084A1B77DDD437D98C59F55BED:1168,D15CB49A4413A7C904706C92DFEE7641;D15CB49A4413A7C904706C92DFEE7641:3854"
@@ -368,9 +368,9 @@
     {
       "jsxid": "326664",
       "batchType": "3855",
-      "encounterGroup": "MSDRG 239 Amputation Exc Upper Limb & Toe w MCC",
-      "encounterType": "Inpatient",
-      "encounterVolume": "1",
+      "ChargeGroup": "MSDRG 239 Amputation Exc Upper Limb & Toe w MCC",
+      "ChargeType": "Inpatient",
+      "ChargeVolume": "1",
       "serviceLine": "Vascular Surgery & PVI",
       "standardReport": "N",
       "mstrUrl": "http:\/\/devanalytics.medassets.com\/MicroStrategy\/servlet\/mstrWeb?Server=scs41vdmapapp01&Project=Navigator&Port=0&evt=2048001&src=mstrWeb.2048001&currentViewMedia=2&uid=navigatoruser&pwd=tibco123&visMode=0&documentID=8D2FB75441655878AC5265BA30F472F0&hiddensections=header,path,dockLeft,footer&elementsPromptAnswers=463DAA084A1B77DDD437D98C59F55BED;463DAA084A1B77DDD437D98C59F55BED:1168,D15CB49A4413A7C904706C92DFEE7641;D15CB49A4413A7C904706C92DFEE7641:3855"
@@ -378,9 +378,9 @@
     {
       "jsxid": "326665",
       "batchType": "3856",
-      "encounterGroup": "MSDRG 240 Amputation Exc Upper Limb & Toe w CC",
-      "encounterType": "Inpatient",
-      "encounterVolume": "3",
+      "ChargeGroup": "MSDRG 240 Amputation Exc Upper Limb & Toe w CC",
+      "ChargeType": "Inpatient",
+      "ChargeVolume": "3",
       "serviceLine": "Vascular Surgery & PVI",
       "standardReport": "N",
       "mstrUrl": "http:\/\/devanalytics.medassets.com\/MicroStrategy\/servlet\/mstrWeb?Server=scs41vdmapapp01&Project=Navigator&Port=0&evt=2048001&src=mstrWeb.2048001&currentViewMedia=2&uid=navigatoruser&pwd=tibco123&visMode=0&documentID=8D2FB75441655878AC5265BA30F472F0&hiddensections=header,path,dockLeft,footer&elementsPromptAnswers=463DAA084A1B77DDD437D98C59F55BED;463DAA084A1B77DDD437D98C59F55BED:1168,D15CB49A4413A7C904706C92DFEE7641;D15CB49A4413A7C904706C92DFEE7641:3856"
@@ -388,9 +388,9 @@
     {
       "jsxid": "326666",
       "batchType": "3857",
-      "encounterGroup": "MSDRG 241 Amputation Exc Upper Limb & Toe wo CC\/MC",
-      "encounterType": "Inpatient",
-      "encounterVolume": "1",
+      "ChargeGroup": "MSDRG 241 Amputation Exc Upper Limb & Toe wo CC\/MC",
+      "ChargeType": "Inpatient",
+      "ChargeVolume": "1",
       "serviceLine": "Vascular Surgery & PVI",
       "standardReport": "N",
       "mstrUrl": "http:\/\/devanalytics.medassets.com\/MicroStrategy\/servlet\/mstrWeb?Server=scs41vdmapapp01&Project=Navigator&Port=0&evt=2048001&src=mstrWeb.2048001&currentViewMedia=2&uid=navigatoruser&pwd=tibco123&visMode=0&documentID=8D2FB75441655878AC5265BA30F472F0&hiddensections=header,path,dockLeft,footer&elementsPromptAnswers=463DAA084A1B77DDD437D98C59F55BED;463DAA084A1B77DDD437D98C59F55BED:1168,D15CB49A4413A7C904706C92DFEE7641;D15CB49A4413A7C904706C92DFEE7641:3857"
@@ -398,9 +398,9 @@
     {
       "jsxid": "326667",
       "batchType": "3858",
-      "encounterGroup": "MSDRG 242 Pacemaker Implant w MCC",
-      "encounterType": "Inpatient",
-      "encounterVolume": "7",
+      "ChargeGroup": "MSDRG 242 Pacemaker Implant w MCC",
+      "ChargeType": "Inpatient",
+      "ChargeVolume": "7",
       "serviceLine": "Cardiology",
       "standardReport": "Y",
       "mstrUrl": "http:\/\/devanalytics.medassets.com\/MicroStrategy\/servlet\/mstrWeb?Server=scs41vdmapapp01&Project=Navigator&Port=0&evt=2048001&src=mstrWeb.2048001&currentViewMedia=2&uid=navigatoruser&pwd=tibco123&visMode=0&documentID=8D2FB75441655878AC5265BA30F472F0&hiddensections=header,path,dockLeft,footer&elementsPromptAnswers=463DAA084A1B77DDD437D98C59F55BED;463DAA084A1B77DDD437D98C59F55BED:1168,D15CB49A4413A7C904706C92DFEE7641;D15CB49A4413A7C904706C92DFEE7641:3858"
@@ -408,9 +408,9 @@
     {
       "jsxid": "326668",
       "batchType": "3859",
-      "encounterGroup": "MSDRG 243 Pacemaker Implant w CC",
-      "encounterType": "Inpatient",
-      "encounterVolume": "13",
+      "ChargeGroup": "MSDRG 243 Pacemaker Implant w CC",
+      "ChargeType": "Inpatient",
+      "ChargeVolume": "13",
       "serviceLine": "Cardiology",
       "standardReport": "Y",
       "mstrUrl": "http:\/\/devanalytics.medassets.com\/MicroStrategy\/servlet\/mstrWeb?Server=scs41vdmapapp01&Project=Navigator&Port=0&evt=2048001&src=mstrWeb.2048001&currentViewMedia=2&uid=navigatoruser&pwd=tibco123&visMode=0&documentID=8D2FB75441655878AC5265BA30F472F0&hiddensections=header,path,dockLeft,footer&elementsPromptAnswers=463DAA084A1B77DDD437D98C59F55BED;463DAA084A1B77DDD437D98C59F55BED:1168,D15CB49A4413A7C904706C92DFEE7641;D15CB49A4413A7C904706C92DFEE7641:3859"
@@ -418,9 +418,9 @@
     {
       "jsxid": "326669",
       "batchType": "3860",
-      "encounterGroup": "MSDRG 244 Pacemaker Implant wo CC\/MCC",
-      "encounterType": "Inpatient",
-      "encounterVolume": "10",
+      "ChargeGroup": "MSDRG 244 Pacemaker Implant wo CC\/MCC",
+      "ChargeType": "Inpatient",
+      "ChargeVolume": "10",
       "serviceLine": "Cardiology",
       "standardReport": "Y",
       "mstrUrl": "http:\/\/devanalytics.medassets.com\/MicroStrategy\/servlet\/mstrWeb?Server=scs41vdmapapp01&Project=Navigator&Port=0&evt=2048001&src=mstrWeb.2048001&currentViewMedia=2&uid=navigatoruser&pwd=tibco123&visMode=0&documentID=8D2FB75441655878AC5265BA30F472F0&hiddensections=header,path,dockLeft,footer&elementsPromptAnswers=463DAA084A1B77DDD437D98C59F55BED;463DAA084A1B77DDD437D98C59F55BED:1168,D15CB49A4413A7C904706C92DFEE7641;D15CB49A4413A7C904706C92DFEE7641:3860"
@@ -428,9 +428,9 @@
     {
       "jsxid": "326670",
       "batchType": "3861",
-      "encounterGroup": "MSDRG 245 AICD Generator Px",
-      "encounterType": "Inpatient",
-      "encounterVolume": "2",
+      "ChargeGroup": "MSDRG 245 AICD Generator Px",
+      "ChargeType": "Inpatient",
+      "ChargeVolume": "2",
       "serviceLine": "Cardiology",
       "standardReport": "Y",
       "mstrUrl": "http:\/\/devanalytics.medassets.com\/MicroStrategy\/servlet\/mstrWeb?Server=scs41vdmapapp01&Project=Navigator&Port=0&evt=2048001&src=mstrWeb.2048001&currentViewMedia=2&uid=navigatoruser&pwd=tibco123&visMode=0&documentID=8D2FB75441655878AC5265BA30F472F0&hiddensections=header,path,dockLeft,footer&elementsPromptAnswers=463DAA084A1B77DDD437D98C59F55BED;463DAA084A1B77DDD437D98C59F55BED:1168,D15CB49A4413A7C904706C92DFEE7641;D15CB49A4413A7C904706C92DFEE7641:3861"
@@ -438,9 +438,9 @@
     {
       "jsxid": "326671",
       "batchType": "3862",
-      "encounterGroup": "MSDRG 246 Perc CV Px w DES w MCC",
-      "encounterType": "Inpatient",
-      "encounterVolume": "15",
+      "ChargeGroup": "MSDRG 246 Perc CV Px w DES w MCC",
+      "ChargeType": "Inpatient",
+      "ChargeVolume": "15",
       "serviceLine": "Cardiology",
       "standardReport": "Y",
       "mstrUrl": "http:\/\/devanalytics.medassets.com\/MicroStrategy\/servlet\/mstrWeb?Server=scs41vdmapapp01&Project=Navigator&Port=0&evt=2048001&src=mstrWeb.2048001&currentViewMedia=2&uid=navigatoruser&pwd=tibco123&visMode=0&documentID=8D2FB75441655878AC5265BA30F472F0&hiddensections=header,path,dockLeft,footer&elementsPromptAnswers=463DAA084A1B77DDD437D98C59F55BED;463DAA084A1B77DDD437D98C59F55BED:1168,D15CB49A4413A7C904706C92DFEE7641;D15CB49A4413A7C904706C92DFEE7641:3862"
@@ -448,9 +448,9 @@
     {
       "jsxid": "326672",
       "batchType": "3863",
-      "encounterGroup": "MSDRG 247 Perc CV Px w DES wo MCC",
-      "encounterType": "Inpatient",
-      "encounterVolume": "72",
+      "ChargeGroup": "MSDRG 247 Perc CV Px w DES wo MCC",
+      "ChargeType": "Inpatient",
+      "ChargeVolume": "72",
       "serviceLine": "Cardiology",
       "standardReport": "Y",
       "mstrUrl": "http:\/\/devanalytics.medassets.com\/MicroStrategy\/servlet\/mstrWeb?Server=scs41vdmapapp01&Project=Navigator&Port=0&evt=2048001&src=mstrWeb.2048001&currentViewMedia=2&uid=navigatoruser&pwd=tibco123&visMode=0&documentID=8D2FB75441655878AC5265BA30F472F0&hiddensections=header,path,dockLeft,footer&elementsPromptAnswers=463DAA084A1B77DDD437D98C59F55BED;463DAA084A1B77DDD437D98C59F55BED:1168,D15CB49A4413A7C904706C92DFEE7641;D15CB49A4413A7C904706C92DFEE7641:3863"
@@ -458,9 +458,9 @@
     {
       "jsxid": "326673",
       "batchType": "3864",
-      "encounterGroup": "MSDRG 248 Perc CV Px w Non-DES w MCC",
-      "encounterType": "Inpatient",
-      "encounterVolume": "7",
+      "ChargeGroup": "MSDRG 248 Perc CV Px w Non-DES w MCC",
+      "ChargeType": "Inpatient",
+      "ChargeVolume": "7",
       "serviceLine": "Cardiology",
       "standardReport": "Y",
       "mstrUrl": "http:\/\/devanalytics.medassets.com\/MicroStrategy\/servlet\/mstrWeb?Server=scs41vdmapapp01&Project=Navigator&Port=0&evt=2048001&src=mstrWeb.2048001&currentViewMedia=2&uid=navigatoruser&pwd=tibco123&visMode=0&documentID=8D2FB75441655878AC5265BA30F472F0&hiddensections=header,path,dockLeft,footer&elementsPromptAnswers=463DAA084A1B77DDD437D98C59F55BED;463DAA084A1B77DDD437D98C59F55BED:1168,D15CB49A4413A7C904706C92DFEE7641;D15CB49A4413A7C904706C92DFEE7641:3864"
@@ -468,9 +468,9 @@
     {
       "jsxid": "326674",
       "batchType": "3865",
-      "encounterGroup": "MSDRG 249 Perc CV Px w Non-DES wo MCC",
-      "encounterType": "Inpatient",
-      "encounterVolume": "21",
+      "ChargeGroup": "MSDRG 249 Perc CV Px w Non-DES wo MCC",
+      "ChargeType": "Inpatient",
+      "ChargeVolume": "21",
       "serviceLine": "Cardiology",
       "standardReport": "Y",
       "mstrUrl": "http:\/\/devanalytics.medassets.com\/MicroStrategy\/servlet\/mstrWeb?Server=scs41vdmapapp01&Project=Navigator&Port=0&evt=2048001&src=mstrWeb.2048001&currentViewMedia=2&uid=navigatoruser&pwd=tibco123&visMode=0&documentID=8D2FB75441655878AC5265BA30F472F0&hiddensections=header,path,dockLeft,footer&elementsPromptAnswers=463DAA084A1B77DDD437D98C59F55BED;463DAA084A1B77DDD437D98C59F55BED:1168,D15CB49A4413A7C904706C92DFEE7641;D15CB49A4413A7C904706C92DFEE7641:3865"
@@ -478,9 +478,9 @@
     {
       "jsxid": "326487",
       "batchType": "3686",
-      "encounterGroup": "MSDRG 25 Cranio & Endovascular Proc w MCC",
-      "encounterType": "Inpatient",
-      "encounterVolume": "1",
+      "ChargeGroup": "MSDRG 25 Cranio & Endovascular Proc w MCC",
+      "ChargeType": "Inpatient",
+      "ChargeVolume": "1",
       "serviceLine": "Neurosciences",
       "standardReport": "N",
       "mstrUrl": "http:\/\/devanalytics.medassets.com\/MicroStrategy\/servlet\/mstrWeb?Server=scs41vdmapapp01&Project=Navigator&Port=0&evt=2048001&src=mstrWeb.2048001&currentViewMedia=2&uid=navigatoruser&pwd=tibco123&visMode=0&documentID=8D2FB75441655878AC5265BA30F472F0&hiddensections=header,path,dockLeft,footer&elementsPromptAnswers=463DAA084A1B77DDD437D98C59F55BED;463DAA084A1B77DDD437D98C59F55BED:1168,D15CB49A4413A7C904706C92DFEE7641;D15CB49A4413A7C904706C92DFEE7641:3686"
@@ -488,9 +488,9 @@
     {
       "jsxid": "326675",
       "batchType": "3866",
-      "encounterGroup": "MSDRG 250 Perc CV Px wo Stent or AMI w MCC",
-      "encounterType": "Inpatient",
-      "encounterVolume": "8",
+      "ChargeGroup": "MSDRG 250 Perc CV Px wo Stent or AMI w MCC",
+      "ChargeType": "Inpatient",
+      "ChargeVolume": "8",
       "serviceLine": "Cardiology",
       "standardReport": "Y",
       "mstrUrl": "http:\/\/devanalytics.medassets.com\/MicroStrategy\/servlet\/mstrWeb?Server=scs41vdmapapp01&Project=Navigator&Port=0&evt=2048001&src=mstrWeb.2048001&currentViewMedia=2&uid=navigatoruser&pwd=tibco123&visMode=0&documentID=8D2FB75441655878AC5265BA30F472F0&hiddensections=header,path,dockLeft,footer&elementsPromptAnswers=463DAA084A1B77DDD437D98C59F55BED;463DAA084A1B77DDD437D98C59F55BED:1168,D15CB49A4413A7C904706C92DFEE7641;D15CB49A4413A7C904706C92DFEE7641:3866"
@@ -498,9 +498,9 @@
     {
       "jsxid": "326676",
       "batchType": "3867",
-      "encounterGroup": "MSDRG 251 Perc CV Px wo Stent or AMI wo MCC",
-      "encounterType": "Inpatient",
-      "encounterVolume": "29",
+      "ChargeGroup": "MSDRG 251 Perc CV Px wo Stent or AMI wo MCC",
+      "ChargeType": "Inpatient",
+      "ChargeVolume": "29",
       "serviceLine": "Cardiology",
       "standardReport": "Y",
       "mstrUrl": "http:\/\/devanalytics.medassets.com\/MicroStrategy\/servlet\/mstrWeb?Server=scs41vdmapapp01&Project=Navigator&Port=0&evt=2048001&src=mstrWeb.2048001&currentViewMedia=2&uid=navigatoruser&pwd=tibco123&visMode=0&documentID=8D2FB75441655878AC5265BA30F472F0&hiddensections=header,path,dockLeft,footer&elementsPromptAnswers=463DAA084A1B77DDD437D98C59F55BED;463DAA084A1B77DDD437D98C59F55BED:1168,D15CB49A4413A7C904706C92DFEE7641;D15CB49A4413A7C904706C92DFEE7641:3867"
@@ -508,9 +508,9 @@
     {
       "jsxid": "326677",
       "batchType": "3868",
-      "encounterGroup": "MSDRG 252 Other Vascular Proc w MCC",
-      "encounterType": "Inpatient",
-      "encounterVolume": "15",
+      "ChargeGroup": "MSDRG 252 Other Vascular Proc w MCC",
+      "ChargeType": "Inpatient",
+      "ChargeVolume": "15",
       "serviceLine": "Vascular Surgery & PVI",
       "standardReport": "Y",
       "mstrUrl": "http:\/\/devanalytics.medassets.com\/MicroStrategy\/servlet\/mstrWeb?Server=scs41vdmapapp01&Project=Navigator&Port=0&evt=2048001&src=mstrWeb.2048001&currentViewMedia=2&uid=navigatoruser&pwd=tibco123&visMode=0&documentID=8D2FB75441655878AC5265BA30F472F0&hiddensections=header,path,dockLeft,footer&elementsPromptAnswers=463DAA084A1B77DDD437D98C59F55BED;463DAA084A1B77DDD437D98C59F55BED:1168,D15CB49A4413A7C904706C92DFEE7641;D15CB49A4413A7C904706C92DFEE7641:3868"
@@ -518,9 +518,9 @@
     {
       "jsxid": "326678",
       "batchType": "3869",
-      "encounterGroup": "MSDRG 253 Other Vascular Proc w CC",
-      "encounterType": "Inpatient",
-      "encounterVolume": "25",
+      "ChargeGroup": "MSDRG 253 Other Vascular Proc w CC",
+      "ChargeType": "Inpatient",
+      "ChargeVolume": "25",
       "serviceLine": "Vascular Surgery & PVI",
       "standardReport": "Y",
       "mstrUrl": "http:\/\/devanalytics.medassets.com\/MicroStrategy\/servlet\/mstrWeb?Server=scs41vdmapapp01&Project=Navigator&Port=0&evt=2048001&src=mstrWeb.2048001&currentViewMedia=2&uid=navigatoruser&pwd=tibco123&visMode=0&documentID=8D2FB75441655878AC5265BA30F472F0&hiddensections=header,path,dockLeft,footer&elementsPromptAnswers=463DAA084A1B77DDD437D98C59F55BED;463DAA084A1B77DDD437D98C59F55BED:1168,D15CB49A4413A7C904706C92DFEE7641;D15CB49A4413A7C904706C92DFEE7641:3869"
@@ -528,9 +528,9 @@
     {
       "jsxid": "326679",
       "batchType": "3870",
-      "encounterGroup": "MSDRG 254 Other Vascular Proc wo CC\/MCC",
-      "encounterType": "Inpatient",
-      "encounterVolume": "36",
+      "ChargeGroup": "MSDRG 254 Other Vascular Proc wo CC\/MCC",
+      "ChargeType": "Inpatient",
+      "ChargeVolume": "36",
       "serviceLine": "Vascular Surgery & PVI",
       "standardReport": "Y",
       "mstrUrl": "http:\/\/devanalytics.medassets.com\/MicroStrategy\/servlet\/mstrWeb?Server=scs41vdmapapp01&Project=Navigator&Port=0&evt=2048001&src=mstrWeb.2048001&currentViewMedia=2&uid=navigatoruser&pwd=tibco123&visMode=0&documentID=8D2FB75441655878AC5265BA30F472F0&hiddensections=header,path,dockLeft,footer&elementsPromptAnswers=463DAA084A1B77DDD437D98C59F55BED;463DAA084A1B77DDD437D98C59F55BED:1168,D15CB49A4413A7C904706C92DFEE7641;D15CB49A4413A7C904706C92DFEE7641:3870"
@@ -538,9 +538,9 @@
     {
       "jsxid": "326488",
       "batchType": "3687",
-      "encounterGroup": "MSDRG 26 Cranio & Endovascular Proc w CC",
-      "encounterType": "Inpatient",
-      "encounterVolume": "1",
+      "ChargeGroup": "MSDRG 26 Cranio & Endovascular Proc w CC",
+      "ChargeType": "Inpatient",
+      "ChargeVolume": "1",
       "serviceLine": "Neurosciences",
       "standardReport": "N",
       "mstrUrl": "http:\/\/devanalytics.medassets.com\/MicroStrategy\/servlet\/mstrWeb?Server=scs41vdmapapp01&Project=Navigator&Port=0&evt=2048001&src=mstrWeb.2048001&currentViewMedia=2&uid=navigatoruser&pwd=tibco123&visMode=0&documentID=8D2FB75441655878AC5265BA30F472F0&hiddensections=header,path,dockLeft,footer&elementsPromptAnswers=463DAA084A1B77DDD437D98C59F55BED;463DAA084A1B77DDD437D98C59F55BED:1168,D15CB49A4413A7C904706C92DFEE7641;D15CB49A4413A7C904706C92DFEE7641:3687"
@@ -548,9 +548,9 @@
     {
       "jsxid": "326685",
       "batchType": "3876",
-      "encounterGroup": "MSDRG 260 Pacemaker Revision w MCC",
-      "encounterType": "Inpatient",
-      "encounterVolume": "5",
+      "ChargeGroup": "MSDRG 260 Pacemaker Revision w MCC",
+      "ChargeType": "Inpatient",
+      "ChargeVolume": "5",
       "serviceLine": "Cardiology",
       "standardReport": "Y",
       "mstrUrl": "http:\/\/devanalytics.medassets.com\/MicroStrategy\/servlet\/mstrWeb?Server=scs41vdmapapp01&Project=Navigator&Port=0&evt=2048001&src=mstrWeb.2048001&currentViewMedia=2&uid=navigatoruser&pwd=tibco123&visMode=0&documentID=8D2FB75441655878AC5265BA30F472F0&hiddensections=header,path,dockLeft,footer&elementsPromptAnswers=463DAA084A1B77DDD437D98C59F55BED;463DAA084A1B77DDD437D98C59F55BED:1168,D15CB49A4413A7C904706C92DFEE7641;D15CB49A4413A7C904706C92DFEE7641:3876"
@@ -558,9 +558,9 @@
     {
       "jsxid": "326686",
       "batchType": "3877",
-      "encounterGroup": "MSDRG 261 Pacemaker Revision w CC",
-      "encounterType": "Inpatient",
-      "encounterVolume": "11",
+      "ChargeGroup": "MSDRG 261 Pacemaker Revision w CC",
+      "ChargeType": "Inpatient",
+      "ChargeVolume": "11",
       "serviceLine": "Cardiology",
       "standardReport": "Y",
       "mstrUrl": "http:\/\/devanalytics.medassets.com\/MicroStrategy\/servlet\/mstrWeb?Server=scs41vdmapapp01&Project=Navigator&Port=0&evt=2048001&src=mstrWeb.2048001&currentViewMedia=2&uid=navigatoruser&pwd=tibco123&visMode=0&documentID=8D2FB75441655878AC5265BA30F472F0&hiddensections=header,path,dockLeft,footer&elementsPromptAnswers=463DAA084A1B77DDD437D98C59F55BED;463DAA084A1B77DDD437D98C59F55BED:1168,D15CB49A4413A7C904706C92DFEE7641;D15CB49A4413A7C904706C92DFEE7641:3877"
@@ -568,9 +568,9 @@
     {
       "jsxid": "326687",
       "batchType": "3878",
-      "encounterGroup": "MSDRG 262 Pacemaker Revision wo CC\/MCC",
-      "encounterType": "Inpatient",
-      "encounterVolume": "6",
+      "ChargeGroup": "MSDRG 262 Pacemaker Revision wo CC\/MCC",
+      "ChargeType": "Inpatient",
+      "ChargeVolume": "6",
       "serviceLine": "Cardiology",
       "standardReport": "Y",
       "mstrUrl": "http:\/\/devanalytics.medassets.com\/MicroStrategy\/servlet\/mstrWeb?Server=scs41vdmapapp01&Project=Navigator&Port=0&evt=2048001&src=mstrWeb.2048001&currentViewMedia=2&uid=navigatoruser&pwd=tibco123&visMode=0&documentID=8D2FB75441655878AC5265BA30F472F0&hiddensections=header,path,dockLeft,footer&elementsPromptAnswers=463DAA084A1B77DDD437D98C59F55BED;463DAA084A1B77DDD437D98C59F55BED:1168,D15CB49A4413A7C904706C92DFEE7641;D15CB49A4413A7C904706C92DFEE7641:3878"
@@ -578,9 +578,9 @@
     {
       "jsxid": "326689",
       "batchType": "3880",
-      "encounterGroup": "MSDRG 264 Other Circulatory Sys OR Proc",
-      "encounterType": "Inpatient",
-      "encounterVolume": "7",
+      "ChargeGroup": "MSDRG 264 Other Circulatory Sys OR Proc",
+      "ChargeType": "Inpatient",
+      "ChargeVolume": "7",
       "serviceLine": "Vascular Surgery & PVI",
       "standardReport": "N",
       "mstrUrl": "http:\/\/devanalytics.medassets.com\/MicroStrategy\/servlet\/mstrWeb?Server=scs41vdmapapp01&Project=Navigator&Port=0&evt=2048001&src=mstrWeb.2048001&currentViewMedia=2&uid=navigatoruser&pwd=tibco123&visMode=0&documentID=8D2FB75441655878AC5265BA30F472F0&hiddensections=header,path,dockLeft,footer&elementsPromptAnswers=463DAA084A1B77DDD437D98C59F55BED;463DAA084A1B77DDD437D98C59F55BED:1168,D15CB49A4413A7C904706C92DFEE7641;D15CB49A4413A7C904706C92DFEE7641:3880"
@@ -588,9 +588,9 @@
     {
       "jsxid": "326491",
       "batchType": "3690",
-      "encounterGroup": "MSDRG 29 Spinal Proc w CC or Neurostim",
-      "encounterType": "Inpatient",
-      "encounterVolume": "2",
+      "ChargeGroup": "MSDRG 29 Spinal Proc w CC or Neurostim",
+      "ChargeType": "Inpatient",
+      "ChargeVolume": "2",
       "serviceLine": "Neurosciences",
       "standardReport": "N",
       "mstrUrl": "http:\/\/devanalytics.medassets.com\/MicroStrategy\/servlet\/mstrWeb?Server=scs41vdmapapp01&Project=Navigator&Port=0&evt=2048001&src=mstrWeb.2048001&currentViewMedia=2&uid=navigatoruser&pwd=tibco123&visMode=0&documentID=8D2FB75441655878AC5265BA30F472F0&hiddensections=header,path,dockLeft,footer&elementsPromptAnswers=463DAA084A1B77DDD437D98C59F55BED;463DAA084A1B77DDD437D98C59F55BED:1168,D15CB49A4413A7C904706C92DFEE7641;D15CB49A4413A7C904706C92DFEE7641:3690"
@@ -598,9 +598,9 @@
     {
       "jsxid": "326492",
       "batchType": "3691",
-      "encounterGroup": "MSDRG 30 Spinal Proc wo CC\/MCC",
-      "encounterType": "Inpatient",
-      "encounterVolume": "5",
+      "ChargeGroup": "MSDRG 30 Spinal Proc wo CC\/MCC",
+      "ChargeType": "Inpatient",
+      "ChargeVolume": "5",
       "serviceLine": "Neurosciences",
       "standardReport": "N",
       "mstrUrl": "http:\/\/devanalytics.medassets.com\/MicroStrategy\/servlet\/mstrWeb?Server=scs41vdmapapp01&Project=Navigator&Port=0&evt=2048001&src=mstrWeb.2048001&currentViewMedia=2&uid=navigatoruser&pwd=tibco123&visMode=0&documentID=8D2FB75441655878AC5265BA30F472F0&hiddensections=header,path,dockLeft,footer&elementsPromptAnswers=463DAA084A1B77DDD437D98C59F55BED;463DAA084A1B77DDD437D98C59F55BED:1168,D15CB49A4413A7C904706C92DFEE7641;D15CB49A4413A7C904706C92DFEE7641:3691"
@@ -608,9 +608,9 @@
     {
       "jsxid": "326755",
       "batchType": "3928",
-      "encounterGroup": "MSDRG 336 Peritoneal Adhesiolysis w CC",
-      "encounterType": "Inpatient",
-      "encounterVolume": "1",
+      "ChargeGroup": "MSDRG 336 Peritoneal Adhesiolysis w CC",
+      "ChargeType": "Inpatient",
+      "ChargeVolume": "1",
       "serviceLine": "Surgical",
       "standardReport": "N",
       "mstrUrl": "http:\/\/devanalytics.medassets.com\/MicroStrategy\/servlet\/mstrWeb?Server=scs41vdmapapp01&Project=Navigator&Port=0&evt=2048001&src=mstrWeb.2048001&currentViewMedia=2&uid=navigatoruser&pwd=tibco123&visMode=0&documentID=8D2FB75441655878AC5265BA30F472F0&hiddensections=header,path,dockLeft,footer&elementsPromptAnswers=463DAA084A1B77DDD437D98C59F55BED;463DAA084A1B77DDD437D98C59F55BED:1168,D15CB49A4413A7C904706C92DFEE7641;D15CB49A4413A7C904706C92DFEE7641:3928"
@@ -618,9 +618,9 @@
     {
       "jsxid": "326496",
       "batchType": "3695",
-      "encounterGroup": "MSDRG 34 Carotid Artery Stent Proc w MCC",
-      "encounterType": "Inpatient",
-      "encounterVolume": "3",
+      "ChargeGroup": "MSDRG 34 Carotid Artery Stent Proc w MCC",
+      "ChargeType": "Inpatient",
+      "ChargeVolume": "3",
       "serviceLine": "Vascular Surgery & PVI",
       "standardReport": "Y",
       "mstrUrl": "http:\/\/devanalytics.medassets.com\/MicroStrategy\/servlet\/mstrWeb?Server=scs41vdmapapp01&Project=Navigator&Port=0&evt=2048001&src=mstrWeb.2048001&currentViewMedia=2&uid=navigatoruser&pwd=tibco123&visMode=0&documentID=8D2FB75441655878AC5265BA30F472F0&hiddensections=header,path,dockLeft,footer&elementsPromptAnswers=463DAA084A1B77DDD437D98C59F55BED;463DAA084A1B77DDD437D98C59F55BED:1168,D15CB49A4413A7C904706C92DFEE7641;D15CB49A4413A7C904706C92DFEE7641:3695"
@@ -628,9 +628,9 @@
     {
       "jsxid": "326497",
       "batchType": "3696",
-      "encounterGroup": "MSDRG 35 Carotid Artery Stent Proc w CC",
-      "encounterType": "Inpatient",
-      "encounterVolume": "2",
+      "ChargeGroup": "MSDRG 35 Carotid Artery Stent Proc w CC",
+      "ChargeType": "Inpatient",
+      "ChargeVolume": "2",
       "serviceLine": "Vascular Surgery & PVI",
       "standardReport": "Y",
       "mstrUrl": "http:\/\/devanalytics.medassets.com\/MicroStrategy\/servlet\/mstrWeb?Server=scs41vdmapapp01&Project=Navigator&Port=0&evt=2048001&src=mstrWeb.2048001&currentViewMedia=2&uid=navigatoruser&pwd=tibco123&visMode=0&documentID=8D2FB75441655878AC5265BA30F472F0&hiddensections=header,path,dockLeft,footer&elementsPromptAnswers=463DAA084A1B77DDD437D98C59F55BED;463DAA084A1B77DDD437D98C59F55BED:1168,D15CB49A4413A7C904706C92DFEE7641;D15CB49A4413A7C904706C92DFEE7641:3696"
@@ -638,9 +638,9 @@
     {
       "jsxid": "326774",
       "batchType": "3947",
-      "encounterGroup": "MSDRG 355 Hernia Proc wo CC\/MCC",
-      "encounterType": "Inpatient",
-      "encounterVolume": "1",
+      "ChargeGroup": "MSDRG 355 Hernia Proc wo CC\/MCC",
+      "ChargeType": "Inpatient",
+      "ChargeVolume": "1",
       "serviceLine": "Surgical",
       "standardReport": "N",
       "mstrUrl": "http:\/\/devanalytics.medassets.com\/MicroStrategy\/servlet\/mstrWeb?Server=scs41vdmapapp01&Project=Navigator&Port=0&evt=2048001&src=mstrWeb.2048001&currentViewMedia=2&uid=navigatoruser&pwd=tibco123&visMode=0&documentID=8D2FB75441655878AC5265BA30F472F0&hiddensections=header,path,dockLeft,footer&elementsPromptAnswers=463DAA084A1B77DDD437D98C59F55BED;463DAA084A1B77DDD437D98C59F55BED:1168,D15CB49A4413A7C904706C92DFEE7641;D15CB49A4413A7C904706C92DFEE7641:3947"
@@ -648,9 +648,9 @@
     {
       "jsxid": "326498",
       "batchType": "3697",
-      "encounterGroup": "MSDRG 36 Carotid Artery Stent Proc wo CC\/MCC",
-      "encounterType": "Inpatient",
-      "encounterVolume": "12",
+      "ChargeGroup": "MSDRG 36 Carotid Artery Stent Proc wo CC\/MCC",
+      "ChargeType": "Inpatient",
+      "ChargeVolume": "12",
       "serviceLine": "Vascular Surgery & PVI",
       "standardReport": "Y",
       "mstrUrl": "http:\/\/devanalytics.medassets.com\/MicroStrategy\/servlet\/mstrWeb?Server=scs41vdmapapp01&Project=Navigator&Port=0&evt=2048001&src=mstrWeb.2048001&currentViewMedia=2&uid=navigatoruser&pwd=tibco123&visMode=0&documentID=8D2FB75441655878AC5265BA30F472F0&hiddensections=header,path,dockLeft,footer&elementsPromptAnswers=463DAA084A1B77DDD437D98C59F55BED;463DAA084A1B77DDD437D98C59F55BED:1168,D15CB49A4413A7C904706C92DFEE7641;D15CB49A4413A7C904706C92DFEE7641:3697"
@@ -658,9 +658,9 @@
     {
       "jsxid": "326499",
       "batchType": "3698",
-      "encounterGroup": "MSDRG 37 Extracranial Proc w MCC",
-      "encounterType": "Inpatient",
-      "encounterVolume": "8",
+      "ChargeGroup": "MSDRG 37 Extracranial Proc w MCC",
+      "ChargeType": "Inpatient",
+      "ChargeVolume": "8",
       "serviceLine": "Vascular Surgery & PVI",
       "standardReport": "Y",
       "mstrUrl": "http:\/\/devanalytics.medassets.com\/MicroStrategy\/servlet\/mstrWeb?Server=scs41vdmapapp01&Project=Navigator&Port=0&evt=2048001&src=mstrWeb.2048001&currentViewMedia=2&uid=navigatoruser&pwd=tibco123&visMode=0&documentID=8D2FB75441655878AC5265BA30F472F0&hiddensections=header,path,dockLeft,footer&elementsPromptAnswers=463DAA084A1B77DDD437D98C59F55BED;463DAA084A1B77DDD437D98C59F55BED:1168,D15CB49A4413A7C904706C92DFEE7641;D15CB49A4413A7C904706C92DFEE7641:3698"
@@ -668,9 +668,9 @@
     {
       "jsxid": "326500",
       "batchType": "3699",
-      "encounterGroup": "MSDRG 38 Extracranial Proc w CC",
-      "encounterType": "Inpatient",
-      "encounterVolume": "13",
+      "ChargeGroup": "MSDRG 38 Extracranial Proc w CC",
+      "ChargeType": "Inpatient",
+      "ChargeVolume": "13",
       "serviceLine": "Vascular Surgery & PVI",
       "standardReport": "Y",
       "mstrUrl": "http:\/\/devanalytics.medassets.com\/MicroStrategy\/servlet\/mstrWeb?Server=scs41vdmapapp01&Project=Navigator&Port=0&evt=2048001&src=mstrWeb.2048001&currentViewMedia=2&uid=navigatoruser&pwd=tibco123&visMode=0&documentID=8D2FB75441655878AC5265BA30F472F0&hiddensections=header,path,dockLeft,footer&elementsPromptAnswers=463DAA084A1B77DDD437D98C59F55BED;463DAA084A1B77DDD437D98C59F55BED:1168,D15CB49A4413A7C904706C92DFEE7641;D15CB49A4413A7C904706C92DFEE7641:3699"
@@ -678,9 +678,9 @@
     {
       "jsxid": "326501",
       "batchType": "3700",
-      "encounterGroup": "MSDRG 39 Extracranial Proc wo CC\/MCC",
-      "encounterType": "Inpatient",
-      "encounterVolume": "88",
+      "ChargeGroup": "MSDRG 39 Extracranial Proc wo CC\/MCC",
+      "ChargeType": "Inpatient",
+      "ChargeVolume": "88",
       "serviceLine": "Vascular Surgery & PVI",
       "standardReport": "Y",
       "mstrUrl": "http:\/\/devanalytics.medassets.com\/MicroStrategy\/servlet\/mstrWeb?Server=scs41vdmapapp01&Project=Navigator&Port=0&evt=2048001&src=mstrWeb.2048001&currentViewMedia=2&uid=navigatoruser&pwd=tibco123&visMode=0&documentID=8D2FB75441655878AC5265BA30F472F0&hiddensections=header,path,dockLeft,footer&elementsPromptAnswers=463DAA084A1B77DDD437D98C59F55BED;463DAA084A1B77DDD437D98C59F55BED:1168,D15CB49A4413A7C904706C92DFEE7641;D15CB49A4413A7C904706C92DFEE7641:3700"
@@ -688,9 +688,9 @@
     {
       "jsxid": "326854",
       "batchType": "4025",
-      "encounterGroup": "MSDRG 463 Wound Debrid & Skin Graft w MCC",
-      "encounterType": "Inpatient",
-      "encounterVolume": "1",
+      "ChargeGroup": "MSDRG 463 Wound Debrid & Skin Graft w MCC",
+      "ChargeType": "Inpatient",
+      "ChargeVolume": "1",
       "serviceLine": "Orthopedics",
       "standardReport": "N",
       "mstrUrl": "http:\/\/devanalytics.medassets.com\/MicroStrategy\/servlet\/mstrWeb?Server=scs41vdmapapp01&Project=Navigator&Port=0&evt=2048001&src=mstrWeb.2048001&currentViewMedia=2&uid=navigatoruser&pwd=tibco123&visMode=0&documentID=8D2FB75441655878AC5265BA30F472F0&hiddensections=header,path,dockLeft,footer&elementsPromptAnswers=463DAA084A1B77DDD437D98C59F55BED;463DAA084A1B77DDD437D98C59F55BED:1168,D15CB49A4413A7C904706C92DFEE7641;D15CB49A4413A7C904706C92DFEE7641:4025"
@@ -698,9 +698,9 @@
     {
       "jsxid": "327196",
       "batchType": "4352",
-      "encounterGroup": "MSDRG 901 Wound Debridements w MCC",
-      "encounterType": "Inpatient",
-      "encounterVolume": "1",
+      "ChargeGroup": "MSDRG 901 Wound Debridements w MCC",
+      "ChargeType": "Inpatient",
+      "ChargeVolume": "1",
       "serviceLine": "Orthopedics",
       "standardReport": "N",
       "mstrUrl": "http:\/\/devanalytics.medassets.com\/MicroStrategy\/servlet\/mstrWeb?Server=scs41vdmapapp01&Project=Navigator&Port=0&evt=2048001&src=mstrWeb.2048001&currentViewMedia=2&uid=navigatoruser&pwd=tibco123&visMode=0&documentID=8D2FB75441655878AC5265BA30F472F0&hiddensections=header,path,dockLeft,footer&elementsPromptAnswers=463DAA084A1B77DDD437D98C59F55BED;463DAA084A1B77DDD437D98C59F55BED:1168,D15CB49A4413A7C904706C92DFEE7641;D15CB49A4413A7C904706C92DFEE7641:4352"
@@ -708,9 +708,9 @@
     {
       "jsxid": "327197",
       "batchType": "4353",
-      "encounterGroup": "MSDRG 902 Wound Debridements w CC",
-      "encounterType": "Inpatient",
-      "encounterVolume": "2",
+      "ChargeGroup": "MSDRG 902 Wound Debridements w CC",
+      "ChargeType": "Inpatient",
+      "ChargeVolume": "2",
       "serviceLine": "Orthopedics",
       "standardReport": "N",
       "mstrUrl": "http:\/\/devanalytics.medassets.com\/MicroStrategy\/servlet\/mstrWeb?Server=scs41vdmapapp01&Project=Navigator&Port=0&evt=2048001&src=mstrWeb.2048001&currentViewMedia=2&uid=navigatoruser&pwd=tibco123&visMode=0&documentID=8D2FB75441655878AC5265BA30F472F0&hiddensections=header,path,dockLeft,footer&elementsPromptAnswers=463DAA084A1B77DDD437D98C59F55BED;463DAA084A1B77DDD437D98C59F55BED:1168,D15CB49A4413A7C904706C92DFEE7641;D15CB49A4413A7C904706C92DFEE7641:4353"
@@ -718,9 +718,9 @@
     {
       "jsxid": "327198",
       "batchType": "4354",
-      "encounterGroup": "MSDRG 903 Wound Debridements wo CC\/MCC",
-      "encounterType": "Inpatient",
-      "encounterVolume": "1",
+      "ChargeGroup": "MSDRG 903 Wound Debridements wo CC\/MCC",
+      "ChargeType": "Inpatient",
+      "ChargeVolume": "1",
       "serviceLine": "Orthopedics",
       "standardReport": "N",
       "mstrUrl": "http:\/\/devanalytics.medassets.com\/MicroStrategy\/servlet\/mstrWeb?Server=scs41vdmapapp01&Project=Navigator&Port=0&evt=2048001&src=mstrWeb.2048001&currentViewMedia=2&uid=navigatoruser&pwd=tibco123&visMode=0&documentID=8D2FB75441655878AC5265BA30F472F0&hiddensections=header,path,dockLeft,footer&elementsPromptAnswers=463DAA084A1B77DDD437D98C59F55BED;463DAA084A1B77DDD437D98C59F55BED:1168,D15CB49A4413A7C904706C92DFEE7641;D15CB49A4413A7C904706C92DFEE7641:4354"
@@ -728,9 +728,9 @@
     {
       "jsxid": "326739",
       "batchType": "1126",
-      "encounterGroup": "Non Coronary Stents (OP)",
-      "encounterType": "Outpatient",
-      "encounterVolume": "96",
+      "ChargeGroup": "Non Coronary Stents (OP)",
+      "ChargeType": "Outpatient",
+      "ChargeVolume": "96",
       "serviceLine": "Vascular Surgery & PVI",
       "standardReport": "Y",
       "mstrUrl": "http:\/\/devanalytics.medassets.com\/MicroStrategy\/servlet\/mstrWeb?Server=scs41vdmapapp01&Project=Navigator&Port=0&evt=2048001&src=mstrWeb.2048001&currentViewMedia=2&uid=navigatoruser&pwd=tibco123&visMode=0&documentID=8D2FB75441655878AC5265BA30F472F0&hiddensections=header,path,dockLeft,footer&elementsPromptAnswers=463DAA084A1B77DDD437D98C59F55BED;463DAA084A1B77DDD437D98C59F55BED:1168,D15CB49A4413A7C904706C92DFEE7641;D15CB49A4413A7C904706C92DFEE7641:1126"
@@ -738,9 +738,9 @@
     {
       "jsxid": "326728",
       "batchType": "4419",
-      "encounterGroup": "Other Cardiothoracic Px (MSDRG 228, 229, 230)",
-      "encounterType": "Inpatient",
-      "encounterVolume": "47",
+      "ChargeGroup": "Other Cardiothoracic Px (MSDRG 228, 229, 230)",
+      "ChargeType": "Inpatient",
+      "ChargeVolume": "47",
       "serviceLine": "Cardiac Surgery",
       "standardReport": "N",
       "mstrUrl": "http:\/\/devanalytics.medassets.com\/MicroStrategy\/servlet\/mstrWeb?Server=scs41vdmapapp01&Project=Navigator&Port=0&evt=2048001&src=mstrWeb.2048001&currentViewMedia=2&uid=navigatoruser&pwd=tibco123&visMode=0&documentID=8D2FB75441655878AC5265BA30F472F0&hiddensections=header,path,dockLeft,footer&elementsPromptAnswers=463DAA084A1B77DDD437D98C59F55BED;463DAA084A1B77DDD437D98C59F55BED:1168,D15CB49A4413A7C904706C92DFEE7641;D15CB49A4413A7C904706C92DFEE7641:4419"
@@ -748,9 +748,9 @@
     {
       "jsxid": "326740",
       "batchType": "1124",
-      "encounterGroup": "Pacemaker CRT (OP)",
-      "encounterType": "Outpatient",
-      "encounterVolume": "2",
+      "ChargeGroup": "Pacemaker CRT (OP)",
+      "ChargeType": "Outpatient",
+      "ChargeVolume": "2",
       "serviceLine": "Cardiology",
       "standardReport": "Y",
       "mstrUrl": "http:\/\/devanalytics.medassets.com\/MicroStrategy\/servlet\/mstrWeb?Server=scs41vdmapapp01&Project=Navigator&Port=0&evt=2048001&src=mstrWeb.2048001&currentViewMedia=2&uid=navigatoruser&pwd=tibco123&visMode=0&documentID=8D2FB75441655878AC5265BA30F472F0&hiddensections=header,path,dockLeft,footer&elementsPromptAnswers=463DAA084A1B77DDD437D98C59F55BED;463DAA084A1B77DDD437D98C59F55BED:1168,D15CB49A4413A7C904706C92DFEE7641;D15CB49A4413A7C904706C92DFEE7641:1124"
@@ -758,9 +758,9 @@
     {
       "jsxid": "326730",
       "batchType": "4429",
-      "encounterGroup": "Pacemaker Implant (MSDRG 242, 243, 244)",
-      "encounterType": "Inpatient",
-      "encounterVolume": "30",
+      "ChargeGroup": "Pacemaker Implant (MSDRG 242, 243, 244)",
+      "ChargeType": "Inpatient",
+      "ChargeVolume": "30",
       "serviceLine": "Cardiology",
       "standardReport": "N",
       "mstrUrl": "http:\/\/devanalytics.medassets.com\/MicroStrategy\/servlet\/mstrWeb?Server=scs41vdmapapp01&Project=Navigator&Port=0&evt=2048001&src=mstrWeb.2048001&currentViewMedia=2&uid=navigatoruser&pwd=tibco123&visMode=0&documentID=8D2FB75441655878AC5265BA30F472F0&hiddensections=header,path,dockLeft,footer&elementsPromptAnswers=463DAA084A1B77DDD437D98C59F55BED;463DAA084A1B77DDD437D98C59F55BED:1168,D15CB49A4413A7C904706C92DFEE7641;D15CB49A4413A7C904706C92DFEE7641:4429"
@@ -768,9 +768,9 @@
     {
       "jsxid": "326633",
       "batchType": "4420",
-      "encounterGroup": "Pacemaker Rev except Replace (MSDRG 260,261,262)",
-      "encounterType": "Inpatient",
-      "encounterVolume": "22",
+      "ChargeGroup": "Pacemaker Rev except Replace (MSDRG 260,261,262)",
+      "ChargeType": "Inpatient",
+      "ChargeVolume": "22",
       "serviceLine": "Cardiology",
       "standardReport": "N",
       "mstrUrl": "http:\/\/devanalytics.medassets.com\/MicroStrategy\/servlet\/mstrWeb?Server=scs41vdmapapp01&Project=Navigator&Port=0&evt=2048001&src=mstrWeb.2048001&currentViewMedia=2&uid=navigatoruser&pwd=tibco123&visMode=0&documentID=8D2FB75441655878AC5265BA30F472F0&hiddensections=header,path,dockLeft,footer&elementsPromptAnswers=463DAA084A1B77DDD437D98C59F55BED;463DAA084A1B77DDD437D98C59F55BED:1168,D15CB49A4413A7C904706C92DFEE7641;D15CB49A4413A7C904706C92DFEE7641:4420"
@@ -778,9 +778,9 @@
     {
       "jsxid": "326741",
       "batchType": "779",
-      "encounterGroup": "Pacemakers (OP)",
-      "encounterType": "Outpatient",
-      "encounterVolume": "152",
+      "ChargeGroup": "Pacemakers (OP)",
+      "ChargeType": "Outpatient",
+      "ChargeVolume": "152",
       "serviceLine": "Cardiology",
       "standardReport": "Y",
       "mstrUrl": "http:\/\/devanalytics.medassets.com\/MicroStrategy\/servlet\/mstrWeb?Server=scs41vdmapapp01&Project=Navigator&Port=0&evt=2048001&src=mstrWeb.2048001&currentViewMedia=2&uid=navigatoruser&pwd=tibco123&visMode=0&documentID=8D2FB75441655878AC5265BA30F472F0&hiddensections=header,path,dockLeft,footer&elementsPromptAnswers=463DAA084A1B77DDD437D98C59F55BED;463DAA084A1B77DDD437D98C59F55BED:1168,D15CB49A4413A7C904706C92DFEE7641;D15CB49A4413A7C904706C92DFEE7641:779"
@@ -788,9 +788,9 @@
     {
       "jsxid": "326742",
       "batchType": "848",
-      "encounterGroup": "Peripheral Angioplasty (OP)",
-      "encounterType": "Outpatient",
-      "encounterVolume": "58",
+      "ChargeGroup": "Peripheral Angioplasty (OP)",
+      "ChargeType": "Outpatient",
+      "ChargeVolume": "58",
       "serviceLine": "Vascular Surgery & PVI",
       "standardReport": "Y",
       "mstrUrl": "http:\/\/devanalytics.medassets.com\/MicroStrategy\/servlet\/mstrWeb?Server=scs41vdmapapp01&Project=Navigator&Port=0&evt=2048001&src=mstrWeb.2048001&currentViewMedia=2&uid=navigatoruser&pwd=tibco123&visMode=0&documentID=8D2FB75441655878AC5265BA30F472F0&hiddensections=header,path,dockLeft,footer&elementsPromptAnswers=463DAA084A1B77DDD437D98C59F55BED;463DAA084A1B77DDD437D98C59F55BED:1168,D15CB49A4413A7C904706C92DFEE7641;D15CB49A4413A7C904706C92DFEE7641:848"
@@ -798,9 +798,9 @@
     {
       "jsxid": "326729",
       "batchType": "4423",
-      "encounterGroup": "PTCA only (MSDRG 250, 251)",
-      "encounterType": "Inpatient",
-      "encounterVolume": "37",
+      "ChargeGroup": "PTCA only (MSDRG 250, 251)",
+      "ChargeType": "Inpatient",
+      "ChargeVolume": "37",
       "serviceLine": "Cardiology",
       "standardReport": "N",
       "mstrUrl": "http:\/\/devanalytics.medassets.com\/MicroStrategy\/servlet\/mstrWeb?Server=scs41vdmapapp01&Project=Navigator&Port=0&evt=2048001&src=mstrWeb.2048001&currentViewMedia=2&uid=navigatoruser&pwd=tibco123&visMode=0&documentID=8D2FB75441655878AC5265BA30F472F0&hiddensections=header,path,dockLeft,footer&elementsPromptAnswers=463DAA084A1B77DDD437D98C59F55BED;463DAA084A1B77DDD437D98C59F55BED:1168,D15CB49A4413A7C904706C92DFEE7641;D15CB49A4413A7C904706C92DFEE7641:4423"
@@ -808,9 +808,9 @@
     {
       "jsxid": "326744",
       "batchType": "781",
-      "encounterGroup": "Stents (OP)",
-      "encounterType": "Outpatient",
-      "encounterVolume": "28",
+      "ChargeGroup": "Stents (OP)",
+      "ChargeType": "Outpatient",
+      "ChargeVolume": "28",
       "serviceLine": "Cardiology",
       "standardReport": "Y",
       "mstrUrl": "http:\/\/devanalytics.medassets.com\/MicroStrategy\/servlet\/mstrWeb?Server=scs41vdmapapp01&Project=Navigator&Port=0&evt=2048001&src=mstrWeb.2048001&currentViewMedia=2&uid=navigatoruser&pwd=tibco123&visMode=0&documentID=8D2FB75441655878AC5265BA30F472F0&hiddensections=header,path,dockLeft,footer&elementsPromptAnswers=463DAA084A1B77DDD437D98C59F55BED;463DAA084A1B77DDD437D98C59F55BED:1168,D15CB49A4413A7C904706C92DFEE7641;D15CB49A4413A7C904706C92DFEE7641:781"

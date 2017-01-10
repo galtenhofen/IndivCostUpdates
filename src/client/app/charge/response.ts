@@ -1,4 +1,4 @@
-import {IEncounter} from './encounter';
+import {ICharge} from './charge';
 
 export interface IResponse {
    jsxid: string
@@ -6,7 +6,7 @@ export interface IResponse {
    dataFileGroupId: string
    userName: string
    caseNumber: string
-   encounterList: IEncounter[]
+   chargeList: ICharge[]
         
 }
 

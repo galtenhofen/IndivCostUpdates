@@ -28,18 +28,18 @@ export class HomeComponent implements OnInit {
    * Get the names OnInit
    */
   ngOnInit() {
-    this.getNames();
+    //this.getNames();
   }
 
   /**
    * Handle the nameListService observable
    */
   getNames() {
-    this.nameListService.get()
-      .subscribe(
-        names => this.names = names,
-        error => this.errorMessage = <any>error
-      );
+   // this.nameListService.get()
+    //  .subscribe(
+    //    names => this.names = names,
+    //    error => this.errorMessage = <any>error
+    //  );
   }
 
   /**

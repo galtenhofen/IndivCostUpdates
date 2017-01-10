@@ -1,0 +1,128 @@
+<div class='panel panel-primary' id='all'>
+    <div class='panel-heading' id='btnHeaders'>
+    <div class='row'>
+                    <div class='col-xs-1'>
+                            <button class='btn btn-success' id='getBtn' (click)='onClickrefreshChargeList()'>
+                                Refresh Data
+                            </button>
+                    </div>
+<div class='col-xs-2'>
+                    <div class="radio-toolbar" vertical-align='middle'>
+
+                        <input type="radio" id="radio1" name="radios" value="N" checked>
+                        <label for="radio1">Implants</label>
+
+                        <input type="radio" id="radio2" name="radios" value="O">
+                        <label for="radio2">Med-Surg</label>
+                    </div>
+</div>
+
+<div class='col-xs-2'>
+  <select name ="status" form = "statusForm" [(ngModel)]='revCodeFilter' placeholder="RevCode" default = "RevCode">
+                    <option value="" disabled selected>Revenue Code</option>
+                    <option value="">All</option>
+                    <option value="270">270</option>
+                    <option value="271">271</option>
+                    <option value="274">274</option>
+                    <option value="275">275</option>
+                </select>
+</div>
+
+ <!-- <div class='col-xs-2' id='dfgLbl' vertical-align='middle' align='right'>Filter Description:</div>  --> 
+    <div class='col-xs-4' align='left' style='color:#000000'><input class="form-control form-control-inline" type='text' [(ngModel)]='dataFileGroupId' placeholder="Enter text to filter"/></div>
+           
+                    <div class='col-xs-1'>
+                            <button class='btn btn-success' id='allBtn' (click)='onClickselectAll(this)'>
+                                Filter Modified
+                            </button>
+                    </div>
+                    <div class='col-xs-1'>
+                            <button class='btn btn-success' id='noneBtn' (click)='onClickdeselectAll(this)'>
+                                Filter Un-Modified
+                            </button>
+                    </div>
+         </div>
+
+
+
+    </div>  <!-- panel-heading closure -->
+    <div class='panel-body'>
+
+
+
+<!-- 
+<modal-error></modal-error>
+<modal-confirm></modal-confirm>
+-->
+
+<body onload='makeTableScroll();'>
+<div class='scrollingTable'> 
+           <table id='ChargesTable' class='table table-striped table-bordered' > 
+        <!--         <thead *ngIf= '!loading && (Charges && Charges.length > 0) && !errorMessage' >-->
+            <thead *ngIf= '!loading && (Charges && Charges.length > 0) && !errorMessage' >
+                    <tr>
+                        <th></th>
+                        <th>Charge Group</th>
+                        <th>Charge Group Type</th>
+                        <th>Volume</th>
+                        <th>Service Line</th>
+                    
+      
+                    </tr>
+                </thead>           
+         <!--        <tbody *ngIf='!loading && (Charges && Charges.length > 0) && !errorMessage'> -->
+             <tbody *ngIf='!loading && Charges  && !errorMessage'> 
+                <tr *ngFor='let Charge of Charges; let i = index;'  >
+                    <td><div class="vertAlign"><input #updateCheckbox style="height:auto" type="checkbox" id="updateCheckbox" (change)="onToggleUpdate(Charge.jsxid,updateCheckbox.checked)" ></div></td>
+                    
+                    <!--<td style="text-align:center" (click)="generateURL(Charge.ChargeGroupType)"><a href="" target="_blank">{{Charge.ChargeGroup}}</a></td>--> 
+                    
+                    <td style="text-align:center"><div class = "tdContainer" style="height:10px"><a href={{Charge.mstrUrl}} target="_blank">  {{Charge.ChargeGroup}} </a></div></td> 
+                    <td style="text-align:center"><div class = "tdContainer" style="height:10px">{{Charge.ChargeType}}</div></td>
+                    <td style="text-align:center"><div class = "tdContainer" style="height:10px">{{Charge.ChargeVolume}}</div></td>
+                    <td style="text-align:center"><div class = "tdContainer" style="height:10px">{{Charge.serviceLine}}</div></td>
+
+                    
+                </tr> 
+                
+                </tbody>
+               </table>
+                <!--<div class= 'panel-heading' *ngIf= 'attempt==false && !loading && !updating'>
+                      Enter a DataFileGroupId to get files.
+                   </div> -->
+               <div class= 'panel-heading' *ngIf= 'loading && (!Charges || Charges.length < 1)'>
+                      Retrieving Charge Groups...
+                   </div>   
+               <div class= 'panel-heading' *ngIf='!updating && errorMessage && !loading'>
+                      There was a problem with the web service.  <br> Try again or notify development team.   <br>Error Code: {{errorMessage}}
+                   </div>  
+                <div class= 'panel-heading' *ngIf='(!Charges || Charges.length < 1) && !errorMessage && !loading'>
+                      There is no data for this facility
+                   </div>  
+
+
+
+
+           </div> <!-- this is the table-responsive wrapper-->  
+        </body>
+<!--</div> -->
+<div class='row' id='fillerRow'></div>
+<div class='row'>
+         <!--   <div class='col-xs-3' align="left" *ngIf= 'attempt!=false && !loading && (Charges && Charges.length > 0)'  >
+                <button id='getSpendDataBtn' class='btn btn-primary' onclick="window.open('http://medassets.sharepoint.com/sites/spendmanagement/AS/TEPS/TO/Clinical/TIBCO/Processing/SQL/spRP_SCFPO_OrthoSpendData.sql')"> Get Ortho Spend Construct Data</button>
+                </div>  -->
+                <div class='col-xs-2'>
+                    <button id='cancelBtn' class='btn btn-primary' (click)='onClickConstruct()' > Get Ortho Spend Construct Data </button> 
+                </div>
+            <div class='col-xs-2'>
+            </div>
+             <div class='col-xs-4' >
+                <button id='cancelBtn' class='btn btn-primary' (click)='onClickCancel()' > Cancel </button> 
+                <button id='scfBtn' class='btn btn-primary' (click)='onClickScf()' > 12 Month SCF Data </button> 
+                <button id='submitBtn' class='btn btn-danger' (click)='onClickSubmit()' > Submit </button> 
+              </div> 
+     </div>          
+        </div>
+  
+</div>
+
