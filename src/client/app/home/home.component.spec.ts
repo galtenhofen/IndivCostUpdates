@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { TestBed } from '@angular/core/testing';
 import { FormsModule } from '@angular/forms';
-import { RouterModule } from '@angular/router';
+//import { RouterModule } from '@angular/router';
 import {
   async
 } from '@angular/core/testing';
@@ -21,7 +21,8 @@ export function main() {
     // Disable old forms
     beforeEach(() => {
       TestBed.configureTestingModule({
-        imports: [FormsModule, RouterModule, HttpModule, HomeModule],
+        imports: [FormsModule, HttpModule, HomeModule],
+        //imports: [FormsModule, RouterModule, HttpModule, HomeModule],
         declarations: [TestComponent],
         providers: [
           NameListService,

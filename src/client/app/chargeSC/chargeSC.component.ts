@@ -1,19 +1,20 @@
 import { Component, OnInit } from '@angular/core';
-import { ChargeService } from './chargeSC.service';
+//import { ChargeServiceSC } from './chargeSC.service';
+import { HomeService } from '../home/home.service';
 import {IChargeSC} from './chargeSC';
-import {IResponse} from './responseSC';
-//import {IReport} from './reportSC';
+import {IResponseSC} from './responseSC';
+
 
 /**
  * This class represents the lazy loaded ChargeComponent.
  */
 @Component({
   moduleId: module.id,
-  selector: 'sd-charge',
-  templateUrl: 'charge.component.html',
-  styleUrls: ['charge.component.css'],
+  selector: 'sub-charge',
+  templateUrl: 'chargeSC.component.html',
+  styleUrls: ['chargeSC.component.css'],
 })
-export class ChargeComponent implements OnInit {
+export class ChargeComponentSC implements OnInit {
 
   //newName: string = '';
   errorMessage: string;
@@ -31,17 +32,9 @@ export class ChargeComponent implements OnInit {
 
     
     postUpdates: string;
-   reportList: string[] = [];
-    //reportObjects: string[] = [];
-    /*
-    newVarCostUpdates: IUpdate[] = [];
-    updateObjects: IUpdate[] = [];
-    update: IUpdate;
 
-    outbound: IOutbound;
-*/
-    response: IResponse;
-    charges: ICharge[] = [];
+    response: IResponseSC;
+    charges: IChargeSC[] = [];
 
     confirmResponse:string = '';
     loading: boolean = false;
@@ -49,6 +42,7 @@ export class ChargeComponent implements OnInit {
     attempt: boolean;
     updating: boolean = false;
     updatingError: boolean = false;
+    revCodeFilter: string;
 
   
 
@@ -56,66 +50,49 @@ export class ChargeComponent implements OnInit {
    * Creates an instance of the ChargeComponent with the injected
    * Charge.
    *
-   * @param {ChargeService} ChargeService - The injected Charge.
+   * @param {ChargeServiceSC} ChargeServiceSC - The injected Charge.
    */
-  constructor(public _chargeService: ChargeService) {this.loading = this._chargeService.loading;}
+  constructor(public _chargeService: HomeService) {this.loading = this._chargeService.loading;}
 
   /**
    * Get the charges OnInit
    */
   ngOnInit() {
-console.log('IN onInIt   this.charges: ' + this.charges);
-
 console.log('IN onInIt   this.charges stringify: ' + JSON.stringify(this.charges));
-     //this.loading=false;
-    //    this.attempt=false;
-    //    this.updating=false;
+this.revCodeFilter = "";
+
+this.callGetSubcodedChargeList();
   }
 
-  /**
-   * Handle the ChargeService observable
-   */
- /* getCharges() {
-    this.ChargeService.getCharges()
-      .subscribe(
-        charges => this.charges = charges,
-        error => this.errorMessage = <any>error
-      );
-  }*/
 
 
-onClickrefreshChargeList(): void{
+onClickrefreshSubcodedChargeList(): void{
+             console.log('Refresh Subcoded Charges Button Pressed');
+             this.callGetSubcodedChargeList();
+  
+            }
 
-     console.log('Retrieving Charges...');
+callGetSubcodedChargeList():void{
+       console.log('Retrieving Subcoded Charges...');
 
           //  this.attempt= true;
-          //  this.disableButtons();
             this.errorMessage = "";
-          //  this.updating = false;
           this.charges = [];
-            
-                if (this.dataFileGroupId && this.dataFileGroupId != null && this.dataFileGroupId!=""){
-                
-                this.loading = true;
 
-                    this._chargeService.getCharges(this.dataFileGroupId)
+                this.loading = true;
+                this.dataFileGroupId = "878";
+                    this._chargeService.getSubcodedCharges(this.dataFileGroupId)
                     .subscribe(
                         response => this.charges = response.chargeList,
-                        //error => this.errorMessage = <any>error,
-                        error => this.onRequestComplete("Get Charges", error),
-                        () => this.onRequestComplete("Get Charges", "200"));
-                }
-                else{
-                    alert('Please Enter a DataFileGroupId to in order to fetch files');
-            
-                }
+                        error => this.onRequestComplete("Get Subcoded Charges", error),
+                        () => this.onRequestComplete("Get Subcoded Charges", "200"));
 
-            console.log('Leaving onClickrefreshBatchList this.loading: ' + this.loading);
-            }
+            console.log('Leaving onClickrefreshChargeList this.loading: ' + this.loading);
+}            
 
   onRequestComplete(action:any, result:any){
             console.log('ENTERING onRequestComplete  Action Performed: ' + action + '  Result: ' + result);
-                if(action == "Get Charges"){
+                if(action == "Get Subcoded Charges"){
                     if(result == "200")
                         {
                             this.loading = this._chargeService.loading;
@@ -133,7 +110,7 @@ onClickrefreshChargeList(): void{
                      }   
 
                     }
-                else if(action == "Submit Charges"){
+                else if(action == "Submit Subcoded Charges"){
                     if(result == "200")
                         {
                             //this.updating = false;
@@ -156,7 +133,7 @@ onClickrefreshChargeList(): void{
 
         console.log("Loading?: " + this.loading);
         console.log("Error?: " + this.errorMessage);
-        console.log("ChargeLength?: " + this.charges.length);
+        //console.log("ChargeLength?: " + this.charges.length);
         console.log("Charges: " + JSON.stringify(this.charges));
         console.log('LEAVING onRequestComplete');
         }
@@ -179,7 +156,7 @@ onClickrefreshChargeList(): void{
                 wrapper.style.height = height + "px";
             }
         }
-
+/*
         onClickselectStandard(source:any){
             console.log('Select Standard Reports');
             this.reportList = [];
@@ -267,9 +244,9 @@ onClickrefreshChargeList(): void{
 
         //this.canEnableButtons();    
     }
-
+*/
     onClickSubmit(): void{
-        console.log('IN onClickSubmit - Reports to send:' + JSON.stringify(this.reportList));
+    /*console.log('IN onClickSubmit - Reports to send:' + JSON.stringify(this.reportList));
    
     if(confirm('Are you sure you want to submit the selected reports and close the Prelim Reports App?')){
 

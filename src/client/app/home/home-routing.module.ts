@@ -5,7 +5,8 @@ import { HomeComponent } from './home.component';
 @NgModule({
   imports: [
     RouterModule.forRoot([
-      { path: '', component: HomeComponent }
+      { path: 'NonSubcoded', component: HomeComponent, data: [{view: 'NonSubcoded'}] },
+      { path: 'Subcoded', component: HomeComponent, data: [{view: 'Subcoded'}]}, 
     ])
   ],
   exports: [RouterModule]

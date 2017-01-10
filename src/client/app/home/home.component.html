@@ -1,1 +1,21 @@
-<sd-charge>...Loading</sd-charge>
+<div class='mainDiv' *ngIf="viewController == 'NonSubcoded'">
+ 
+ <div class='middlePanel' align='center'>
+
+         <non-charge></non-charge>
+
+ </div>
+
+ 
+</div> 
+
+<div class='mainDiv' *ngIf="viewController == 'Subcoded'">
+ 
+ <div class='middlePanel' align='center'>
+
+         <sub-charge></sub-charge>
+
+ </div>
+
+ 
+</div>

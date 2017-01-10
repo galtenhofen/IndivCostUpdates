@@ -1,6 +1,6 @@
 <nav>
-  <a [routerLink]="['/']" [routerLinkActive]="['router-link-active']" [routerLinkActiveOptions]="{exact:true}">Non-Subcoded</a>
-  <a [routerLink]="['/']" [routerLinkActive]="['router-link-active']" [routerLinkActiveOptions]="{exact:true}">Subcoded</a>
+  <a [routerLink]="['/', 'NonSubcoded']" [routerLinkActive]="['router-link-active']" [routerLinkActiveOptions]="{exact:true}">Non-Subcoded</a>
+  <a [routerLink]="['/', 'Subcoded']" [routerLinkActive]="['router-link-active']" [routerLinkActiveOptions]="{exact:true}">Subcoded</a>
   <a [routerLink]="['/info']" [routerLinkActive]="['router-link-active']" [routerLinkActiveOptions]="{exact:true}">Project Info</a>
   <a [routerLink]="['/notes']" [routerLinkActive]="['router-link-active']" [routerLinkActiveOptions]="{exact:true}">Facility Notes</a>
 </nav>

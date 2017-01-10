@@ -15,6 +15,8 @@ th{
     vertical-align: center;
     vertical-align: middle;
     height: 40px;
+    font-size: 12px;
+    margin-bottom: 15px;
 
 }
 
@@ -81,10 +83,11 @@ td{
     float: left
 }
 
-#dfginput{
-    width: 100px;
+.dfginput{
+    width: 450px;
+    height: 40px;
     text-align:left;
-    padding-top: 10px;
+    padding-top: 5px;
     float: left
 }
 
@@ -137,24 +140,49 @@ font-size: 70% !important;
     text-align: center; 
     font-size: 120%;
 }
-/*
-#btnHeaders{
-    height: 50px;
-}
 
-.panel-heading{
-    height: 50px;
+select{
+    color: #337AB7 !important;
+    height: 40px;
+    width:150px;
+    border:2px solid white;
+    -webkit-border-top-right-radius: 5px;
+    -webkit-border-bottom-right-radius: 5px;
+    -moz-border-radius-topright: 5px;
+    -moz-border-radius-bottomright: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    -webkit-border-top-left-radius: 5px;
+    -webkit-border-bottom-left-radius: 5px;
+    -moz-border-radius-topleft: 5px;
+    -moz-border-radius-bottomleft: 5px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    padding:2px;
 }
-.row{
-    height: 48px;
+/*
+select:required:invalid {
+  color: gray;
 }*/
 
-/*
-.radio-toolbar input[type="radio"]:checked + label {
-    border-radius: 10px;
-    background-color:deepskyblue;
-    border: 2px solid white
-}*/
+option {
+  color: #337AB7 !important;
+  border: white;
+}
+
+.radio-toolbar{
+    padding-top: 10px;
+    /*vertical-align: middle;*/
+}
+
+.dropdown{
+    padding-top: 1px !important;
+    /*vertical-align: middle;*/
+}
+
+input[type=radio]{
+    margin-left: 15px;
+}
 
 #ChargesTable{
  /* table-layout: fixed;*/
@@ -168,6 +196,6 @@ font-size: 70% !important;
             overflow-y: auto;
             max-height:500px;
             min-height:500px;
-            width:auto;
+            width:100%;
         }
 

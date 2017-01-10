@@ -1,12 +1,12 @@
 import {IChargeSC} from './chargeSC';
 
-export interface IResponse {
+export interface IResponseSC {
    jsxid: string
    providerId: string
    dataFileGroupId: string
    userName: string
    caseNumber: string
-   chargeListSC: IChargeSC[]
+   chargeList: IChargeSC[]
         
 }
 

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ChargeService } from './charge.service';
+//import { ChargeService } from './charge.service';
+import { HomeService } from '../home/home.service';
 import {ICharge} from './charge';
 import {IResponse} from './response';
 import {IReport} from './report';
@@ -9,7 +10,7 @@ import {IReport} from './report';
  */
 @Component({
   moduleId: module.id,
-  selector: 'sd-charge',
+  selector: 'non-charge',
   templateUrl: 'charge.component.html',
   styleUrls: ['charge.component.css'],
 })
@@ -33,13 +34,7 @@ export class ChargeComponent implements OnInit {
     postUpdates: string;
    reportList: string[] = [];
     //reportObjects: string[] = [];
-    /*
-    newVarCostUpdates: IUpdate[] = [];
-    updateObjects: IUpdate[] = [];
-    update: IUpdate;
 
-    outbound: IOutbound;
-*/
     response: IResponse;
     charges: ICharge[] = [];
 
@@ -59,48 +54,45 @@ export class ChargeComponent implements OnInit {
    *
    * @param {ChargeService} ChargeService - The injected Charge.
    */
-  constructor(public _chargeService: ChargeService) {this.loading = this._chargeService.loading;}
+  constructor(public _chargeService: HomeService) {this.loading = this._chargeService.loading;}
 
   /**
    * Get the charges OnInit
    */
   ngOnInit() {
-console.log('IN onInIt   this.charges: ' + this.charges);
-
 console.log('IN onInIt   this.charges stringify: ' + JSON.stringify(this.charges));
 this.revCodeFilter = "";
+this.callGetChargeList();
+
   }
 
 
 
 onClickrefreshChargeList(): void{
+            console.log('Refresh button clicked.');
+            this.callGetChargeList();
+            }
+
+callGetChargeList():void{
 
      console.log('Retrieving Charges...');
 
           //  this.attempt= true;
-          //  this.disableButtons();
             this.errorMessage = "";
-          //  this.updating = false;
           this.charges = [];
-            
-              //  if (this.dataFileGroupId && this.dataFileGroupId != null && this.dataFileGroupId!=""){
-                
+
                 this.loading = true;
                 this.dataFileGroupId = "878";
                     this._chargeService.getCharges(this.dataFileGroupId)
                     .subscribe(
                         response => this.charges = response.chargeList,
-                        //error => this.errorMessage = <any>error,
                         error => this.onRequestComplete("Get Charges", error),
                         () => this.onRequestComplete("Get Charges", "200"));
-               // }
-               // else{
-              //     alert('Please Enter a DataFileGroupId to in order to fetch files');
-            
-               // }
 
             console.log('Leaving onClickrefreshBatchList this.loading: ' + this.loading);
-            }
+
+
+}            
 
   onRequestComplete(action:any, result:any){
             console.log('ENTERING onRequestComplete  Action Performed: ' + action + '  Result: ' + result);
@@ -168,7 +160,7 @@ onClickrefreshChargeList(): void{
                 wrapper.style.height = height + "px";
             }
         }
-
+/*
         onClickselectStandard(source:any){
             console.log('Select Standard Reports');
             this.reportList = [];
@@ -256,7 +248,7 @@ onClickrefreshChargeList(): void{
 
         //this.canEnableButtons();    
     }
-
+*/
     onClickSubmit(): void{
         console.log('IN onClickSubmit - Reports to send:' + JSON.stringify(this.reportList));
    

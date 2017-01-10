@@ -1,8 +1,8 @@
 <div class='panel panel-primary' id='all'>
-    <div class='panel-heading' id='btnHeaders'>
+    <div class='panel-heading clearfix' id='btnHeaders'>
     <div class='row'>
                     <div class='col-xs-1'>
-                            <button class='btn btn-success' id='getBtn' (click)='onClickrefreshChargeList()'>
+                            <button class='btn btn-success' id='getBtn' (click)='onClickrefreshSubcodedChargeList()'>
                                 Refresh Data
                             </button>
                     </div>
@@ -17,19 +17,24 @@
                     </div>
 </div>
 
-<div class='col-xs-2'>
-  <select name ="status" form = "statusForm" [(ngModel)]='revCodeFilter' placeholder="RevCode" default = "RevCode">
-                    <option value="" disabled selected>Revenue Code</option>
-                    <option value="">All</option>
+<div class='col-xs-2 dropdown' align="right">
+   <style>
+    select:invalid { color: gray; }
+</style>
+<form>
+  <select form = "revCodeForm" name="revCode" [(ngModel)]='revCodeFilter'  required>
+                    <option value="" selected>Revenue Code</option>
                     <option value="270">270</option>
                     <option value="271">271</option>
+                    <option value="272">272</option>
                     <option value="274">274</option>
                     <option value="275">275</option>
                 </select>
+ </form> 
 </div>
 
  <!-- <div class='col-xs-2' id='dfgLbl' vertical-align='middle' align='right'>Filter Description:</div>  --> 
-    <div class='col-xs-4' align='left' style='color:#000000'><input class="form-control form-control-inline" type='text' [(ngModel)]='dataFileGroupId' placeholder="Enter text to filter"/></div>
+    <div class='col-xs-3 dfginput' align='left' style='color:#000000'><input class="form-control form-control-inline" type='text' [(ngModel)]='chargeDescription' placeholder="Enter text to filter"/></div>
            
                     <div class='col-xs-1'>
                             <button class='btn btn-success' id='allBtn' (click)='onClickselectAll(this)'>
@@ -57,32 +62,46 @@
 
 <body onload='makeTableScroll();'>
 <div class='scrollingTable'> 
-           <table id='ChargesTable' class='table table-striped table-bordered' > 
+           <table id='ChargesSCTable' class='table table-striped table-bordered' > 
         <!--         <thead *ngIf= '!loading && (Charges && Charges.length > 0) && !errorMessage' >-->
-            <thead *ngIf= '!loading && (Charges && Charges.length > 0) && !errorMessage' >
+            <thead *ngIf= '!loading && (charges && charges.length > 0) && !errorMessage' >
                     <tr>
-                        <th></th>
-                        <th>Charge Group</th>
-                        <th>Charge Group Type</th>
-                        <th>Volume</th>
-                        <th>Service Line</th>
-                    
+                        <th>CV</th>
+                        <th>Ortho</th>
+                        <th>Spine</th>
+                        <th>Other</th>
+                        <th>Charge<br>Code</th>
+                        <th>Rev<br>Code</th>
+                        <th>ChargeID</th>
+                        <th>Charge<br>Description</th>                        
+                        <th>Total<br>Var Cost</th>
+                        <th>Unit<br>Charge</th>
+                        <th>Unit<br>Var Cost</th>
+                        <th>New<br>Var Cost</th>                        
+                        <th>Reviewed</th>                 
       
                     </tr>
                 </thead>           
          <!--        <tbody *ngIf='!loading && (Charges && Charges.length > 0) && !errorMessage'> -->
-             <tbody *ngIf='!loading && Charges  && !errorMessage'> 
-                <tr *ngFor='let Charge of Charges; let i = index;'  >
-                    <td><div class="vertAlign"><input #updateCheckbox style="height:auto" type="checkbox" id="updateCheckbox" (change)="onToggleUpdate(Charge.jsxid,updateCheckbox.checked)" ></div></td>
-                    
+             <tbody *ngIf='!loading && charges  && !errorMessage'> 
+                <tr *ngFor='let charge of charges; let i = index;'  >
+
                     <!--<td style="text-align:center" (click)="generateURL(Charge.ChargeGroupType)"><a href="" target="_blank">{{Charge.ChargeGroup}}</a></td>--> 
                     
-                    <td style="text-align:center"><div class = "tdContainer" style="height:10px"><a href={{Charge.mstrUrl}} target="_blank">  {{Charge.ChargeGroup}} </a></div></td> 
-                    <td style="text-align:center"><div class = "tdContainer" style="height:10px">{{Charge.ChargeType}}</div></td>
-                    <td style="text-align:center"><div class = "tdContainer" style="height:10px">{{Charge.ChargeVolume}}</div></td>
-                    <td style="text-align:center"><div class = "tdContainer" style="height:10px">{{Charge.serviceLine}}</div></td>
-
-                    
+                    <td style="text-align:center"><div class = "tdContainer" style="height:10px">{{charge.cv}}</div></td>
+                    <td style="text-align:center"><div class = "tdContainer" style="height:10px">{{charge.ortho}}</div></td>
+                    <td style="text-align:center"><div class = "tdContainer" style="height:10px">{{charge.spine}}</div></td>
+                    <td style="text-align:center"><div class = "tdContainer" style="height:10px">{{charge.other}}</div></td>
+                    <td style="text-align:center"><div class = "tdContainer" style="height:10px">{{charge.chargeCode}} </div></td>
+                    <td style="text-align:center"><div class = "tdContainer" style="height:10px">{{charge.chargeID}} </div></td>
+                    <td style="text-align:center"><div class = "tdContainer" style="height:10px">{{charge.revCode}} </div></td>
+                    <td style="text-align:center"><div class = "tdContainer" style="height:10px">{{charge.chargeDescription}} </div></td>
+                    <td style="text-align:center"><div class = "tdContainer" style="height:10px">{{charge.totalVarCost}} </div></td>
+                    <td style="text-align:center"><div class = "tdContainer" style="height:10px">{{charge.unitCharge}} </div></td>
+                    <td style="text-align:center"><div class = "tdContainer" style="height:10px">{{charge.unitVarCost}} </div></td>
+                    <td style="text-align:center"><div class = "tdContainer" style="height:10px">{{charge.newVarCost}} </div></td>
+                    <td style="text-align:center"><div class="vertAlign"><input #updateCheckbox style="height:auto" type="checkbox" id="updateCheckbox" (change)="onToggleUpdate(Charge.jsxid,updateCheckbox.checked)" ></div></td>
+                              
                 </tr> 
                 
                 </tbody>
@@ -90,14 +109,14 @@
                 <!--<div class= 'panel-heading' *ngIf= 'attempt==false && !loading && !updating'>
                       Enter a DataFileGroupId to get files.
                    </div> -->
-               <div class= 'panel-heading' *ngIf= 'loading && (!Charges || Charges.length < 1)'>
-                      Retrieving Charge Groups...
+               <div class= 'panel-heading' *ngIf= 'loading && (!charges || charges.length < 1)'>
+                      Retrieving Subcoded Charges...
                    </div>   
                <div class= 'panel-heading' *ngIf='!updating && errorMessage && !loading'>
                       There was a problem with the web service.  <br> Try again or notify development team.   <br>Error Code: {{errorMessage}}
                    </div>  
-                <div class= 'panel-heading' *ngIf='(!Charges || Charges.length < 1) && !errorMessage && !loading'>
-                      There is no data for this facility
+                <div class= 'panel-heading' *ngIf='(!charges || charges.length < 1) && !errorMessage && !loading'>
+                      There are no subcoded charges for this facility
                    </div>  
 
 
