@@ -84,10 +84,7 @@
                 </thead>           
          <!--        <tbody *ngIf='!loading && (Charges && Charges.length > 0) && !errorMessage'> -->
              <tbody *ngIf='!loading && charges  && !errorMessage'> 
-                <tr *ngFor='let charge of charges | chargeSCFilter:levelGroupFilter:revCodeFilter:descriptionFilter:modifiedFilter'  >
-
-                    <!--<td style="text-align:center" (click)="generateURL(Charge.ChargeGroupType)"><a href="" target="_blank">{{Charge.ChargeGroup}}</a></td>--> 
-                    
+                <tr *ngFor='let charge of charges | chargeSCFilter:levelGroupFilter:revCodeFilter:descriptionFilter:modifiedFilter; let i = index;'  >
                     <td style="text-align:center"><div class = "tdContainer" style="height:10px">{{charge.cv}}</div></td>
                     <td style="text-align:center"><div class = "tdContainer" style="height:10px">{{charge.ortho}}</div></td>
                     <td style="text-align:center"><div class = "tdContainer" style="height:10px">{{charge.spine}}</div></td>
@@ -99,17 +96,13 @@
                     <td style="text-align:center"><div class = "tdContainer" style="height:10px">{{charge.totalVarCost}} </div></td>
                     <td style="text-align:center"><div class = "tdContainer" style="height:10px">{{charge.unitCharge}} </div></td>
                     <td style="text-align:center"><div class = "tdContainer" style="height:10px">{{charge.unitVarCost}} </div></td>
-                    <!--<td style="text-align:center"><div class = "tdContainer" style="height:10px">{{charge.newVarCost}} </div></td>-->
-                    <td style="text-align:center" ><input #newVarCost style = "border: none"type="number" min="1" id="newVarCost" [attr.id]="'newVarCost' + charge.jsxid" [(ngModel)]='newVarCost[i]' (change)="onUpdateVarCost(charge.jsxid, charge.revCode, newVarCost[i], charge.chargeID)" aria-label="..." >{{charge.newVarCost}}</td>
-                    <td style="text-align:center"><div class="vertAlign"><input #updateCheckbox style="height:auto" type="checkbox" id="updateCheckbox" [(ngModel)]="charge.reviewed" (change)="onToggleReviewed(charge.jsxid,updateCheckbox.checked)" ></div></td>
-                              
+                  <td style="text-align:center" > <input #newVarCost style="border: none" type="number" min="1" id="newVarCost" [attr.id]="'newVarCost' + charge.jsxid" [(ngModel)]="charge.newVarCost" (change)="onUpdateVarCost(charge.jsxid, charge.revCode, charge.newVarCost, charge.chargeID)" aria-label="..." > </td>
+                    <td style="text-align:center"><div class="vertAlign"><input #updateCheckbox style="height:auto" type="checkbox" id="updateCheckbox" [(ngModel)]="charge.reviewed" (change)="onToggleReviewed(charge.jsxid,updateCheckbox.checked)" ></div></td>             
                 </tr> 
                 
                 </tbody>
                </table>
-                <!--<div class= 'panel-heading' *ngIf= 'attempt==false && !loading && !updating'>
-                      Enter a DataFileGroupId to get files.
-                   </div> -->
+
                <div class= 'panel-heading' *ngIf= 'loading && (!charges || charges.length < 1)'>
                       Retrieving Subcoded Charges...
                    </div>   
