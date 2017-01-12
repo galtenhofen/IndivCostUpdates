@@ -9,10 +9,10 @@
 <div class='col-xs-2'>
                     <div class="radio-toolbar" vertical-align='middle'>
 
-                        <input type="radio" id="radio1" name="radios" value="N" checked>
+                        <input #ImplantSCRadio type="radio" id="radio1" name="radios" [(ngModel)]='levelGroupFilter' value="Implant"  checked>
                         <label for="radio1">Implants</label>
 
-                        <input type="radio" id="radio2" name="radios" value="O">
+                        <input #MedSurgSCRadio type="radio" id="radio2" name="radios"  [(ngModel)]='levelGroupFilter' value="MedSurg" >
                         <label for="radio2">Med-Surg</label>
                     </div>
 </div>
@@ -34,15 +34,15 @@
 </div>
 
  <!-- <div class='col-xs-2' id='dfgLbl' vertical-align='middle' align='right'>Filter Description:</div>  --> 
-    <div class='col-xs-3 dfginput' align='left' style='color:#000000'><input class="form-control form-control-inline" type='text' [(ngModel)]='chargeDescription' placeholder="Enter text to filter"/></div>
+    <div class='col-xs-3 dfginput' align='left' style='color:#000000'><input class="form-control form-control-inline" type='text' name="descriptionSCInput"  [(ngModel)]='descriptionFilter' placeholder="Enter text to filter"/></div>
            
                     <div class='col-xs-1'>
-                            <button class='btn btn-success' id='allBtn' (click)='onClickselectAll(this)'>
+                            <button class='btn btn-success' id='allBtn' (click)='onClickFilterModified(this)'>
                                 Filter Modified
                             </button>
                     </div>
                     <div class='col-xs-1'>
-                            <button class='btn btn-success' id='noneBtn' (click)='onClickdeselectAll(this)'>
+                            <button class='btn btn-success' id='noneBtn' (click)='onClickFilterUnmodified(this)'>
                                 Filter Un-Modified
                             </button>
                     </div>
@@ -84,7 +84,7 @@
                 </thead>           
          <!--        <tbody *ngIf='!loading && (Charges && Charges.length > 0) && !errorMessage'> -->
              <tbody *ngIf='!loading && charges  && !errorMessage'> 
-                <tr *ngFor='let charge of charges; let i = index;'  >
+                <tr *ngFor='let charge of charges | chargeSCFilter:levelGroupFilter:revCodeFilter:descriptionFilter:modifiedFilter'  >
 
                     <!--<td style="text-align:center" (click)="generateURL(Charge.ChargeGroupType)"><a href="" target="_blank">{{Charge.ChargeGroup}}</a></td>--> 
                     
@@ -93,14 +93,15 @@
                     <td style="text-align:center"><div class = "tdContainer" style="height:10px">{{charge.spine}}</div></td>
                     <td style="text-align:center"><div class = "tdContainer" style="height:10px">{{charge.other}}</div></td>
                     <td style="text-align:center"><div class = "tdContainer" style="height:10px">{{charge.chargeCode}} </div></td>
-                    <td style="text-align:center"><div class = "tdContainer" style="height:10px">{{charge.chargeID}} </div></td>
                     <td style="text-align:center"><div class = "tdContainer" style="height:10px">{{charge.revCode}} </div></td>
+                    <td style="text-align:center"><div class = "tdContainer" style="height:10px">{{charge.chargeID}} </div></td>
                     <td style="text-align:center"><div class = "tdContainer" style="height:10px">{{charge.chargeDescription}} </div></td>
                     <td style="text-align:center"><div class = "tdContainer" style="height:10px">{{charge.totalVarCost}} </div></td>
                     <td style="text-align:center"><div class = "tdContainer" style="height:10px">{{charge.unitCharge}} </div></td>
                     <td style="text-align:center"><div class = "tdContainer" style="height:10px">{{charge.unitVarCost}} </div></td>
-                    <td style="text-align:center"><div class = "tdContainer" style="height:10px">{{charge.newVarCost}} </div></td>
-                    <td style="text-align:center"><div class="vertAlign"><input #updateCheckbox style="height:auto" type="checkbox" id="updateCheckbox" (change)="onToggleUpdate(Charge.jsxid,updateCheckbox.checked)" ></div></td>
+                    <!--<td style="text-align:center"><div class = "tdContainer" style="height:10px">{{charge.newVarCost}} </div></td>-->
+                    <td style="text-align:center" ><input #newVarCost style = "border: none"type="number" min="1" id="newVarCost" [attr.id]="'newVarCost' + charge.jsxid" [(ngModel)]='newVarCost[i]' (change)="onUpdateVarCost(charge.jsxid, charge.revCode, newVarCost[i], charge.chargeID)" aria-label="..." >{{charge.newVarCost}}</td>
+                    <td style="text-align:center"><div class="vertAlign"><input #updateCheckbox style="height:auto" type="checkbox" id="updateCheckbox" [(ngModel)]="charge.reviewed" (change)="onToggleReviewed(charge.jsxid,updateCheckbox.checked)" ></div></td>
                               
                 </tr> 
                 

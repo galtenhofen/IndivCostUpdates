@@ -4,6 +4,8 @@ import { HomeComponent } from './home.component';
 import { HomeService } from './home.service';
 import { HomeRoutingModule } from './home-routing.module';
 import { SharedModule } from '../shared/shared.module';
+import { ChargeFilterPipe } from '../charge/charge.pipe';
+import { ChargeSCFilterPipe } from '../chargeSC/chargeSC.pipe';
 import { ChargeModule } from '../charge/charge.module';
 import { ChargeService } from '../charge/charge.service';
 import { ChargeModuleSC } from '../chargeSC/chargeSC.module';

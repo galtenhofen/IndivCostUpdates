@@ -30,7 +30,7 @@ export class HomeService {
   getCharges(dfgid:string): Observable<IResponse> {
     return this.http.get('/assets/charges.json')
                     .finally( () => this.loading = false)
-                    .do(data=> console.log("IN getCharges:  " + JSON.stringify(data)))
+                   //.do(data=> console.log("IN getCharges:  " + JSON.stringify(data)))
                     //.do(data=> console.log("IN getCharges:  " + data))
                     .map((res: Response) => <IResponse>res.json())
                     .catch(this.handleError);
@@ -40,7 +40,7 @@ export class HomeService {
     getSubcodedCharges(dfgid:string): Observable<IResponseSC> {
     return this.http.get('/assets/chargesSC.json')
                     .finally( () => this.loading = false)
-                    .do(data=> console.log("IN getChargesSC:  " + JSON.stringify(data)))
+                   // .do(data=> console.log("IN getChargesSC:  " + JSON.stringify(data)))
                    // .do(data=> console.log("IN getCharges:  " + data))
                     .map((res: Response) => <IResponseSC>res.json())
                     .catch(this.handleError);

@@ -477,7 +477,7 @@
         "quantityPerUom": "1",
         "quantityPerUomSource": "www.stems.com",
         "comments": "used prior CDM research to price",
-        "levelGrouping": "Implants"
+        "levelGrouping": "MedSurg"
       },
       {
         "jsxid": "600011",
@@ -507,7 +507,7 @@
         "quantityPerUom": "1",
         "quantityPerUomSource": "www.stems.com",
         "comments": "used prior CDM research to price",
-        "levelGrouping": "Implants"
+        "levelGrouping": "MedSurg"
       },
       {
         "jsxid": "600012",
@@ -537,7 +537,7 @@
         "quantityPerUom": "1",
         "quantityPerUomSource": "www.stems.com",
         "comments": "used prior CDM research to price",
-        "levelGrouping": "Implants"
+        "levelGrouping": "MedSurg"
       },
       {
         "jsxid": "600013",
@@ -567,7 +567,7 @@
         "quantityPerUom": "1",
         "quantityPerUomSource": "www.stems.com",
         "comments": "used prior CDM research to price",
-        "levelGrouping": "Implants"
+        "levelGrouping": "MedSurg"
       },
       {
         "jsxid": "600014",
@@ -597,7 +597,7 @@
         "quantityPerUom": "1",
         "quantityPerUomSource": "www.stems.com",
         "comments": "used prior CDM research to price",
-        "levelGrouping": "Implants"
+        "levelGrouping": "MedSurg"
       }
     ]
 }

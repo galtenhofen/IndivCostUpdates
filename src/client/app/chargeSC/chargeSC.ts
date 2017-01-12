@@ -12,5 +12,8 @@ export interface IChargeSC {
         totalVarCost: string,
         unitCharge: string,
         unitVarCost: string,
-        levelGrouping: string
+        newVarCost: number,
+        levelGrouping: string,
+        modified:string,
+        reviewed: boolean
 }

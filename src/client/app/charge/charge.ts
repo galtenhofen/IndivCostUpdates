@@ -11,7 +11,7 @@ export interface ICharge {
         totalVarCost: string,
         unitCharge: string,
         unitVarCost: string,
-        newVarCost: string,
+        newVarCost: number,
         prevCdmVarCostPctChg: string,
         originalVarCost: string,
         rccFlag: string,
@@ -26,5 +26,7 @@ export interface ICharge {
         quantityPerUom: string,
         quantityPerUomSourc: string,
         comments: string,
-        levelGrouping: string
+        levelGrouping: string,
+        modified:string
+        reviewed:boolean
 }

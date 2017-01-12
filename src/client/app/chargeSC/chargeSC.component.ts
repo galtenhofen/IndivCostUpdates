@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 //import { ChargeServiceSC } from './chargeSC.service';
 import { HomeService } from '../home/home.service';
+import {ChargeSCFilterPipe} from './chargeSC.pipe';
+import {IUpdateSC} from './updateSC';
 import {IChargeSC} from './chargeSC';
 import {IResponseSC} from './responseSC';
 
@@ -30,7 +32,10 @@ export class ChargeComponentSC implements OnInit {
     caseNumber: string;
     jsxid: number;
 
-    
+    reviewedList: string[] = [];
+    update: IUpdateSC;
+    updateObjects: IUpdateSC[] = [];
+
     postUpdates: string;
 
     response: IResponseSC;
@@ -42,7 +47,11 @@ export class ChargeComponentSC implements OnInit {
     attempt: boolean;
     updating: boolean = false;
     updatingError: boolean = false;
+    
+    levelGroupFilter: string;
     revCodeFilter: string;
+    descriptionFilter: string;
+    modifiedFilter: string;
 
   
 
@@ -60,6 +69,7 @@ export class ChargeComponentSC implements OnInit {
   ngOnInit() {
 console.log('IN onInIt   this.charges stringify: ' + JSON.stringify(this.charges));
 this.revCodeFilter = "";
+this.levelGroupFilter = "Implant";
 
 this.callGetSubcodedChargeList();
   }
@@ -156,95 +166,96 @@ callGetSubcodedChargeList():void{
                 wrapper.style.height = height + "px";
             }
         }
-/*
-        onClickselectStandard(source:any){
-            console.log('Select Standard Reports');
-            this.reportList = [];
-            this.reportList.push("326731","326732","326733","326736","326641","326642","326644","326645","326647","326648","326649","326650","326651","326652","326653","326654","326658","326659","326660","326661","326662","326667","326668","326669","326670","326671","326672","326673","326674","326675","326676","326677","326678","326679","326685","326686","326687","326496","326497","326498","326499","326500","326501","326739","326740","326741","326742","326744");
-           
-            console.log("Charges[0]: " + JSON.stringify(this.charges[0]));  
- 
-
-            var checkboxes = document.getElementsByTagName('input'); 
-            for (var i = 0; i < checkboxes.length; i++)
-            {
-            if (checkboxes[i].type == 'checkbox'){
-                if(this.charges[i]){
-                    if(this.charges[i].standardReport ==="Y"){
-                   
-                    checkboxes[i].checked = true;
-                    }
-                    else{
-                        checkboxes[i].checked = false;
-                    }
-                }
-                
-                }
-            }
-            
-            console.log('Report List: ' + JSON.stringify(this.reportList));
-
-        }
-
-          onClickdeselectAll(source:any){
-              console.log('DeSelect All');
-            this.reportList = [];
-            var checkboxes = document.getElementsByTagName('input');   
-            for (var i = 0; i < checkboxes.length; i++)
-            {
-            if (checkboxes[i].type == 'checkbox')
-            {
-            checkboxes[i].checked = source.checked;
-            }
-            }
-
-                console.log('Report List: ' + JSON.stringify(this.reportList));
-        }
-
-          onClickselectAll(source:any){
-              console.log('Select All');
-            this.reportList = [];
-            this.reportList = [];
-            var checkboxes = document.getElementsByTagName('input');   
-            for (var i = 0; i < checkboxes.length; i++)
-            {
-            if (checkboxes[i].type == 'checkbox')
-            {
-            checkboxes[i].checked = !source.checked;
-            }
-            }
-
-            
-            for (var j = 0; j < this.charges.length; j++){
-                this.reportList.push(this.charges[j].jsxid);
-            }
-            console.log('Report List: ' + JSON.stringify(this.reportList));
-        }
-
-        onToggleUpdate(jsxid:any, checked:any): void{
-        console.log('Retry button clicked.  Identifier: ' + jsxid + '  Current value = ' + checked);
         
+        
+        onToggleReviewed(jsxid:string, reviewed:boolean): void{
+        console.log('Reviewed button clicked.  CDMItemKey: ' + jsxid + '  Reviewed? = ' + reviewed);
+        console.log('Current ReviewedList: ' + this.reviewedList)
+        //this.reviewedList = {"batchId": jsxid, "newVarCost": null, "updated": updated  };
 
-        if(checked == true){
-        this.reportList.push(jsxid);
-        console.log('retryObj: ' + this.reportList);
-        console.log('stringify retryObj: ' + JSON.stringify(this.reportList));
-        }
-        else{
+//if the jsxid id exists, remove current value first
 
-            for(var i = 0; i <  this.reportList.length; i++) {
-                if( this.reportList[i] == jsxid) {
-                     this.reportList.splice(i, 1);
+
+for(var i = 0; i <  this.reviewedList.length; i++) {
+                if( this.reviewedList[i] == jsxid) {
+                     this.reviewedList.splice(i, 1);
                     break;
                     }
         }
-          
-          console.log('Report List: ' + JSON.stringify(this.reportList));
+
+
+        if(reviewed == true){
+        //then add it in if updated = true
+        this.reviewedList.push(jsxid);
+      
         }
 
-        //this.canEnableButtons();    
+
+        console.log('reviewedList: ' + this.reviewedList);
+        console.log('charges length: ' + this.charges.length);
+
+
+
     }
-*/
+
+
+
+    onUpdateVarCost(jsxid:string, revCode: string, varCost:number, chargeId: string): void{
+        console.log('VarCost Updated.  jsxid: ' + jsxid + '  Current value = ' + varCost);
+     if (varCost == null || varCost>=1){
+       this.update = {"jsxid": jsxid, "revCode": revCode,  "newVarCost": varCost, "chargeId": chargeId  };
+
+    //if this batchid is already in the updated array, need to delete it before adding new value
+        if(varCost != null){
+            
+            for(var i = 0; i <  this.updateObjects.length; i++) {
+                if( this.updateObjects[i].jsxid == jsxid) {
+                     this.updateObjects.splice(i, 1);
+                    break;
+                    }
+            }
+
+        this.updateObjects.push(this.update);
+
+        console.log('stringify updateObj: ' + JSON.stringify(this.updateObjects));
+        }
+        else{
+
+            for(var i = 0; i <  this.updateObjects.length; i++) {
+                if( this.updateObjects[i].jsxid == jsxid) {
+                     this.updateObjects.splice(i, 1);
+                    break;
+                    }
+                }
+               
+
+          console.log('stringify updateObj: ' + JSON.stringify(this.updateObjects));
+          
+        }
+
+         //Trying to find the object in the array of charge objects to update newVarCost
+                for(var i = 0; i <  this.charges.length; i++) {
+                    if( this.charges[i].jsxid == jsxid) {
+                         this.charges[i].newVarCost = varCost;
+                        break;
+                        }
+                    }
+        console.log('stringify updateObj: ' + JSON.stringify(this.charges));
+        
+        
+        console.log('updateObjects length: ' + this.updateObjects.length);
+
+        console.log('charges length: ' + this.charges.length);
+       // this.canEnableButtons();    
+        }
+        else{
+           // alert("Value must be a number greater or equal to one.");
+            var targetCell = "updateVarCost"+jsxid;
+            (<HTMLInputElement> document.getElementById(targetCell)).value = "";
+           
+        }
+    }
+
     onClickSubmit(): void{
     /*console.log('IN onClickSubmit - Reports to send:' + JSON.stringify(this.reportList));
    
@@ -256,6 +267,7 @@ callGetSubcodedChargeList():void{
                     error => this.errorMessage = <any>error);
 
                     }
+                    */
     }
 
 

@@ -9,10 +9,10 @@
 <div class='col-xs-2'>
                     <div class="radio-toolbar" vertical-align='middle'>
 
-                        <input type="radio" id="radio1" name="radios" value="N" checked>
+                        <input #ImplantRadio type="radio" id="radio1" name="radios" [(ngModel)]='levelGroupFilter' value="Implant" (click)="onClickLevelGrouping(ImplantRadio .value)" checked>
                         <label for="radio1">Implants</label>
 
-                        <input type="radio" id="radio2" name="radios" value="O">
+                        <input #MedSurgRadio type="radio" id="radio2" name="radios" [(ngModel)]='levelGroupFilter' value="MedSurg" (click)="onClickLevelGrouping(MedSurgRadio.value)">
                         <label for="radio2">Med-Surg</label>
                     </div>
 </div>
@@ -34,15 +34,15 @@
 </div>
 
  <!-- <div class='col-xs-2' id='dfgLbl' vertical-align='middle' align='right'>Filter Description:</div>  --> 
-    <div class='col-xs-3 dfginput' align='left' style='color:#000000'><input class="form-control form-control-inline" type='text' [(ngModel)]='chargeDescription' placeholder="Enter text to filter"/></div>
+    <div class='col-xs-3 dfginput' align='left' style='color:#000000'><input class="form-control form-control-inline" name="descriptionInput" type='text' [(ngModel)]='descriptionFilter' placeholder="Enter text to filter"/></div>
            
                     <div class='col-xs-1'>
-                            <button class='btn btn-success' id='allBtn' (click)='onClickselectAll(this)'>
+                            <button class='btn btn-success' id='allBtn' name="modifiedFilterBtn" [(ngModel)]='modifiedFilter' (click)='onClickselectAll(this)' ngDefaultControl>
                                 Filter Modified
                             </button>
                     </div>
                     <div class='col-xs-1'>
-                            <button class='btn btn-success' id='noneBtn' (click)='onClickdeselectAll(this)'>
+                            <button class='btn btn-success' id='noneBtn' name="unmodifiedFilterBtn" [(ngModel)]='modifiedFilter' (click)='onClickdeselectAll(this)' ngDefaultControl>
                                 Filter Un-Modified
                             </button>
                     </div>
@@ -90,7 +90,7 @@
                 </thead>           
          <!--        <tbody *ngIf='!loading && (Charges && Charges.length > 0) && !errorMessage'> -->
              <tbody *ngIf='!loading && charges  && !errorMessage'> 
-                <tr *ngFor='let charge of charges; let i = index;'  >
+                <tr *ngFor='let charge of charges | chargeFilter:levelGroupFilter:revCodeFilter:descriptionFilter:modifiedFilter'  >
 
                     <!--<td style="text-align:center" (click)="generateURL(Charge.ChargeGroupType)"><a href="" target="_blank">{{Charge.ChargeGroup}}</a></td>--> 
                     
@@ -112,7 +112,7 @@
                     <td style="text-align:center"><div class = "tdContainer" style="height:10px">{{charge.rccFlag}} </div></td>
                     <td style="text-align:center"><div class = "tdContainer" style="height:10px">{{charge.prevCdmOverrideType}} </div></td>
                     <td style="text-align:center"><div class = "tdContainer" style="height:10px">{{charge.prevCdmVersion}} </div></td>
-                    <td style="text-align:center"><div class="vertAlign"><input #updateCheckbox style="height:auto" type="checkbox" id="updateCheckbox" (change)="onToggleUpdate(Charge.jsxid,updateCheckbox.checked)" ></div></td>
+                    <td style="text-align:center"><div class="vertAlign"><input #updateCheckbox style="height:auto" type="checkbox" id="updateCheckbox" [(ngModel)]="charge.reviewed" (change)="onToggleReviewed(charge.jsxid,updateCheckbox.checked)" ></div></td>
                               
                 </tr> 
                 

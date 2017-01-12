@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-//import { ChargeService } from './charge.service';
+import {ChargeFilterPipe} from './charge.pipe';
 import { HomeService } from '../home/home.service';
 import {ICharge} from './charge';
 import {IResponse} from './response';
@@ -16,10 +16,13 @@ import {IReport} from './report';
 })
 export class ChargeComponent implements OnInit {
 
-  //newName: string = '';
+    levelGroupFilter: string;
+    revCodeFilter: string;
+    descriptionFilter: string;
+    modifiedFilter: string;
+
+
   errorMessage: string;
-
-
     pageTitle: string = 'Individual Cost Updates';
    // errorMessage: string;
     httpStatus: string;
@@ -32,8 +35,11 @@ export class ChargeComponent implements OnInit {
 
     
     postUpdates: string;
-   reportList: string[] = [];
-    //reportObjects: string[] = [];
+  
+    //updateObjects: IUpdate[] = [];
+    //update: IUpdate;
+
+    reviewedList: string[] = [];
 
     response: IResponse;
     charges: ICharge[] = [];
@@ -44,7 +50,6 @@ export class ChargeComponent implements OnInit {
     attempt: boolean;
     updating: boolean = false;
     updatingError: boolean = false;
-    revCodeFilter: string;
 
   
 
@@ -62,6 +67,7 @@ export class ChargeComponent implements OnInit {
   ngOnInit() {
 console.log('IN onInIt   this.charges stringify: ' + JSON.stringify(this.charges));
 this.revCodeFilter = "";
+this.levelGroupFilter = "Implant";
 this.callGetChargeList();
 
   }
@@ -161,50 +167,6 @@ callGetChargeList():void{
             }
         }
 /*
-        onClickselectStandard(source:any){
-            console.log('Select Standard Reports');
-            this.reportList = [];
-            this.reportList.push("326731","326732","326733","326736","326641","326642","326644","326645","326647","326648","326649","326650","326651","326652","326653","326654","326658","326659","326660","326661","326662","326667","326668","326669","326670","326671","326672","326673","326674","326675","326676","326677","326678","326679","326685","326686","326687","326496","326497","326498","326499","326500","326501","326739","326740","326741","326742","326744");
-           
-            console.log("Charges[0]: " + JSON.stringify(this.charges[0]));  
- 
-
-            var checkboxes = document.getElementsByTagName('input'); 
-            for (var i = 0; i < checkboxes.length; i++)
-            {
-            if (checkboxes[i].type == 'checkbox'){
-                if(this.charges[i]){
-                    if(this.charges[i].standardReport ==="Y"){
-                   
-                    checkboxes[i].checked = true;
-                    }
-                    else{
-                        checkboxes[i].checked = false;
-                    }
-                }
-                
-                }
-            }
-            
-            console.log('Report List: ' + JSON.stringify(this.reportList));
-
-        }
-
-          onClickdeselectAll(source:any){
-              console.log('DeSelect All');
-            this.reportList = [];
-            var checkboxes = document.getElementsByTagName('input');   
-            for (var i = 0; i < checkboxes.length; i++)
-            {
-            if (checkboxes[i].type == 'checkbox')
-            {
-            checkboxes[i].checked = source.checked;
-            }
-            }
-
-                console.log('Report List: ' + JSON.stringify(this.reportList));
-        }
-
           onClickselectAll(source:any){
               console.log('Select All');
             this.reportList = [];
@@ -224,34 +186,110 @@ callGetChargeList():void{
             }
             console.log('Report List: ' + JSON.stringify(this.reportList));
         }
+*/
 
-        onToggleUpdate(jsxid:any, checked:any): void{
-        console.log('Retry button clicked.  Identifier: ' + jsxid + '  Current value = ' + checked);
-        
 
-        if(checked == true){
-        this.reportList.push(jsxid);
-        console.log('retryObj: ' + this.reportList);
-        console.log('stringify retryObj: ' + JSON.stringify(this.reportList));
+
+onToggleReviewed(jsxid:string, reviewed:boolean): void{
+        console.log('Reviewed button clicked.  CDMItemKey: ' + jsxid + '  Reviewed? = ' + reviewed);
+        console.log('Current ReviewedList: ' + this.reviewedList)
+        //this.reviewedList = {"batchId": jsxid, "newVarCost": null, "updated": updated  };
+
+//if the jsxid id exists, remove current value first
+
+
+for(var i = 0; i <  this.reviewedList.length; i++) {
+                if( this.reviewedList[i] == jsxid) {
+                     this.reviewedList.splice(i, 1);
+                    break;
+                    }
+        }
+
+
+        if(reviewed == true){
+        //then add it in if updated = true
+        this.reviewedList.push(jsxid);
+      
+        }
+
+
+        console.log('reviewedList: ' + this.reviewedList);
+        //console.log('stringify updateObj: ' + JSON.stringify(this.updateObjects));
+        console.log('charges length: ' + this.charges.length);
+/*
+        if(updated== true){
+        this.updateObjects.push(this.update);
+        console.log('retryObj: ' + this.updateObjects);
+        console.log('stringify retryObj: ' + JSON.stringify(this.updateObjects));
         }
         else{
 
-            for(var i = 0; i <  this.reportList.length; i++) {
-                if( this.reportList[i] == jsxid) {
-                     this.reportList.splice(i, 1);
+            for(var i = 0; i <  this.updateObjects.length; i++) {
+                if( this.updateObjects[i].batchId == jsxid) {
+                     this.updateObjects.splice(i, 1);
                     break;
                     }
         }
           
-          console.log('Report List: ' + JSON.stringify(this.reportList));
+          console.log('stringify updateObj: ' + JSON.stringify(this.updateObjects));
+        }*/
+
+
+    }
+/*
+    onUpdateVarCost(jsxid:string, varCost:any): void{
+        console.log('VarCost Updated.  BatchId: ' + jsxid + '  Current value = ' + varCost);
+     if (varCost != null && varCost != "" && varCost>=1){
+       this.update = {"batchId": jsxid, "newVarCost": varCost, updated: false  };
+
+//if this batchid is already in the updated array, need to delete it before adding new value
+        if(varCost != "" && varCost != null){
+            
+            for(var i = 0; i <  this.updateObjects.length; i++) {
+                if( this.updateObjects[i].batchId == jsxid) {
+                     this.updateObjects.splice(i, 1);
+                    break;
+                    }
+            }
+
+        this.updateObjects.push(this.update);
+
+        console.log('retryObj: ' + this.updateObjects);
+        console.log('stringify retryObj: ' + JSON.stringify(this.updateObjects));
+        }
+        else{
+
+            for(var i = 0; i <  this.updateObjects.length; i++) {
+                if( this.updateObjects[i].batchId == jsxid) {
+                     this.updateObjects.splice(i, 1);
+                    break;
+                    }
+        }
+          
+          console.log('stringify updateObj: ' + JSON.stringify(this.updateObjects));
+        }
+        console.log('updateObjects length: ' + this.updateObjects.length);
+        console.log('batchFiles length: ' + this.batchfiles.length); 
+        }
+        else{
+            alert("Value must be a number greater or equal to one.");
+            var targetCell = "updateVarCost"+jsxid;
+            (<HTMLInputElement> document.getElementById(targetCell)).value = "";
+           
+        }
+    }
+
+*/
+
+
+        onClickLevelGrouping(value:any): void{
+        console.log('LevelGrouping Chosen:  Filter by: ' + value);
+         
         }
 
-        //this.canEnableButtons();    
-    }
-*/
     onClickSubmit(): void{
-        console.log('IN onClickSubmit - Reports to send:' + JSON.stringify(this.reportList));
-   
+        console.log('IN onClickSubmit - Reports to send:' + JSON.stringify(this.reviewedList));
+   /*
     if(confirm('Are you sure you want to submit the selected reports and close the Prelim Reports App?')){
 
                 this._chargeService.postReportList(this.reportList)
@@ -260,19 +298,10 @@ callGetChargeList():void{
                     error => this.errorMessage = <any>error);
 
                     }
+                    */
     }
 
+    
 
-  /**
-   * Pushes a new name onto the charges array
-   * @return {boolean} false to prevent default form submit behavior to refresh the page.
-   */
-  /*
-  addName(): boolean {
-    // TODO: implement ChargeService.post
-    this.charges.push(this.newName);
-    this.newName = '';
-    return false;
-  }*/
 
 }
