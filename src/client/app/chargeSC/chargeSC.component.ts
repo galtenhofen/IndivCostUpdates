@@ -67,11 +67,11 @@ export class ChargeComponentSC implements OnInit {
    * Get the charges OnInit
    */
   ngOnInit() {
-console.log('IN onInIt   this.charges stringify: ' + JSON.stringify(this.charges));
-this.revCodeFilter = "";
-this.levelGroupFilter = "Implant";
+        console.log('IN onInIt   this.charges stringify: ' + JSON.stringify(this.charges));
+        this.revCodeFilter = "";
+        this.levelGroupFilter = "Implant";
 
-this.callGetSubcodedChargeList();
+        this.callGetSubcodedChargeList();
   }
 
 
@@ -169,34 +169,56 @@ callGetSubcodedChargeList():void{
         
         
         onToggleReviewed(jsxid:string, reviewed:boolean): void{
-        console.log('Reviewed button clicked.  CDMItemKey: ' + jsxid + '  Reviewed? = ' + reviewed);
-        console.log('Current ReviewedList: ' + this.reviewedList)
-        //this.reviewedList = {"batchId": jsxid, "newVarCost": null, "updated": updated  };
+            console.log('Reviewed button clicked.  CDMItemKey: ' + jsxid + '  Reviewed? = ' + reviewed);
+            console.log('Current ReviewedList: ' + this.reviewedList)
+            //this.reviewedList = {"batchId": jsxid, "newVarCost": null, "updated": updated  };
 
-//if the jsxid id exists, remove current value first
+            //if the jsxid id exists, remove current value first
 
 
-for(var i = 0; i <  this.reviewedList.length; i++) {
-                if( this.reviewedList[i] == jsxid) {
-                     this.reviewedList.splice(i, 1);
-                    break;
+            for(var i = 0; i <  this.reviewedList.length; i++) {
+                            if( this.reviewedList[i] == jsxid) {
+                                this.reviewedList.splice(i, 1);
+                                break;
+                                }
                     }
-        }
 
 
-        if(reviewed == true){
-        //then add it in if updated = true
-        this.reviewedList.push(jsxid);
-      
-        }
+            if(reviewed == true){
+            //then add it in if updated = true
+            this.reviewedList.push(jsxid);
+        
+            }
 
 
-        console.log('reviewedList: ' + this.reviewedList);
-        console.log('charges length: ' + this.charges.length);
+            console.log('reviewedList: ' + this.reviewedList);
+            console.log('charges length: ' + this.charges.length);
 
 
 
     }
+
+        onClickFilterModified(): void{
+            console.log("IN onClickFilterModified")
+            this.modifiedFilter = "Y";
+            //this.charges = this.charges.filter(charge => charge.modified === "Y");
+            //this.charges.filter(function(e){return e.modified == "Y"});
+        }
+
+
+        onClickFilterUnmodified(): void{
+            console.log("IN onClickFilterUnodified")
+            this.modifiedFilter = "N";
+            //this.charges.filter(function(e){return e.modified != "Y" || !e.modified});
+            //this.charges = this.charges.filter(charge => charge.modified != "Y" || !charge.modified);
+        }
+
+         onClickClearFilters(): void{
+            console.log("IN onClickClearFilters")
+            this.modifiedFilter = "";
+            //this.charges.filter(function(e){return e.modified === "Y" || !e.modified});
+           // this.charges = this.charges.filter(charge => charge.modified === "Y" || !charge.modified);
+        }
 
 
 
@@ -237,6 +259,7 @@ for(var i = 0; i <  this.reviewedList.length; i++) {
                 for(var i = 0; i <  this.charges.length; i++) {
                     if( this.charges[i].jsxid == jsxid) {
                          this.charges[i].newVarCost = varCost;
+                         this.charges[i].modified = "Y";
                         break;
                         }
                     }
@@ -257,30 +280,8 @@ for(var i = 0; i <  this.reviewedList.length; i++) {
     }
 
     onClickSubmit(): void{
-    /*console.log('IN onClickSubmit - Reports to send:' + JSON.stringify(this.reportList));
-   
-    if(confirm('Are you sure you want to submit the selected reports and close the Prelim Reports App?')){
 
-                this._chargeService.postReportList(this.reportList)
-                .subscribe(
-                    data => this.postUpdates = JSON.stringify(data), 
-                    error => this.errorMessage = <any>error);
-
-                    }
-                    */
     }
 
-
-  /**
-   * Pushes a new name onto the charges array
-   * @return {boolean} false to prevent default form submit behavior to refresh the page.
-   */
-  /*
-  addName(): boolean {
-    // TODO: implement ChargeService.post
-    this.charges.push(this.newName);
-    this.newName = '';
-    return false;
-  }*/
 
 }

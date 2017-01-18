@@ -20,7 +20,8 @@
         "chargeDescription": "TestdataSubcoded2 XML File",
         "totalVarCost": "7583",
         "unitCharge": "8902",
-        "unitVarCost": "4593"
+        "unitVarCost": "4593",
+         "modified": "N"
       },
       {
         "jsxid": "2",
@@ -36,7 +37,8 @@
         "chargeDescription": "A Stent of some sort",
         "totalVarCost": "7122",
         "unitCharge": "8213",
-        "unitVarCost": "1232"
+        "unitVarCost": "1232",
+        "modified": "N"
       },
       {
         "jsxid": "3",
@@ -52,7 +54,8 @@
         "chargeDescription": "Sesame Street Bandaids",
         "totalVarCost": "6654",
         "unitCharge": "7",
-        "unitVarCost": "7853"
+        "unitVarCost": "7853",
+        "modified": "N"
       },
       {
         "jsxid": "4",
@@ -68,7 +71,8 @@
         "chargeDescription": "Live Heart",
         "totalVarCost": "9987",
         "unitCharge": "2234",
-        "unitVarCost": "2233"
+        "unitVarCost": "2233",
+        "modified": "N"
       },
       {
         "jsxid": "5",
@@ -84,7 +88,8 @@
         "chargeDescription": "Drugs",
         "totalVarCost": "100",
         "unitCharge": "300",
-        "unitVarCost": "35"
+        "unitVarCost": "35",
+        "modified": "N"
       },
       {
         "jsxid": "6",
@@ -100,7 +105,8 @@
         "chargeDescription": "Medicine",
         "totalVarCost": "150",
         "unitCharge": "450",
-        "unitVarCost": "48"
+        "unitVarCost": "48",
+        "modified": "N"
       },
       {
         "jsxid": "7",
@@ -116,7 +122,8 @@
         "chargeDescription": "Drugs and Medicine",
         "totalVarCost": "200",
         "unitCharge": "650",
-        "unitVarCost": "70"
+        "unitVarCost": "70",
+        "modified": "N"
       },
       {
         "jsxid": "8",
@@ -132,7 +139,8 @@
         "chargeDescription": "Knee Implant",
         "totalVarCost": "9987",
         "unitCharge": "2234",
-        "unitVarCost": "2233"
+        "unitVarCost": "2233",
+        "modified": "N"
       },
       {
         "jsxid": "9",
@@ -148,7 +156,8 @@
         "chargeDescription": "Ankle Implant",
         "totalVarCost": "7583",
         "unitCharge": "8902",
-        "unitVarCost": "4593"
+        "unitVarCost": "4593",
+        "modified": "N"
       },
       {
         "jsxid": "10",
@@ -164,7 +173,8 @@
         "chargeDescription": "Shoulder Implant",
         "totalVarCost": "7122",
         "unitCharge": "8213",
-        "unitVarCost": "1232"
+        "unitVarCost": "1232",
+        "modified": "N"
       },
       {
         "jsxid": "11",
@@ -180,7 +190,8 @@
         "chargeDescription": "Face Implant",
         "totalVarCost": "6654",
         "unitCharge": "7",
-        "unitVarCost": "7853"
+        "unitVarCost": "7853",
+        "modified": "N"
       },
       {
         "jsxid": "12",
@@ -196,7 +207,8 @@
         "chargeDescription": "Brain Implant",
         "totalVarCost": "9987",
         "unitCharge": "2234",
-        "unitVarCost": "2233"
+        "unitVarCost": "2233",
+        "modified": "N"
       }
     ]
 }

@@ -11,7 +11,7 @@ export class ChargeSCFilterPipe implements PipeTransform{
                     let revCodefilter: string = argRev ? argRev.toLocaleLowerCase(): null;
                     let descriptionfilter: string = argDesc ? argDesc.toLocaleLowerCase(): null;
                     let modifiedfilter: string = argMod ? argMod.toLocaleLowerCase(): null;
-                    console.log("LevelGrouping: " + levelGroupfilter + " - RevCode: " + revCodefilter  + " - Description: " + descriptionfilter + " - Modified: " + modifiedfilter);
+                    console.log("IN SUBCODED PIPE TRANSFORM.     LevelGrouping: " + levelGroupfilter + " - RevCode: " + revCodefilter  + " - Description: " + descriptionfilter + " - Modified: " + modifiedfilter);
 
             if(levelGroupfilter){
                 value = value.filter((charge: IChargeSC) =>
@@ -28,8 +28,9 @@ export class ChargeSCFilterPipe implements PipeTransform{
                     value.chargeDescription.toLocaleLowerCase().indexOf(descriptionfilter) != -1);
             }
             if(modifiedfilter){
-                    value = value.filter((value: IChargeSC) =>
-                    value.modified.toLocaleLowerCase().indexOf(modifiedfilter) != -1);
+                console.log("modifiedFilter  value: ");         
+
+                        value = value.filter((value: IChargeSC) => value.modified.toLocaleLowerCase().indexOf(modifiedfilter) != -1);
             }
            return value;
                 

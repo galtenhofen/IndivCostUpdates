@@ -1,53 +1,68 @@
 <div class='panel panel-primary' id='all'>
-    <div class='panel-heading clearfix' id='btnHeaders'>
-    <div class='row'>
-                    <div class='col-xs-1'>
+    <div class='panel-heading' id='btnHeaders'>
+        <div class='container-fluid'>
+        <div class='row'>
+            <div class='col-lg-1' >
                             <button class='btn btn-success' id='getBtn' (click)='onClickrefreshChargeList()'>
                                 Refresh Data
                             </button>
                     </div>
-<div class='col-xs-2'>
-                    <div class="radio-toolbar" vertical-align='middle'>
-
+            <div class='col-lg-1 '>
+                    <div class="radio-toolbar" align="left">
+                        <div class = "row">
                         <input #ImplantRadio type="radio" id="radio1" name="radios" [(ngModel)]='levelGroupFilter' value="Implant" (click)="onClickLevelGrouping(ImplantRadio .value)" checked>
                         <label for="radio1">Implants</label>
-
+                        </div>
+                        <div class = "row">
                         <input #MedSurgRadio type="radio" id="radio2" name="radios" [(ngModel)]='levelGroupFilter' value="MedSurg" (click)="onClickLevelGrouping(MedSurgRadio.value)">
                         <label for="radio2">Med-Surg</label>
+                        </div>
                     </div>
-</div>
+                </div>
 
-<div class='col-xs-2 dropdown' align="right">
-   <style>
-    select:invalid { color: gray; }
-</style>
-<form>
-  <select form = "revCodeForm" name="revCode" [(ngModel)]='revCodeFilter'  required>
-                    <option value="" selected>Revenue Code</option>
-                    <option value="270">270</option>
-                    <option value="271">271</option>
-                    <option value="272">272</option>
-                    <option value="274">274</option>
-                    <option value="275">275</option>
-                </select>
- </form> 
-</div>
+            <div class='col-lg-1 dropdown '>
+                    <style>
+                        select:invalid { color: gray; }
+                    </style>
+                <form style="width:100%" >
+                    <select form = "revCodeForm" name="revCode" [(ngModel)]='revCodeFilter'  required>
+                        <option value="" selected>Revenue Code</option>
+                        <option value="270">270</option>
+                        <option value="271">271</option>
+                        <option value="272">272</option>
+                        <option value="274">274</option>
+                        <option value="275">275</option>
+                    </select>
+                </form> 
+                </div>
 
- <!-- <div class='col-xs-2' id='dfgLbl' vertical-align='middle' align='right'>Filter Description:</div>  --> 
-    <div class='col-xs-3 dfginput' align='left' style='color:#000000'><input class="form-control form-control-inline" name="descriptionInput" type='text' [(ngModel)]='descriptionFilter' placeholder="Enter text to filter"/></div>
-           
-                    <div class='col-xs-1'>
-                            <button class='btn btn-success' id='allBtn' name="modifiedFilterBtn" [(ngModel)]='modifiedFilter' (click)='onClickselectAll(this)' ngDefaultControl>
-                                Filter Modified
+            <div class='col-lg-3 dfginput ' style='color:#000000'><input class="form-control form-control-inline" name="descriptionInput" type='text' [(ngModel)]='descriptionFilter' placeholder="Enter text to filter"/></div>
+            
+            <div class='col-lg-1 ' align='right'>
+                            <button [ngClass]="showAll" class='btn btn-success' id='allBtn'  (click)='onClickFilterNone()'>
+                                Show All
                             </button>
                     </div>
-                    <div class='col-xs-1'>
-                            <button class='btn btn-success' id='noneBtn' name="unmodifiedFilterBtn" [(ngModel)]='modifiedFilter' (click)='onClickdeselectAll(this)' ngDefaultControl>
-                                Filter Un-Modified
+            
+            <div class='col-lg-1 ' align='right'>
+                            <button [ngClass]="showModified" class='btn btn-success' id='modBtn'  (click)='onClickFilterModified()'>
+                                Show Modified
                             </button>
                     </div>
-         </div>
 
+            <div class='col-lg-2 ' align='left'>
+                            <button [ngClass]="showUnModified" class='btn btn-success' id='unmodBtn' (click)='onClickFilterUnmodified()'>
+                                Show Un-Modified
+                            </button>
+                    </div>
+
+            <div class='col-lg-1 '>
+                            <button [ngClass]="clearAll" class='btn btn-danger' id='clearBtn' (click)='onClickClearFilters()'>
+                                Clear Filters
+                            </button>
+                    </div>
+         </div>  <!-- row closure -->
+        </div>  <!-- container closure -->
 
 
     </div>  <!-- panel-heading closure -->
@@ -88,10 +103,10 @@
       
                     </tr>
                 </thead>           
-         <!--        <tbody *ngIf='!loading && (Charges && Charges.length > 0) && !errorMessage'> -->
+                <tbody *ngIf='!loading && (Charges && Charges.length > 0) && !errorMessage'> -->
              <tbody *ngIf='!loading && charges  && !errorMessage'> 
-                <tr *ngFor='let charge of charges | chargeFilter:levelGroupFilter:revCodeFilter:descriptionFilter:modifiedFilter'  >
-
+                <tr *ngFor='let charge of charges | chargeFilter:levelGroupFilter:revCodeFilter:descriptionFilter:modifiedFilter; let i = index'  [ngClass]="{rowModified: charge.modified === 'Y'}">
+<!-- [class.rowModified]=charge.modified -->
                     <!--<td style="text-align:center" (click)="generateURL(Charge.ChargeGroupType)"><a href="" target="_blank">{{Charge.ChargeGroup}}</a></td>--> 
                     
                     <td style="text-align:center"><div class = "tdContainer" style="height:10px">{{charge.jsxid}}</div></td> 
@@ -106,13 +121,13 @@
                     <td style="text-align:center"><div class = "tdContainer" style="height:10px">{{charge.totalVarCost}} </div></td>
                     <td style="text-align:center"><div class = "tdContainer" style="height:10px">{{charge.unitCharge}} </div></td>
                     <td style="text-align:center"><div class = "tdContainer" style="height:10px">{{charge.unitVarCost}} </div></td>
-                    <td style="text-align:center"><div class = "tdContainer" style="height:10px">{{charge.newVarCost}} </div></td>
+                    <td style="text-align:center" > <input #newVarCost [ngClass]="{rowModified: charge.modified === 'Y'}" style="border: none" type="number" min="1" id="newVarCost" [attr.id]="'newVarCost' + charge.jsxid" [(ngModel)]="charge.newVarCost" (change)="onUpdateVarCost(charge.jsxid, charge.revCode, charge.newVarCost, charge.chargeID, updateCheckbox.checked)" aria-label="..." > </td>
                     <td style="text-align:center"><div class = "tdContainer" style="height:10px">{{charge.prevCdmVarCostPctChg}} </div></td>
                     <td style="text-align:center"><div class = "tdContainer" style="height:10px">{{charge.originalVarCost}} </div></td>
                     <td style="text-align:center"><div class = "tdContainer" style="height:10px">{{charge.rccFlag}} </div></td>
                     <td style="text-align:center"><div class = "tdContainer" style="height:10px">{{charge.prevCdmOverrideType}} </div></td>
                     <td style="text-align:center"><div class = "tdContainer" style="height:10px">{{charge.prevCdmVersion}} </div></td>
-                    <td style="text-align:center"><div class="vertAlign"><input #updateCheckbox style="height:auto" type="checkbox" id="updateCheckbox" [(ngModel)]="charge.reviewed" (change)="onToggleReviewed(charge.jsxid,updateCheckbox.checked)" ></div></td>
+                    <td style="text-align:center"><div class="vertAlign"><input #updateCheckbox style="height:auto" type="checkbox" id="updateCheckbox" [(ngModel)]="charge.reviewed" (change)="onToggleReviewed(charge.jsxid,charge.newVarCost,updateCheckbox.checked)" ></div></td>
                               
                 </tr> 
                 

@@ -15,9 +15,13 @@ th{
     vertical-align: center;
     vertical-align: middle;
     height: 40px;
-    font-size: 12px;
+    font-size: 12px !important;
     margin-bottom: 15px;
 
+}
+
+tr{
+    vertical-align: middle;
 }
 
 td{
@@ -27,21 +31,45 @@ td{
     padding: 0px;
 }
 
+
+.panel-heading{
+    height: 67px;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.panel-body{
+    padding: 0px !important;
+}
+
 .table > tbody > tr > td {
  padding: 0px !important;
 }
 
-/*
-.table > tbody > tr {
-   height: 20px !important;
-   padding: 0px !important;
-
+.rowModified{
+    background: #E6E6FA !important;
 }
-*/
+
+
+td>input{
+  width: 120px;
+  text-align: center;
+}
+
 .tdContainer{
     vertical-align: middle;
     margin: 0px;
     padding: 2px;
+}
+
+.container-fluid{
+    width:100%;
+    height:100%;
+    margin: 0px;
+}
+
+.row{
+    height: 100%
 }
 
 .input[type=checkbox]{
@@ -58,64 +86,54 @@ td{
     height: 20px;
 }
 
-#standardBtn{
- border: 2px solid white;
- border-radius: 10px;
+#btnHeaders{
+    vertical-align: middle;
 }
 
 #allBtn{
  border: 2px solid white;
  border-radius: 10px;
+ vertical-align: middle;
 }
 
-#noneBtn{
+#clearBtn{
  border: 2px solid white;
  border-radius: 10px;
 }
+
+#modBtn{
+ border: 2px solid white;
+ border-radius: 10px;
+ 
+}
+
+#unmodBtn{
+ border: 2px solid white;
+ border-radius: 10px;
+}
+
 #getBtn{
  border: 2px solid white;
  border-radius: 10px;
-}
-
-#dfgLbl{
-    text-align:left;
-    padding-top: 10px;
-    float: left
+ padding-top:5px;
 }
 
 .dfginput{
-    width: 450px;
-    height: 40px;
-    text-align:left;
-    padding-top: 5px;
-    float: left
+    height: 45px;
+    text-align:center;
+    margin-left: 40px;
 }
 
-#standardButton{
-    width: 10%;
-    text-align:left;
-    padding-top: 10px;
-    float: left
+.nolight-class {
+    border: none !important;
+    color: black !important;
+  /*background: red !important;*/
 }
 
-#allButton{
-    width: 10%;
-    text-align:left;
-    padding-top: 10px;
-    float: left
+.highlight-class {
+    border: 3px solid white !important;
+    color: white !important;
 }
-
-#noneButton{
-    width: 10%;
-    text-align:left;
-    padding-top: 10px;
-    float: left
-}
-/*
-input { 
-    text-align: center; 
-    font-size: 120%;
-}*/
 
 input::-webkit-input-placeholder {
 font-size: 70% !important;
@@ -144,7 +162,7 @@ font-size: 70% !important;
 select{
     color: #337AB7 !important;
     height: 40px;
-    width:150px;
+    /*width:100px;*/
     border:2px solid white;
     -webkit-border-top-right-radius: 5px;
     -webkit-border-bottom-right-radius: 5px;
@@ -158,7 +176,7 @@ select{
     -moz-border-radius-bottomleft: 5px;
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
-    padding:2px;
+    /*padding:2px;*/
 }
 /*
 select:required:invalid {
@@ -171,8 +189,9 @@ option {
 }
 
 .radio-toolbar{
-    padding-top: 10px;
-    /*vertical-align: middle;*/
+    /*padding-left: -30px;*/
+    margin-left: 10px;
+    vertical-align: top;
 }
 
 .dropdown{
@@ -181,7 +200,12 @@ option {
 }
 
 input[type=radio]{
-    margin-left: 15px;
+    margin-left: 5px;
+}
+
+label{
+    margin-left: 5px;
+    font: 8px !important;
 }
 
 #ChargesTable{

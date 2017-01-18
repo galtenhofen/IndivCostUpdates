@@ -34,16 +34,21 @@
 </div>
 
  <!-- <div class='col-xs-2' id='dfgLbl' vertical-align='middle' align='right'>Filter Description:</div>  --> 
-    <div class='col-xs-3 dfginput' align='left' style='color:#000000'><input class="form-control form-control-inline" type='text' name="descriptionSCInput"  [(ngModel)]='descriptionFilter' placeholder="Enter text to filter"/></div>
+    <div class='dfginput' align='left' style='color:#000000'><input class="form-control form-control-inline" type='text' name="descriptionSCInput"  [(ngModel)]='descriptionFilter' placeholder="Enter text to filter"/></div>
            
-                    <div class='col-xs-1'>
-                            <button class='btn btn-success' id='allBtn' (click)='onClickFilterModified(this)'>
+                    <div class='col-xs-1' align='right'>
+                            <button class='btn btn-success' id='allBtn'  (click)='onClickFilterModified()'>
                                 Filter Modified
                             </button>
                     </div>
-                    <div class='col-xs-1'>
-                            <button class='btn btn-success' id='noneBtn' (click)='onClickFilterUnmodified(this)'>
+                    <div class='col-xs-2' align='left'>
+                            <button class='btn btn-success' id='noneBtn' (click)='onClickFilterUnmodified()'>
                                 Filter Un-Modified
+                            </button>
+                    </div>
+                    <div class='col-xs-1'>
+                            <button class='btn btn-success' id='clearBtn' (click)='onClickClearFilters()'>
+                                Clear Filters
                             </button>
                     </div>
          </div>

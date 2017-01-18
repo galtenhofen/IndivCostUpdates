@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import {ChargeFilterPipe} from './charge.pipe';
 import { HomeService } from '../home/home.service';
 import {ICharge} from './charge';
+import {IUpdate} from './update';
 import {IResponse} from './response';
 import {IReport} from './report';
 
@@ -32,12 +33,11 @@ export class ChargeComponent implements OnInit {
     userName: string;
     caseNumber: string;
     jsxid: number;
-
     
     postUpdates: string;
   
-    //updateObjects: IUpdate[] = [];
-    //update: IUpdate;
+    update: IUpdate;
+    updateObjects: IUpdate[] = [];
 
     reviewedList: string[] = [];
 
@@ -51,6 +51,9 @@ export class ChargeComponent implements OnInit {
     updating: boolean = false;
     updatingError: boolean = false;
 
+    showModified:string = 'nolight-class';
+    showUnModified:string = 'nolight-class';
+    showAll:string = 'highlight-class';
   
 
   /**
@@ -188,16 +191,48 @@ callGetChargeList():void{
         }
 */
 
+    onClickFilterNone(): void{
+            console.log("IN onClickFilterNone")
+            this.modifiedFilter = "";
+            this.showModified = 'nolight-class';
+            this.showUnModified = 'nolight-class';
+            this.showAll = 'highlight-class';
+        }
+
+     onClickFilterModified(): void{
+            console.log("IN onClickFilterModified")
+            this.modifiedFilter = "Y";
+            this.showModified = 'highlight-class';
+            this.showUnModified = 'nolight-class';
+            this.showAll = 'nolight-class';
+        }
 
 
-onToggleReviewed(jsxid:string, reviewed:boolean): void{
+        onClickFilterUnmodified(): void{
+            console.log("IN onClickFilterUnodified")
+            this.modifiedFilter = "N";
+            this.showModified = 'nolight-class';
+            this.showUnModified = 'highlight-class';
+            this.showAll = 'nolight-class';
+        }
+
+         onClickClearFilters(): void{
+            console.log("IN onClickClearFilters")
+            this.modifiedFilter = "";
+            this.revCodeFilter = "";
+            this.descriptionFilter= "";
+            this.showModified = 'nolight-class';
+            this.showUnModified = 'nolight-class';
+            this.showAll = 'highlight-class';
+            
+        }
+
+
+onToggleReviewed(jsxid:string, varCost:number, reviewed:boolean): void{
         console.log('Reviewed button clicked.  CDMItemKey: ' + jsxid + '  Reviewed? = ' + reviewed);
         console.log('Current ReviewedList: ' + this.reviewedList)
-        //this.reviewedList = {"batchId": jsxid, "newVarCost": null, "updated": updated  };
 
 //if the jsxid id exists, remove current value first
-
-
 for(var i = 0; i <  this.reviewedList.length; i++) {
                 if( this.reviewedList[i] == jsxid) {
                      this.reviewedList.splice(i, 1);
@@ -209,44 +244,41 @@ for(var i = 0; i <  this.reviewedList.length; i++) {
         if(reviewed == true){
         //then add it in if updated = true
         this.reviewedList.push(jsxid);
-      
+        
+        for(var i = 0; i <  this.charges.length; i++) {
+                    if( this.charges[i].jsxid == jsxid) {
+                         this.charges[i].modified = "Y";
+                        break;
+                        }
+                    }
+
         }
-
-
-        console.log('reviewedList: ' + this.reviewedList);
-        //console.log('stringify updateObj: ' + JSON.stringify(this.updateObjects));
-        console.log('charges length: ' + this.charges.length);
-/*
-        if(updated== true){
-        this.updateObjects.push(this.update);
-        console.log('retryObj: ' + this.updateObjects);
-        console.log('stringify retryObj: ' + JSON.stringify(this.updateObjects));
-        }
-        else{
-
-            for(var i = 0; i <  this.updateObjects.length; i++) {
-                if( this.updateObjects[i].batchId == jsxid) {
-                     this.updateObjects.splice(i, 1);
-                    break;
+        else if(varCost == null){
+             for(var i = 0; i <  this.charges.length; i++) {
+                    if( this.charges[i].jsxid == jsxid) {
+                         this.charges[i].modified = "N";
+                        break;
+                        }
                     }
         }
-          
-          console.log('stringify updateObj: ' + JSON.stringify(this.updateObjects));
-        }*/
+
+        
+
+        console.log('reviewedList: ' + this.reviewedList);
+        console.log('charges length: ' + this.charges.length);
 
 
     }
-/*
-    onUpdateVarCost(jsxid:string, varCost:any): void{
-        console.log('VarCost Updated.  BatchId: ' + jsxid + '  Current value = ' + varCost);
-     if (varCost != null && varCost != "" && varCost>=1){
-       this.update = {"batchId": jsxid, "newVarCost": varCost, updated: false  };
+onUpdateVarCost(jsxid:string, revCode: string, varCost:number, chargeId: string, reviewed:boolean): void{
+        console.log('VarCost Updated.  jsxid: ' + jsxid + '  Current value = ' + varCost);
+     if (varCost == null || varCost>=1){
+       this.update = {"jsxid": jsxid, "revCode": revCode,  "newVarCost": varCost, "chargeId": chargeId  };
 
-//if this batchid is already in the updated array, need to delete it before adding new value
-        if(varCost != "" && varCost != null){
+    //if this batchid is already in the updated array, need to delete it before adding new value
+        if(varCost != null){
             
             for(var i = 0; i <  this.updateObjects.length; i++) {
-                if( this.updateObjects[i].batchId == jsxid) {
+                if( this.updateObjects[i].jsxid == jsxid) {
                      this.updateObjects.splice(i, 1);
                     break;
                     }
@@ -254,33 +286,50 @@ for(var i = 0; i <  this.reviewedList.length; i++) {
 
         this.updateObjects.push(this.update);
 
-        console.log('retryObj: ' + this.updateObjects);
-        console.log('stringify retryObj: ' + JSON.stringify(this.updateObjects));
+        console.log('stringify updateObj: ' + JSON.stringify(this.updateObjects));
         }
         else{
 
             for(var i = 0; i <  this.updateObjects.length; i++) {
-                if( this.updateObjects[i].batchId == jsxid) {
+                if( this.updateObjects[i].jsxid == jsxid) {
                      this.updateObjects.splice(i, 1);
                     break;
                     }
-        }
-          
+                }
+               
+
           console.log('stringify updateObj: ' + JSON.stringify(this.updateObjects));
+          
         }
+
+         //Trying to find the object in the array of charge objects to update newVarCost
+                for(var i = 0; i <  this.charges.length; i++) {
+                    if( this.charges[i].jsxid == jsxid) {
+                         this.charges[i].newVarCost = varCost;
+                         if(varCost !=null || reviewed == true){
+                         this.charges[i].modified = "Y";
+                         }
+                         else{
+                             this.charges[i].modified = "N";
+                         }
+                        break;
+                        }
+                    }
+
+        console.log('stringify updateObj: ' + JSON.stringify(this.charges));
+              
         console.log('updateObjects length: ' + this.updateObjects.length);
-        console.log('batchFiles length: ' + this.batchfiles.length); 
+
+        console.log('charges length: ' + this.charges.length);
+       // this.canEnableButtons();    
         }
         else{
-            alert("Value must be a number greater or equal to one.");
+           // alert("Value must be a number greater or equal to one.");
             var targetCell = "updateVarCost"+jsxid;
             (<HTMLInputElement> document.getElementById(targetCell)).value = "";
            
         }
     }
-
-*/
-
 
         onClickLevelGrouping(value:any): void{
         console.log('LevelGrouping Chosen:  Filter by: ' + value);
