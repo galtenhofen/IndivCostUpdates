@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 //import { ChargeServiceSC } from './chargeSC.service';
 import { HomeService } from '../home/home.service';
 import {ChargeSCFilterPipe} from './chargeSC.pipe';
@@ -20,6 +20,8 @@ export class ChargeComponentSC implements OnInit {
 
   //newName: string = '';
   errorMessage: string;
+  existingChargesSC:any[] = [];
+  fetchMethod: string = "http";
 
 
     pageTitle: string = 'Individual Cost Updates';
@@ -39,6 +41,7 @@ export class ChargeComponentSC implements OnInit {
     postUpdates: string;
 
     response: IResponseSC;
+    singleCharge: IChargeSC;
     charges: IChargeSC[] = [];
 
     confirmResponse:string = '';
@@ -83,11 +86,32 @@ onClickrefreshSubcodedChargeList(): void{
             }
 
 callGetSubcodedChargeList():void{
-       console.log('Retrieving Subcoded Charges...');
+       this.fetchMethod = this.checkLocalStorage();
+     console.log('Retrieving Charges from ' + this.fetchMethod);
 
-          //  this.attempt= true;
+     if(this.fetchMethod === "local"){
+               this.errorMessage = "";
+                this.charges = [];
+                this.loading = true;
+
+                //LOOP THIS TO PUSH ALL ITEMS INTO INTERFACE ARRAY
+
+                //this.existingCharges = JSON.stringify(localStorage.getItem("nonSubcodedCharges"));
+
+                for (var j = 0; j < this.existingChargesSC.length; j++){
+
+                this.singleCharge = this.existingChargesSC[j];
+
+                console.log(this.existingChargesSC[j]);
+
+                this.charges.push(this.singleCharge);
+                }
+
+                this.loading = false;
+            }
+          else{
             this.errorMessage = "";
-          this.charges = [];
+            this.charges = [];
 
                 this.loading = true;
                 this.dataFileGroupId = "878";
@@ -96,9 +120,28 @@ callGetSubcodedChargeList():void{
                         response => this.charges = response.chargeList,
                         error => this.onRequestComplete("Get Subcoded Charges", error),
                         () => this.onRequestComplete("Get Subcoded Charges", "200"));
-
+            }
             console.log('Leaving callGetSubcodedChargeList this.loading: ' + this.loading);
 }            
+
+checkLocalStorage():string{
+        console.log('ENTERING checkLocalStorage');
+
+        var strCharges = localStorage.getItem("subcodedCharges");
+        this.existingChargesSC = JSON.parse(strCharges);
+
+       console.log('In checkLocalStorage  strCharges:' + strCharges);
+       console.log('In checkLocalStorage  existingCharges:' + JSON.stringify(this.existingChargesSC));
+        
+
+            if (!this.existingChargesSC){
+                return "http";
+            }
+            else{
+                return "local";
+                }
+            
+    }
 
   onRequestComplete(action:any, result:any){
             console.log('ENTERING onRequestComplete  Action Performed: ' + action + '  Result: ' + result);
@@ -168,7 +211,7 @@ callGetSubcodedChargeList():void{
         }
         
         
-        onToggleReviewed(jsxid:string, reviewed:boolean): void{
+        onToggleReviewed(jsxid:string, varCost:number, reviewed:boolean): void{
             console.log('Reviewed button clicked.  CDMItemKey: ' + jsxid + '  Reviewed? = ' + reviewed);
             console.log('Current ReviewedList: ' + this.reviewedList)
             //this.reviewedList = {"batchId": jsxid, "newVarCost": null, "updated": updated  };
@@ -187,8 +230,23 @@ callGetSubcodedChargeList():void{
             if(reviewed == true){
             //then add it in if updated = true
             this.reviewedList.push(jsxid);
-        
+            
+            for(var i = 0; i <  this.charges.length; i++) {
+                    if( this.charges[i].jsxid == jsxid) {
+                         this.charges[i].modified = "Y";
+                        break;
+                        }
+                    }
             }
+
+            else if(varCost == null){
+             for(var i = 0; i <  this.charges.length; i++) {
+                    if( this.charges[i].jsxid == jsxid) {
+                         this.charges[i].modified = "N";
+                        break;
+                        }
+                    }
+        }
 
 
             console.log('reviewedList: ' + this.reviewedList);
@@ -222,7 +280,7 @@ callGetSubcodedChargeList():void{
 
 
 
-    onUpdateVarCost(jsxid:string, revCode: string, varCost:number, chargeId: string): void{
+    onUpdateVarCost(jsxid:string, revCode: string, varCost:number, chargeId: string, reviewed:boolean): void{
         console.log('VarCost Updated.  jsxid: ' + jsxid + '  Current value = ' + varCost);
      if (varCost == null || varCost>=1){
        this.update = {"jsxid": jsxid, "revCode": revCode,  "newVarCost": varCost, "chargeId": chargeId  };
@@ -259,7 +317,12 @@ callGetSubcodedChargeList():void{
                 for(var i = 0; i <  this.charges.length; i++) {
                     if( this.charges[i].jsxid == jsxid) {
                          this.charges[i].newVarCost = varCost;
+                         if(varCost !=null || reviewed == true){
                          this.charges[i].modified = "Y";
+                         }
+                         else{
+                             this.charges[i].modified = "N";
+                         }
                         break;
                         }
                     }
@@ -283,5 +346,24 @@ callGetSubcodedChargeList():void{
 
     }
 
+
+        ngOnDestroy() {
+            console.log('IN OnDestroy Subcoded Tab  this.charges stringify: ' + JSON.stringify(this.charges));
+            this.saveChargeList();
+             }
+
+        saveChargeList(){
+            var savedSubCharges = JSON.stringify(this.charges);
+
+            console.log('IN saveChargeList  savedSubCharges :  ' + savedSubCharges) ;
+            localStorage.setItem("subcodedCharges", savedSubCharges);
+
+            // FOR WHEN WE GET A BACKEND:
+           /* this._chargeService.saveCharges(this.charges)
+                .subscribe(
+                    data => this.postUpdates = JSON.stringify(data), 
+                    error => this.errorMessage = <any>error);
+                    */
+            }
 
 }

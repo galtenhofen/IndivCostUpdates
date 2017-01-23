@@ -102,6 +102,10 @@ td>input{
     float: left
 }
 
+.rowModified{
+    background: #E6E6FA !important;
+}
+
 #standardButton{
     width: 10%;
     text-align:left;

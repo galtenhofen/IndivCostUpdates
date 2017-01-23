@@ -89,7 +89,7 @@
                 </thead>           
          <!--        <tbody *ngIf='!loading && (Charges && Charges.length > 0) && !errorMessage'> -->
              <tbody *ngIf='!loading && charges  && !errorMessage'> 
-                <tr *ngFor='let charge of charges | chargeSCFilter:levelGroupFilter:revCodeFilter:descriptionFilter:modifiedFilter; let i = index;'  >
+                <tr *ngFor='let charge of charges | chargeSCFilter:levelGroupFilter:revCodeFilter:descriptionFilter:modifiedFilter; let i = index' [ngClass]="{rowModified: charge.modified === 'Y'}"  >
                     <td style="text-align:center"><div class = "tdContainer" style="height:10px">{{charge.cv}}</div></td>
                     <td style="text-align:center"><div class = "tdContainer" style="height:10px">{{charge.ortho}}</div></td>
                     <td style="text-align:center"><div class = "tdContainer" style="height:10px">{{charge.spine}}</div></td>
@@ -101,8 +101,8 @@
                     <td style="text-align:center"><div class = "tdContainer" style="height:10px">{{charge.totalVarCost}} </div></td>
                     <td style="text-align:center"><div class = "tdContainer" style="height:10px">{{charge.unitCharge}} </div></td>
                     <td style="text-align:center"><div class = "tdContainer" style="height:10px">{{charge.unitVarCost}} </div></td>
-                  <td style="text-align:center" > <input #newVarCost style="border: none" type="number" min="1" id="newVarCost" [attr.id]="'newVarCost' + charge.jsxid" [(ngModel)]="charge.newVarCost" (change)="onUpdateVarCost(charge.jsxid, charge.revCode, charge.newVarCost, charge.chargeID)" aria-label="..." > </td>
-                    <td style="text-align:center"><div class="vertAlign"><input #updateCheckbox style="height:auto" type="checkbox" id="updateCheckbox" [(ngModel)]="charge.reviewed" (change)="onToggleReviewed(charge.jsxid,updateCheckbox.checked)" ></div></td>             
+                  <td style="text-align:center" > <input #newVarCost [ngClass]="{rowModified: charge.modified === 'Y'}" style="border: none" type="number" min="1" id="newVarCost" [attr.id]="'newVarCost' + charge.jsxid" [(ngModel)]="charge.newVarCost" (change)="onUpdateVarCost(charge.jsxid, charge.revCode, charge.newVarCost, charge.chargeID, updateCheckbox.checked)" aria-label="..." > </td>
+                    <td style="text-align:center"><div class="vertAlign"><input #updateCheckbox style="height:auto" type="checkbox" id="updateCheckbox" [(ngModel)]="charge.reviewed" (change)="onToggleReviewed(charge.jsxid,charge.newVarCost, updateCheckbox.checked)" ></div></td>             
                 </tr> 
                 
                 </tbody>
