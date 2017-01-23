@@ -2,25 +2,25 @@
     <div class='panel-heading' id='btnHeaders'>
         <div class='container-fluid'>
         <div class='row'>
-            <div class='col-lg-1' >
+            <div class='col-lg-1 col-md-1 col-xs-1' >
                             <button class='btn btn-success' id='getBtn' (click)='onClickrefreshChargeList()'>
                                 Refresh Data
                             </button>
                     </div>
-            <div class='col-lg-1 '>
-                    <div class="radio-toolbar" align="left">
+            <div class='col-lg-1 col-md-2 col-xs-2'>
+                    <div class="radio-toolbar" align="center">
                         <div class = "row">
                         <input #ImplantRadio type="radio" id="radio1" name="radios" [(ngModel)]='levelGroupFilter' value="Implant" (click)="onClickLevelGrouping(ImplantRadio .value)" checked>
-                        <label for="radio1">Implants</label>
+                        <label class="radioLabel" style="text-overflow: clip" for="radio1">Implants</label>
                         </div>
                         <div class = "row">
                         <input #MedSurgRadio type="radio" id="radio2" name="radios" [(ngModel)]='levelGroupFilter' value="MedSurg" (click)="onClickLevelGrouping(MedSurgRadio.value)">
-                        <label for="radio2">Med-Surg</label>
+                        <label class="radioLabel" style="text-overflow: clip" for="radio2">Med-Surg</label>
                         </div>
                     </div>
                 </div>
 
-            <div class='col-lg-1 dropdown '>
+            <div class='col-lg-1 col-md-1 col-xs-1 dropdown '>
                     <style>
                         select:invalid { color: gray; }
                     </style>
@@ -36,27 +36,27 @@
                 </form> 
                 </div>
 
-            <div class='col-lg-3 dfginput ' style='color:#000000'><input class="form-control form-control-inline" name="descriptionInput" type='text' [(ngModel)]='descriptionFilter' placeholder="Enter text to filter"/></div>
+            <div class='col-lg-3 col-md-2 col-xs-2 dfginput ' style='color:#000000'><input class="form-control form-control-inline" name="descriptionInput" type='text' [(ngModel)]='descriptionFilter' placeholder="Enter text to filter"/></div>
             
-            <div class='col-lg-1 ' align='right'>
+            <div class='col-lg-1 col-md-1 col-xs-1' align='right'>
                             <button [ngClass]="showAll" class='btn btn-success' id='allBtn'  (click)='onClickFilterNone()'>
                                 Show All
                             </button>
                     </div>
             
-            <div class='col-lg-1 ' align='right'>
+            <div class='col-lg-1 col-md-1 col-xs-1' align='right'>
                             <button [ngClass]="showModified" class='btn btn-success' id='modBtn'  (click)='onClickFilterModified()'>
-                                Show Modified
+                                 Show Modified
                             </button>
                     </div>
 
-            <div class='col-lg-2 ' align='left'>
+            <div class='col-lg-2 col-md-2 col-xs-2' align='left'>
                             <button [ngClass]="showUnModified" class='btn btn-success' id='unmodBtn' (click)='onClickFilterUnmodified()'>
-                                Show Un-Modified
+                                Show UnModified
                             </button>
                     </div>
 
-            <div class='col-lg-1 '>
+            <div class='col-lg-1 col-md-1 col-xs-1' align='right'>
                             <button [ngClass]="clearAll" class='btn btn-danger' id='clearBtn' (click)='onClickClearFilters()'>
                                 Clear Filters
                             </button>
@@ -103,7 +103,7 @@
       
                     </tr>
                 </thead>           
-                <tbody *ngIf='!loading && (Charges && Charges.length > 0) && !errorMessage'> -->
+             <!--   <tbody *ngIf='!loading && (Charges && Charges.length > 0) && !errorMessage'> -->
              <tbody *ngIf='!loading && charges  && !errorMessage'> 
                 <tr *ngFor='let charge of charges | chargeFilter:levelGroupFilter:revCodeFilter:descriptionFilter:modifiedFilter; let i = index'  [ngClass]="{rowModified: charge.modified === 'Y'}">
 <!-- [class.rowModified]=charge.modified -->

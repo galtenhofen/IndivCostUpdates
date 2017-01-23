@@ -11,6 +11,7 @@ import { ChargeService } from '../charge/charge.service';
 import { ChargeModuleSC } from '../chargeSC/chargeSC.module';
 import { ChargeServiceSC } from '../chargeSC/chargeSC.service';
 
+
 @NgModule({
   imports: [CommonModule, HomeRoutingModule, SharedModule, ChargeModule, ChargeModuleSC],
   declarations: [HomeComponent],

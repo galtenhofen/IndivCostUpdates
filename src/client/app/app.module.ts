@@ -4,8 +4,6 @@ import { APP_BASE_HREF } from '@angular/common';
 import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
-
-//import { AboutModule } from './about/about.module';
 import { InfoModule } from './info/info.module';
 import { NotesModule } from './notes/notes.module';
 import { HomeModule } from './home/home.module';

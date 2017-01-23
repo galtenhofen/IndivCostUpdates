@@ -97,7 +97,7 @@ callGetSubcodedChargeList():void{
                         error => this.onRequestComplete("Get Subcoded Charges", error),
                         () => this.onRequestComplete("Get Subcoded Charges", "200"));
 
-            console.log('Leaving onClickrefreshChargeList this.loading: ' + this.loading);
+            console.log('Leaving callGetSubcodedChargeList this.loading: ' + this.loading);
 }            
 
   onRequestComplete(action:any, result:any){

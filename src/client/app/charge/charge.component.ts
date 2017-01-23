@@ -1,5 +1,6 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, OnDestroy } from '@angular/core';
 import {ChargeFilterPipe} from './charge.pipe';
+import {Observable} from 'rxjs/Observable';
 import { HomeService } from '../home/home.service';
 import {ICharge} from './charge';
 import {IUpdate} from './update';
@@ -16,6 +17,9 @@ import {IReport} from './report';
   styleUrls: ['charge.component.css'],
 })
 export class ChargeComponent implements OnInit {
+
+    fetchMethod: string = "http";
+    existingCharges:any[] = [];
 
     levelGroupFilter: string;
     revCodeFilter: string;
@@ -42,6 +46,7 @@ export class ChargeComponent implements OnInit {
     reviewedList: string[] = [];
 
     response: IResponse;
+    singleCharge: ICharge;
     charges: ICharge[] = [];
 
     confirmResponse:string = '';
@@ -68,10 +73,10 @@ export class ChargeComponent implements OnInit {
    * Get the charges OnInit
    */
   ngOnInit() {
-console.log('IN onInIt   this.charges stringify: ' + JSON.stringify(this.charges));
-this.revCodeFilter = "";
-this.levelGroupFilter = "Implant";
-this.callGetChargeList();
+    console.log('IN onInIt   this.charges stringify: ' + JSON.stringify(this.charges));
+    this.revCodeFilter = "";
+    this.levelGroupFilter = "Implant";
+   this.callGetChargeList();
 
   }
 
@@ -83,13 +88,34 @@ onClickrefreshChargeList(): void{
             }
 
 callGetChargeList():void{
+     this.fetchMethod = this.checkLocalStorage();
+     console.log('Retrieving Charges from ' + this.fetchMethod);
 
-     console.log('Retrieving Charges...');
+            if(this.fetchMethod === "local"){
+               this.errorMessage = "";
+                this.charges = [];
+                this.loading = true;
 
-          //  this.attempt= true;
-            this.errorMessage = "";
-          this.charges = [];
+                //LOOP THIS TO PUSH ALL ITEMS INTO INTERFACE ARRAY
 
+                //this.existingCharges = JSON.stringify(localStorage.getItem("nonSubcodedCharges"));
+
+                for (var j = 0; j < this.existingCharges.length; j++){
+
+                this.singleCharge = this.existingCharges[j];
+
+                console.log(this.existingCharges[j]);
+
+                this.charges.push(this.singleCharge);
+                }
+
+                this.loading = false;
+            }
+            else{
+
+
+                this.errorMessage = "";
+                this.charges = [];
                 this.loading = true;
                 this.dataFileGroupId = "878";
                     this._chargeService.getCharges(this.dataFileGroupId)
@@ -98,10 +124,33 @@ callGetChargeList():void{
                         error => this.onRequestComplete("Get Charges", error),
                         () => this.onRequestComplete("Get Charges", "200"));
 
-            console.log('Leaving onClickrefreshBatchList this.loading: ' + this.loading);
+            }
+                console.log('Leaving callGetChargeListthis.loading: ' + this.loading);
 
 
-}            
+        }            
+
+
+
+
+    checkLocalStorage():string{
+        console.log('ENTERING checkLocalStorage');
+
+        var strCharges = localStorage.getItem("nonSubcodedCharges");
+        this.existingCharges = JSON.parse(strCharges);
+
+       console.log('In checkLocalStorage  strCharges:' + strCharges);
+       console.log('In checkLocalStorage  existingCharges:' + JSON.stringify(this.existingCharges));
+        
+
+            if (!this.existingCharges){
+                return "http";
+            }
+            else{
+                return "local";
+                }
+            
+    }
 
   onRequestComplete(action:any, result:any){
             console.log('ENTERING onRequestComplete  Action Performed: ' + action + '  Result: ' + result);
@@ -109,7 +158,7 @@ callGetChargeList():void{
                     if(result == "200")
                         {
                             this.loading = this._chargeService.loading;
-                           // this.canEnableButtons();
+                            //this.charges.push(this.singleCharge);
                         }
                      else{
                           setTimeout(() => 
@@ -146,7 +195,6 @@ callGetChargeList():void{
 
         console.log("Loading?: " + this.loading);
         console.log("Error?: " + this.errorMessage);
-        //console.log("ChargeLength?: " + this.charges.length);
         console.log("Charges: " + JSON.stringify(this.charges));
         console.log('LEAVING onRequestComplete');
         }
@@ -169,27 +217,6 @@ callGetChargeList():void{
                 wrapper.style.height = height + "px";
             }
         }
-/*
-          onClickselectAll(source:any){
-              console.log('Select All');
-            this.reportList = [];
-            this.reportList = [];
-            var checkboxes = document.getElementsByTagName('input');   
-            for (var i = 0; i < checkboxes.length; i++)
-            {
-            if (checkboxes[i].type == 'checkbox')
-            {
-            checkboxes[i].checked = !source.checked;
-            }
-            }
-
-            
-            for (var j = 0; j < this.charges.length; j++){
-                this.reportList.push(this.charges[j].jsxid);
-            }
-            console.log('Report List: ' + JSON.stringify(this.reportList));
-        }
-*/
 
     onClickFilterNone(): void{
             console.log("IN onClickFilterNone")
@@ -349,6 +376,29 @@ onUpdateVarCost(jsxid:string, revCode: string, varCost:number, chargeId: string,
                     }
                     */
     }
+
+
+        ngOnDestroy() {
+            console.log('IN OnDestroy   this.charges stringify: ' + JSON.stringify(this.charges));
+            this.saveChargeList();
+             }
+
+        saveChargeList(){
+            var savedNonCharges = JSON.stringify(this.charges);
+
+            //var singleSavedNonCharge = JSON.stringify(this.singleCharge);
+
+            console.log('IN saveChargeList  savedNonCharges :  ' + savedNonCharges) ;
+            localStorage.setItem("nonSubcodedCharges", savedNonCharges);
+
+            // FOR WHEN WE GET A BACKEND:
+           /* this._chargeService.saveCharges(this.charges)
+                .subscribe(
+                    data => this.postUpdates = JSON.stringify(data), 
+                    error => this.errorMessage = <any>error);
+                    */
+            }
+
 
     
 
